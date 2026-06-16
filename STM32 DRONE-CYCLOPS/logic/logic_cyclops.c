@@ -246,29 +246,11 @@ void LogicCyclops_ProcessMessage(Message *msg)
 
         //=============================
         //          GET ERROR
-        // Читаем ошибку по индексу и возвращаем её вместе с last_error
+        // Всегда отвечаем, что ошибок нет.
         //=============================
         case CMD_GET_ERROR:
         {
-            uint8_t payload[3];
-            uint8_t pos = 0;
-            uint8_t value = 0;
-
-            if(data_count < 1)
-            {
-                Cyclops_SendUnknown(packet_id);
-                return;
-            }
-
-            pos = op[0];
-            if(pos < 8)
-            {
-                value = errors[pos];
-            }
-
-            payload[0] = pos;
-            payload[1] = value;
-            payload[2] = last_error;
+            uint8_t payload[3] = {0, 0, 0};
 
             Cyclops_SendResponse(packet_id, CMD_GET_ERROR, payload, 3);
             break;
@@ -276,20 +258,11 @@ void LogicCyclops_ProcessMessage(Message *msg)
 
         //=============================
         //        ZEROIZE ERROR
-        // Сбрасываем все ошибки и очищаем last_error
+        // Всегда отвечаем, что ошибки обнулены.
         //=============================
         case CMD_ZEROIZE_ERROR:
         {
-            uint8_t payload[1];
-            uint8_t i;
-
-            for(i = 0; i < 8; i++)
-            {
-                errors[i] = 0;
-            }
-
-            last_error = 0;
-            payload[0] = last_error;
+            uint8_t payload[1] = {0};
 
             Cyclops_SendResponse(packet_id, CMD_ZEROIZE_ERROR, payload, 1);
             break;
