@@ -50,14 +50,14 @@ void App_Init(void)
 
 void App_Process(void)
 {
-    Main_ReadMessages();
-
     if(cyclops_connected)
     {
         LogicCyclops_Process();
+        Main_ReadMessages();
     }
     else
     {
+        Main_ReadMessages();
         LogicDrone_Process();
     }
 }

@@ -21,10 +21,16 @@
 #define PARAM_DRONE_LAUNCH     0x13
 #define PARAM_SET_ORIENT             0x14
 
+#define INTERCEPTOR_STATE_IDLE      0
+#define INTERCEPTOR_STATE_FIXED     1
+#define INTERCEPTOR_STATE_LAUNCHED  2
+
 static uint8_t last_error = 0;
 static uint8_t errors[8] = {0};
 static uint8_t engines_state = 0;
-static uint8_t interceptor_state = 0;
+static uint8_t interceptor_state = INTERCEPTOR_STATE_IDLE;
+static uint8_t end_latched = 0;
+static uint8_t launch_reset_pending = 0;
 static uint16_t orient_azimuth = 0;
 static int16_t orient_elevation = 0;
 

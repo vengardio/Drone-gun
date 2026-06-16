@@ -3,6 +3,7 @@
 #include "usart.h"
 #include "mavlink_tx.h"
 #include "logic_drone.h"
+#include "gpio.h"
 #include "pwm.h"
 #include "timer.h"
 #include <stdbool.h>
@@ -86,6 +87,30 @@ static uint8_t MakeInterceptorStateByte(uint8_t state, uint8_t targets)
 
 void LogicCyclops_Process(void)
 {
+    uint8_t end = End_Read();
+
+    if(launch_reset_pending)
+    {
+        if(!end)
+        {
+            Servo_Release();
+            LogicDrone_SetDroneState(DRONE_STATE_IDLE);
+            interceptor_state = INTERCEPTOR_STATE_IDLE;
+            engines_state = 0;
+            end_latched = 0;
+            launch_reset_pending = 0;
+        }
+
+        return;
+    }
+
+    if(end && !end_latched)
+    {
+        Servo_Hold();
+        interceptor_state = INTERCEPTOR_STATE_FIXED;
+        end_latched = 1;
+    }
+
     if(LogicDrone_GetDroneState() == DRONE_STATE_PREPARED)
     {
         Servo_Hold();
@@ -249,7 +274,7 @@ void LogicCyclops_ProcessMessage(Message *msg)
                     if(Cyclops_CheckBwa(op, data_count) && (op[4] == 1))
                     {
                         launched = 1;
-                        interceptor_state = 2;
+                        interceptor_state = INTERCEPTOR_STATE_LAUNCHED;
                     }
 
                     payload[0] = PARAM_DRONE_LAUNCH;
@@ -266,6 +291,7 @@ void LogicCyclops_ProcessMessage(Message *msg)
                         DelayMs(200);
                         MavlinkTx_SendFly();
                         LogicDrone_SetDroneState(DRONE_STATE_FIRED);
+                        launch_reset_pending = 1;
                     }
 
                     break;
