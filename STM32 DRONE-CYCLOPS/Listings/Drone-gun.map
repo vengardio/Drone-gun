@@ -1,0 +1,1707 @@
+Component: Arm Compiler for Embedded 6.22 Tool: armlink [5ee90200]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(.text.App_Init) refers to rcc.o(.text.RCC_Init) for RCC_Init
+    main.o(.text.App_Init) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
+    main.o(.text.App_Init) refers to gpio.o(.text.Optocouplers_Enable) for Optocouplers_Enable
+    main.o(.text.App_Init) refers to timer.o(.text.Timer_Init) for Timer_Init
+    main.o(.text.App_Init) refers to timer.o(.text.StatusLedTimer_Init) for StatusLedTimer_Init
+    main.o(.text.App_Init) refers to usart.o(.text.USART_Init) for USART_Init
+    main.o(.text.App_Init) refers to pwm.o(.text.PWM_InitServo) for PWM_InitServo
+    main.o(.text.App_Init) refers to mavlink_tx.o(.text.MavlinkTx_Init) for MavlinkTx_Init
+    main.o(.text.App_Init) refers to logic_drone.o(.text.LogicDrone_Init) for LogicDrone_Init
+    main.o(.ARM.exidx.text.App_Init) refers to main.o(.text.App_Init) for [Anonymous Symbol]
+    main.o(.text.App_Process) refers to main.o(.text.Main_ReadMessages) for Main_ReadMessages
+    main.o(.text.App_Process) refers to main.o(.bss.cyclops_connected) for cyclops_connected
+    main.o(.text.App_Process) refers to logic_cyclops.o(.text.LogicCyclops_Process) for LogicCyclops_Process
+    main.o(.text.App_Process) refers to logic_drone.o(.text.LogicDrone_Process) for LogicDrone_Process
+    main.o(.ARM.exidx.text.App_Process) refers to main.o(.text.App_Process) for [Anonymous Symbol]
+    main.o(.text.Main_ReadMessages) refers to message_queue.o(.text.MessageQueue_Pop) for MessageQueue_Pop
+    main.o(.text.Main_ReadMessages) refers to logic_cyclops.o(.text.LogicCyclops_ProcessMessage) for LogicCyclops_ProcessMessage
+    main.o(.text.Main_ReadMessages) refers to logic_drone.o(.text.LogicDrone_ProcessMessage) for LogicDrone_ProcessMessage
+    main.o(.ARM.exidx.text.Main_ReadMessages) refers to main.o(.text.Main_ReadMessages) for [Anonymous Symbol]
+    main.o(.text.main) refers to main.o(.text.App_Init) for App_Init
+    main.o(.text.main) refers to main.o(.text.App_Process) for App_Process
+    main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
+    main.o(.text.USART1_IRQHandler) refers to main.o(.bss.cyclops_connected) for cyclops_connected
+    main.o(.text.USART1_IRQHandler) refers to cyclops_rx.o(.text.Cyclops_RxByte) for Cyclops_RxByte
+    main.o(.ARM.exidx.text.USART1_IRQHandler) refers to main.o(.text.USART1_IRQHandler) for [Anonymous Symbol]
+    main.o(.text.USART2_IRQHandler) refers to mavlink_rx.o(.text.Mavlink_RxByte) for Mavlink_RxByte
+    main.o(.ARM.exidx.text.USART2_IRQHandler) refers to main.o(.text.USART2_IRQHandler) for [Anonymous Symbol]
+    rcc.o(.ARM.exidx.text.RCC_Init) refers to rcc.o(.text.RCC_Init) for [Anonymous Symbol]
+    gpio.o(.ARM.exidx.text.GPIO_Init) refers to gpio.o(.text.GPIO_Init) for [Anonymous Symbol]
+    gpio.o(.ARM.exidx.text.Launch_Read) refers to gpio.o(.text.Launch_Read) for [Anonymous Symbol]
+    gpio.o(.ARM.exidx.text.Safety_Read) refers to gpio.o(.text.Safety_Read) for [Anonymous Symbol]
+    gpio.o(.ARM.exidx.text.End_Read) refers to gpio.o(.text.End_Read) for [Anonymous Symbol]
+    gpio.o(.ARM.exidx.text.Optocouplers_Enable) refers to gpio.o(.text.Optocouplers_Enable) for [Anonymous Symbol]
+    gpio.o(.ARM.exidx.text.StatusLed_Toggle) refers to gpio.o(.text.StatusLed_Toggle) for [Anonymous Symbol]
+    pwm.o(.ARM.exidx.text.PWM_Init) refers to pwm.o(.text.PWM_Init) for [Anonymous Symbol]
+    pwm.o(.ARM.exidx.text.PWM_SetUs) refers to pwm.o(.text.PWM_SetUs) for [Anonymous Symbol]
+    pwm.o(.text.PWM_InitServo) refers to pwm.o(.data.ServoPWM) for ServoPWM
+    pwm.o(.text.PWM_InitServo) refers to pwm.o(.text.PWM_Init) for PWM_Init
+    pwm.o(.text.PWM_InitServo) refers to pwm.o(.text.Servo_Release) for Servo_Release
+    pwm.o(.ARM.exidx.text.PWM_InitServo) refers to pwm.o(.text.PWM_InitServo) for [Anonymous Symbol]
+    pwm.o(.text.Servo_Release) refers to pwm.o(.data.ServoPWM) for ServoPWM
+    pwm.o(.text.Servo_Release) refers to pwm.o(.text.PWM_SetUs) for PWM_SetUs
+    pwm.o(.ARM.exidx.text.Servo_Release) refers to pwm.o(.text.Servo_Release) for [Anonymous Symbol]
+    pwm.o(.text.Servo_Hold) refers to pwm.o(.data.ServoPWM) for ServoPWM
+    pwm.o(.text.Servo_Hold) refers to pwm.o(.text.PWM_SetUs) for PWM_SetUs
+    pwm.o(.ARM.exidx.text.Servo_Hold) refers to pwm.o(.text.Servo_Hold) for [Anonymous Symbol]
+    timer.o(.text.Timer_Init) refers to system_stm32f10x.o(.data.SystemCoreClock) for SystemCoreClock
+    timer.o(.text.Timer_Init) refers to timer.o(.text.SysTick_Config) for SysTick_Config
+    timer.o(.ARM.exidx.text.Timer_Init) refers to timer.o(.text.Timer_Init) for [Anonymous Symbol]
+    timer.o(.text.SysTick_Config) refers to timer.o(.text.__NVIC_SetPriority) for __NVIC_SetPriority
+    timer.o(.ARM.exidx.text.SysTick_Config) refers to timer.o(.text.SysTick_Config) for [Anonymous Symbol]
+    timer.o(.text.StatusLedTimer_Init) refers to timer.o(.text.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
+    timer.o(.ARM.exidx.text.StatusLedTimer_Init) refers to timer.o(.text.StatusLedTimer_Init) for [Anonymous Symbol]
+    timer.o(.ARM.exidx.text.__NVIC_EnableIRQ) refers to timer.o(.text.__NVIC_EnableIRQ) for [Anonymous Symbol]
+    timer.o(.text.SysTick_Handler) refers to timer.o(.bss.Tick) for Tick
+    timer.o(.ARM.exidx.text.SysTick_Handler) refers to timer.o(.text.SysTick_Handler) for [Anonymous Symbol]
+    timer.o(.text.TIM3_IRQHandler) refers to gpio.o(.text.StatusLed_Toggle) for StatusLed_Toggle
+    timer.o(.ARM.exidx.text.TIM3_IRQHandler) refers to timer.o(.text.TIM3_IRQHandler) for [Anonymous Symbol]
+    timer.o(.text.GetTick) refers to timer.o(.bss.Tick) for Tick
+    timer.o(.ARM.exidx.text.GetTick) refers to timer.o(.text.GetTick) for [Anonymous Symbol]
+    timer.o(.ARM.exidx.text.DelayMs) refers to timer.o(.text.DelayMs) for [Anonymous Symbol]
+    timer.o(.text.Timeout) refers to timer.o(.bss.Tick) for Tick
+    timer.o(.ARM.exidx.text.Timeout) refers to timer.o(.text.Timeout) for [Anonymous Symbol]
+    timer.o(.ARM.exidx.text.__NVIC_SetPriority) refers to timer.o(.text.__NVIC_SetPriority) for [Anonymous Symbol]
+    usart.o(.text.USART_Init) refers to usart.o(.text.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
+    usart.o(.ARM.exidx.text.USART_Init) refers to usart.o(.text.USART_Init) for [Anonymous Symbol]
+    usart.o(.ARM.exidx.text.__NVIC_EnableIRQ) refers to usart.o(.text.__NVIC_EnableIRQ) for [Anonymous Symbol]
+    usart.o(.ARM.exidx.text.USART2_SendByte) refers to usart.o(.text.USART2_SendByte) for [Anonymous Symbol]
+    usart.o(.text.USART2_SendArray) refers to usart.o(.text.USART2_SendByte) for USART2_SendByte
+    usart.o(.ARM.exidx.text.USART2_SendArray) refers to usart.o(.text.USART2_SendArray) for [Anonymous Symbol]
+    usart.o(.ARM.exidx.text.USART1_SendByte) refers to usart.o(.text.USART1_SendByte) for [Anonymous Symbol]
+    usart.o(.text.USART1_SendArray) refers to usart.o(.text.USART1_SendByte) for USART1_SendByte
+    usart.o(.ARM.exidx.text.USART1_SendArray) refers to usart.o(.text.USART1_SendArray) for [Anonymous Symbol]
+    mavlink_tx.o(.text.MavlinkTx_Init) refers to mavlink_tx.o(.text.mavlink_set_proto_version) for mavlink_set_proto_version
+    mavlink_tx.o(.ARM.exidx.text.MavlinkTx_Init) refers to mavlink_tx.o(.text.MavlinkTx_Init) for [Anonymous Symbol]
+    mavlink_tx.o(.text.mavlink_set_proto_version) refers to mavlink_tx.o(.text.mavlink_get_channel_status) for mavlink_get_channel_status
+    mavlink_tx.o(.ARM.exidx.text.mavlink_set_proto_version) refers to mavlink_tx.o(.text.mavlink_set_proto_version) for [Anonymous Symbol]
+    mavlink_tx.o(.text.MavlinkTx_SendPrepare) refers to mavlink_tx.o(.text.MavlinkTx_SendCommand) for MavlinkTx_SendCommand
+    mavlink_tx.o(.ARM.exidx.text.MavlinkTx_SendPrepare) refers to mavlink_tx.o(.text.MavlinkTx_SendPrepare) for [Anonymous Symbol]
+    mavlink_tx.o(.text.MavlinkTx_SendCommand) refers to mavlink_tx.o(.text.mavlink_msg_command_long_pack) for mavlink_msg_command_long_pack
+    mavlink_tx.o(.text.MavlinkTx_SendCommand) refers to mavlink_tx.o(.text.mavlink_msg_to_send_buffer) for mavlink_msg_to_send_buffer
+    mavlink_tx.o(.text.MavlinkTx_SendCommand) refers to usart.o(.text.USART2_SendArray) for USART2_SendArray
+    mavlink_tx.o(.ARM.exidx.text.MavlinkTx_SendCommand) refers to mavlink_tx.o(.text.MavlinkTx_SendCommand) for [Anonymous Symbol]
+    mavlink_tx.o(.text.MavlinkTx_SendCancel) refers to mavlink_tx.o(.text.MavlinkTx_SendCommand) for MavlinkTx_SendCommand
+    mavlink_tx.o(.ARM.exidx.text.MavlinkTx_SendCancel) refers to mavlink_tx.o(.text.MavlinkTx_SendCancel) for [Anonymous Symbol]
+    mavlink_tx.o(.text.MavlinkTx_SendFly) refers to mavlink_tx.o(.text.MavlinkTx_SendCommand) for MavlinkTx_SendCommand
+    mavlink_tx.o(.ARM.exidx.text.MavlinkTx_SendFly) refers to mavlink_tx.o(.text.MavlinkTx_SendFly) for [Anonymous Symbol]
+    mavlink_tx.o(.text.mavlink_get_channel_status) refers to mavlink_tx.o(.bss.mavlink_get_channel_status.m_mavlink_status) for mavlink_get_channel_status.m_mavlink_status
+    mavlink_tx.o(.ARM.exidx.text.mavlink_get_channel_status) refers to mavlink_tx.o(.text.mavlink_get_channel_status) for [Anonymous Symbol]
+    mavlink_tx.o(.text.mavlink_msg_command_long_pack) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    mavlink_tx.o(.text.mavlink_msg_command_long_pack) refers to mavlink_tx.o(.text.mavlink_finalize_message) for mavlink_finalize_message
+    mavlink_tx.o(.ARM.exidx.text.mavlink_msg_command_long_pack) refers to mavlink_tx.o(.text.mavlink_msg_command_long_pack) for [Anonymous Symbol]
+    mavlink_tx.o(.text.mavlink_msg_to_send_buffer) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    mavlink_tx.o(.text.mavlink_msg_to_send_buffer) refers to mavlink_tx.o(.text._mav_trim_payload) for _mav_trim_payload
+    mavlink_tx.o(.ARM.exidx.text.mavlink_msg_to_send_buffer) refers to mavlink_tx.o(.text.mavlink_msg_to_send_buffer) for [Anonymous Symbol]
+    mavlink_tx.o(.text.mavlink_finalize_message) refers to mavlink_tx.o(.text.mavlink_finalize_message_chan) for mavlink_finalize_message_chan
+    mavlink_tx.o(.ARM.exidx.text.mavlink_finalize_message) refers to mavlink_tx.o(.text.mavlink_finalize_message) for [Anonymous Symbol]
+    mavlink_tx.o(.text.mavlink_finalize_message_chan) refers to mavlink_tx.o(.text.mavlink_get_channel_status) for mavlink_get_channel_status
+    mavlink_tx.o(.text.mavlink_finalize_message_chan) refers to mavlink_tx.o(.text.mavlink_finalize_message_buffer) for mavlink_finalize_message_buffer
+    mavlink_tx.o(.ARM.exidx.text.mavlink_finalize_message_chan) refers to mavlink_tx.o(.text.mavlink_finalize_message_chan) for [Anonymous Symbol]
+    mavlink_tx.o(.text.mavlink_finalize_message_buffer) refers to mavlink_tx.o(.text._mav_trim_payload) for _mav_trim_payload
+    mavlink_tx.o(.text.mavlink_finalize_message_buffer) refers to mavlink_tx.o(.text.crc_calculate) for crc_calculate
+    mavlink_tx.o(.text.mavlink_finalize_message_buffer) refers to mavlink_tx.o(.text.crc_accumulate_buffer) for crc_accumulate_buffer
+    mavlink_tx.o(.text.mavlink_finalize_message_buffer) refers to mavlink_tx.o(.text.crc_accumulate) for crc_accumulate
+    mavlink_tx.o(.text.mavlink_finalize_message_buffer) refers to mavlink_tx.o(.text.mavlink_sign_packet) for mavlink_sign_packet
+    mavlink_tx.o(.ARM.exidx.text.mavlink_finalize_message_buffer) refers to mavlink_tx.o(.text.mavlink_finalize_message_buffer) for [Anonymous Symbol]
+    mavlink_tx.o(.ARM.exidx.text._mav_trim_payload) refers to mavlink_tx.o(.text._mav_trim_payload) for [Anonymous Symbol]
+    mavlink_tx.o(.text.crc_calculate) refers to mavlink_tx.o(.text.crc_init) for crc_init
+    mavlink_tx.o(.text.crc_calculate) refers to mavlink_tx.o(.text.crc_accumulate) for crc_accumulate
+    mavlink_tx.o(.ARM.exidx.text.crc_calculate) refers to mavlink_tx.o(.text.crc_calculate) for [Anonymous Symbol]
+    mavlink_tx.o(.text.crc_accumulate_buffer) refers to mavlink_tx.o(.text.crc_accumulate) for crc_accumulate
+    mavlink_tx.o(.ARM.exidx.text.crc_accumulate_buffer) refers to mavlink_tx.o(.text.crc_accumulate_buffer) for [Anonymous Symbol]
+    mavlink_tx.o(.ARM.exidx.text.crc_accumulate) refers to mavlink_tx.o(.text.crc_accumulate) for [Anonymous Symbol]
+    mavlink_tx.o(.text.mavlink_sign_packet) refers to mavlink_tx.o(.text.mavlink_sha256_init) for mavlink_sha256_init
+    mavlink_tx.o(.text.mavlink_sign_packet) refers to mavlink_tx.o(.text.mavlink_sha256_update) for mavlink_sha256_update
+    mavlink_tx.o(.text.mavlink_sign_packet) refers to mavlink_tx.o(.text.mavlink_sha256_final_48) for mavlink_sha256_final_48
+    mavlink_tx.o(.ARM.exidx.text.mavlink_sign_packet) refers to mavlink_tx.o(.text.mavlink_sign_packet) for [Anonymous Symbol]
+    mavlink_tx.o(.ARM.exidx.text.crc_init) refers to mavlink_tx.o(.text.crc_init) for [Anonymous Symbol]
+    mavlink_tx.o(.ARM.exidx.text.mavlink_sha256_init) refers to mavlink_tx.o(.text.mavlink_sha256_init) for [Anonymous Symbol]
+    mavlink_tx.o(.text.mavlink_sha256_update) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    mavlink_tx.o(.text.mavlink_sha256_update) refers to mavlink_tx.o(.text.mavlink_sha256_calc) for mavlink_sha256_calc
+    mavlink_tx.o(.ARM.exidx.text.mavlink_sha256_update) refers to mavlink_tx.o(.text.mavlink_sha256_update) for [Anonymous Symbol]
+    mavlink_tx.o(.text.mavlink_sha256_final_48) refers to rt_memclr.o(.text) for __aeabi_memclr
+    mavlink_tx.o(.text.mavlink_sha256_final_48) refers to mavlink_tx.o(.text.mavlink_sha256_update) for mavlink_sha256_update
+    mavlink_tx.o(.ARM.exidx.text.mavlink_sha256_final_48) refers to mavlink_tx.o(.text.mavlink_sha256_final_48) for [Anonymous Symbol]
+    mavlink_tx.o(.text.mavlink_sha256_calc) refers to mavlink_tx.o(.rodata.mavlink_sha256_constant_256) for mavlink_sha256_constant_256
+    mavlink_tx.o(.ARM.exidx.text.mavlink_sha256_calc) refers to mavlink_tx.o(.text.mavlink_sha256_calc) for [Anonymous Symbol]
+    mavlink_rx.o(.text.Mavlink_RxByte) refers to mavlink_rx.o(.bss.pos) for pos
+    mavlink_rx.o(.text.Mavlink_RxByte) refers to mavlink_rx.o(.bss.buf) for buf
+    mavlink_rx.o(.text.Mavlink_RxByte) refers to mavlink_rx.o(.text.mavlink_parse_char) for mavlink_parse_char
+    mavlink_rx.o(.text.Mavlink_RxByte) refers to mavlink_rx.o(.text.ResetParser) for ResetParser
+    mavlink_rx.o(.text.Mavlink_RxByte) refers to mavlink_rx.o(.text.UpdateExpectedSize) for UpdateExpectedSize
+    mavlink_rx.o(.text.Mavlink_RxByte) refers to mavlink_rx.o(.bss.expected) for expected
+    mavlink_rx.o(.text.Mavlink_RxByte) refers to message_queue.o(.text.MessageQueue_Push) for MessageQueue_Push
+    mavlink_rx.o(.ARM.exidx.text.Mavlink_RxByte) refers to mavlink_rx.o(.text.Mavlink_RxByte) for [Anonymous Symbol]
+    mavlink_rx.o(.text.mavlink_parse_char) refers to mavlink_rx.o(.text.mavlink_frame_char) for mavlink_frame_char
+    mavlink_rx.o(.text.mavlink_parse_char) refers to mavlink_rx.o(.text.mavlink_get_channel_buffer) for mavlink_get_channel_buffer
+    mavlink_rx.o(.text.mavlink_parse_char) refers to mavlink_rx.o(.text.mavlink_get_channel_status) for mavlink_get_channel_status
+    mavlink_rx.o(.text.mavlink_parse_char) refers to mavlink_rx.o(.text._mav_parse_error) for _mav_parse_error
+    mavlink_rx.o(.text.mavlink_parse_char) refers to mavlink_rx.o(.text.mavlink_start_checksum) for mavlink_start_checksum
+    mavlink_rx.o(.ARM.exidx.text.mavlink_parse_char) refers to mavlink_rx.o(.text.mavlink_parse_char) for [Anonymous Symbol]
+    mavlink_rx.o(.text.ResetParser) refers to mavlink_rx.o(.bss.pos) for pos
+    mavlink_rx.o(.text.ResetParser) refers to mavlink_rx.o(.bss.expected) for expected
+    mavlink_rx.o(.ARM.exidx.text.ResetParser) refers to mavlink_rx.o(.text.ResetParser) for [Anonymous Symbol]
+    mavlink_rx.o(.text.UpdateExpectedSize) refers to mavlink_rx.o(.bss.pos) for pos
+    mavlink_rx.o(.text.UpdateExpectedSize) refers to mavlink_rx.o(.bss.buf) for buf
+    mavlink_rx.o(.text.UpdateExpectedSize) refers to mavlink_rx.o(.bss.expected) for expected
+    mavlink_rx.o(.ARM.exidx.text.UpdateExpectedSize) refers to mavlink_rx.o(.text.UpdateExpectedSize) for [Anonymous Symbol]
+    mavlink_rx.o(.text.mavlink_frame_char) refers to mavlink_rx.o(.text.mavlink_get_channel_buffer) for mavlink_get_channel_buffer
+    mavlink_rx.o(.text.mavlink_frame_char) refers to mavlink_rx.o(.text.mavlink_get_channel_status) for mavlink_get_channel_status
+    mavlink_rx.o(.text.mavlink_frame_char) refers to mavlink_rx.o(.text.mavlink_frame_char_buffer) for mavlink_frame_char_buffer
+    mavlink_rx.o(.ARM.exidx.text.mavlink_frame_char) refers to mavlink_rx.o(.text.mavlink_frame_char) for [Anonymous Symbol]
+    mavlink_rx.o(.text.mavlink_get_channel_buffer) refers to mavlink_rx.o(.bss.mavlink_get_channel_buffer.m_mavlink_buffer) for mavlink_get_channel_buffer.m_mavlink_buffer
+    mavlink_rx.o(.ARM.exidx.text.mavlink_get_channel_buffer) refers to mavlink_rx.o(.text.mavlink_get_channel_buffer) for [Anonymous Symbol]
+    mavlink_rx.o(.text.mavlink_get_channel_status) refers to mavlink_rx.o(.bss.mavlink_get_channel_status.m_mavlink_status) for mavlink_get_channel_status.m_mavlink_status
+    mavlink_rx.o(.ARM.exidx.text.mavlink_get_channel_status) refers to mavlink_rx.o(.text.mavlink_get_channel_status) for [Anonymous Symbol]
+    mavlink_rx.o(.ARM.exidx.text._mav_parse_error) refers to mavlink_rx.o(.text._mav_parse_error) for [Anonymous Symbol]
+    mavlink_rx.o(.text.mavlink_start_checksum) refers to mavlink_rx.o(.text.crc_init) for crc_init
+    mavlink_rx.o(.ARM.exidx.text.mavlink_start_checksum) refers to mavlink_rx.o(.text.mavlink_start_checksum) for [Anonymous Symbol]
+    mavlink_rx.o(.text.mavlink_frame_char_buffer) refers to mavlink_rx.o(.text.mavlink_start_checksum) for mavlink_start_checksum
+    mavlink_rx.o(.text.mavlink_frame_char_buffer) refers to mavlink_rx.o(.text._mav_parse_error) for _mav_parse_error
+    mavlink_rx.o(.text.mavlink_frame_char_buffer) refers to mavlink_rx.o(.text.mavlink_update_checksum) for mavlink_update_checksum
+    mavlink_rx.o(.text.mavlink_frame_char_buffer) refers to mavlink_rx.o(.text.mavlink_get_msg_entry) for mavlink_get_msg_entry
+    mavlink_rx.o(.text.mavlink_frame_char_buffer) refers to rt_memclr.o(.text) for __aeabi_memclr
+    mavlink_rx.o(.text.mavlink_frame_char_buffer) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    mavlink_rx.o(.text.mavlink_frame_char_buffer) refers to mavlink_rx.o(.text.mavlink_signature_check) for mavlink_signature_check
+    mavlink_rx.o(.ARM.exidx.text.mavlink_frame_char_buffer) refers to mavlink_rx.o(.text.mavlink_frame_char_buffer) for [Anonymous Symbol]
+    mavlink_rx.o(.text.mavlink_update_checksum) refers to mavlink_rx.o(.text.crc_accumulate) for crc_accumulate
+    mavlink_rx.o(.ARM.exidx.text.mavlink_update_checksum) refers to mavlink_rx.o(.text.mavlink_update_checksum) for [Anonymous Symbol]
+    mavlink_rx.o(.text.mavlink_get_msg_entry) refers to mavlink_rx.o(.rodata.mavlink_get_msg_entry.mavlink_message_crcs) for mavlink_get_msg_entry.mavlink_message_crcs
+    mavlink_rx.o(.ARM.exidx.text.mavlink_get_msg_entry) refers to mavlink_rx.o(.text.mavlink_get_msg_entry) for [Anonymous Symbol]
+    mavlink_rx.o(.text.mavlink_signature_check) refers to mavlink_rx.o(.text.mavlink_sha256_init) for mavlink_sha256_init
+    mavlink_rx.o(.text.mavlink_signature_check) refers to mavlink_rx.o(.text.mavlink_sha256_update) for mavlink_sha256_update
+    mavlink_rx.o(.text.mavlink_signature_check) refers to mavlink_rx.o(.text.mavlink_sha256_final_48) for mavlink_sha256_final_48
+    mavlink_rx.o(.text.mavlink_signature_check) refers to memcmp.o(.text) for memcmp
+    mavlink_rx.o(.ARM.exidx.text.mavlink_signature_check) refers to mavlink_rx.o(.text.mavlink_signature_check) for [Anonymous Symbol]
+    mavlink_rx.o(.ARM.exidx.text.crc_accumulate) refers to mavlink_rx.o(.text.crc_accumulate) for [Anonymous Symbol]
+    mavlink_rx.o(.ARM.exidx.text.mavlink_sha256_init) refers to mavlink_rx.o(.text.mavlink_sha256_init) for [Anonymous Symbol]
+    mavlink_rx.o(.text.mavlink_sha256_update) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    mavlink_rx.o(.text.mavlink_sha256_update) refers to mavlink_rx.o(.text.mavlink_sha256_calc) for mavlink_sha256_calc
+    mavlink_rx.o(.ARM.exidx.text.mavlink_sha256_update) refers to mavlink_rx.o(.text.mavlink_sha256_update) for [Anonymous Symbol]
+    mavlink_rx.o(.text.mavlink_sha256_final_48) refers to rt_memclr.o(.text) for __aeabi_memclr
+    mavlink_rx.o(.text.mavlink_sha256_final_48) refers to mavlink_rx.o(.text.mavlink_sha256_update) for mavlink_sha256_update
+    mavlink_rx.o(.ARM.exidx.text.mavlink_sha256_final_48) refers to mavlink_rx.o(.text.mavlink_sha256_final_48) for [Anonymous Symbol]
+    mavlink_rx.o(.text.mavlink_sha256_calc) refers to mavlink_rx.o(.rodata.mavlink_sha256_constant_256) for mavlink_sha256_constant_256
+    mavlink_rx.o(.ARM.exidx.text.mavlink_sha256_calc) refers to mavlink_rx.o(.text.mavlink_sha256_calc) for [Anonymous Symbol]
+    mavlink_rx.o(.ARM.exidx.text.crc_init) refers to mavlink_rx.o(.text.crc_init) for [Anonymous Symbol]
+    cyclops_tx.o(.text.CyclopsTx_BuildPacket) refers to cyclops_tx.o(.text.XorData) for XorData
+    cyclops_tx.o(.ARM.exidx.text.CyclopsTx_BuildPacket) refers to cyclops_tx.o(.text.CyclopsTx_BuildPacket) for [Anonymous Symbol]
+    cyclops_tx.o(.ARM.exidx.text.XorData) refers to cyclops_tx.o(.text.XorData) for [Anonymous Symbol]
+    cyclops_rx.o(.text.Cyclops_RxByte) refers to cyclops_rx.o(.bss.pos) for pos
+    cyclops_rx.o(.text.Cyclops_RxByte) refers to cyclops_rx.o(.bss.buf) for buf
+    cyclops_rx.o(.text.Cyclops_RxByte) refers to cyclops_rx.o(.text.XorData) for XorData
+    cyclops_rx.o(.text.Cyclops_RxByte) refers to cyclops_rx.o(.text.ResetParser) for ResetParser
+    cyclops_rx.o(.text.Cyclops_RxByte) refers to cyclops_rx.o(.bss.expected) for expected
+    cyclops_rx.o(.text.Cyclops_RxByte) refers to cyclops_rx.o(.text.PacketIsValid) for PacketIsValid
+    cyclops_rx.o(.text.Cyclops_RxByte) refers to message_queue.o(.text.MessageQueue_Push) for MessageQueue_Push
+    cyclops_rx.o(.ARM.exidx.text.Cyclops_RxByte) refers to cyclops_rx.o(.text.Cyclops_RxByte) for [Anonymous Symbol]
+    cyclops_rx.o(.ARM.exidx.text.XorData) refers to cyclops_rx.o(.text.XorData) for [Anonymous Symbol]
+    cyclops_rx.o(.text.ResetParser) refers to cyclops_rx.o(.bss.pos) for pos
+    cyclops_rx.o(.text.ResetParser) refers to cyclops_rx.o(.bss.expected) for expected
+    cyclops_rx.o(.ARM.exidx.text.ResetParser) refers to cyclops_rx.o(.text.ResetParser) for [Anonymous Symbol]
+    cyclops_rx.o(.text.PacketIsValid) refers to cyclops_rx.o(.bss.pos) for pos
+    cyclops_rx.o(.text.PacketIsValid) refers to cyclops_rx.o(.bss.buf) for buf
+    cyclops_rx.o(.text.PacketIsValid) refers to cyclops_rx.o(.text.XorData) for XorData
+    cyclops_rx.o(.ARM.exidx.text.PacketIsValid) refers to cyclops_rx.o(.text.PacketIsValid) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_UpdateDroneBattery) refers to logic_cyclops.o(.data.cached_drone_voltage_mv) for cached_drone_voltage_mv
+    logic_cyclops.o(.text.Cyclops_UpdateDroneBattery) refers to logic_cyclops.o(.data.cached_drone_temp) for cached_drone_temp
+    logic_cyclops.o(.text.Cyclops_UpdateDroneBattery) refers to logic_cyclops.o(.data.cached_drone_battery_pct) for cached_drone_battery_pct
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_UpdateDroneBattery) refers to logic_cyclops.o(.text.Cyclops_UpdateDroneBattery) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_UpdateDroneInfo) refers to logic_cyclops.o(.bss.cached_drone_serial) for cached_drone_serial
+    logic_cyclops.o(.text.Cyclops_UpdateDroneInfo) refers to logic_cyclops.o(.data.cached_drone_version) for cached_drone_version
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_UpdateDroneInfo) refers to logic_cyclops.o(.text.Cyclops_UpdateDroneInfo) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_UpdateDroneTarget) refers to logic_cyclops.o(.bss.cached_drone_target_count) for cached_drone_target_count
+    logic_cyclops.o(.text.Cyclops_UpdateDroneTarget) refers to logic_cyclops.o(.bss.cached_drone_target_intensity) for cached_drone_target_intensity
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_UpdateDroneTarget) refers to logic_cyclops.o(.text.Cyclops_UpdateDroneTarget) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_UpdateDroneStatus) refers to logic_cyclops.o(.bss.cached_drone_system_status) for cached_drone_system_status
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_UpdateDroneStatus) refers to logic_cyclops.o(.text.Cyclops_UpdateDroneStatus) for [Anonymous Symbol]
+    logic_cyclops.o(.text.LogicCyclops_Process) refers to logic_drone.o(.text.LogicDrone_GetDroneState) for LogicDrone_GetDroneState
+    logic_cyclops.o(.text.LogicCyclops_Process) refers to pwm.o(.text.Servo_Hold) for Servo_Hold
+    logic_cyclops.o(.ARM.exidx.text.LogicCyclops_Process) refers to logic_cyclops.o(.text.LogicCyclops_Process) for [Anonymous Symbol]
+    logic_cyclops.o(.text.LogicCyclops_ProcessMessage) refers to logic_cyclops.o(.text.Cyclops_HandlePing) for Cyclops_HandlePing
+    logic_cyclops.o(.text.LogicCyclops_ProcessMessage) refers to logic_cyclops.o(.text.Cyclops_HandleHwReset) for Cyclops_HandleHwReset
+    logic_cyclops.o(.text.LogicCyclops_ProcessMessage) refers to logic_cyclops.o(.text.Cyclops_HandleSwReset) for Cyclops_HandleSwReset
+    logic_cyclops.o(.text.LogicCyclops_ProcessMessage) refers to logic_cyclops.o(.text.Cyclops_HandleGetError) for Cyclops_HandleGetError
+    logic_cyclops.o(.text.LogicCyclops_ProcessMessage) refers to logic_cyclops.o(.text.Cyclops_HandleZeroizeError) for Cyclops_HandleZeroizeError
+    logic_cyclops.o(.text.LogicCyclops_ProcessMessage) refers to logic_cyclops.o(.text.Cyclops_HandleSetParam) for Cyclops_HandleSetParam
+    logic_cyclops.o(.text.LogicCyclops_ProcessMessage) refers to logic_cyclops.o(.text.Cyclops_HandleGetParam) for Cyclops_HandleGetParam
+    logic_cyclops.o(.text.LogicCyclops_ProcessMessage) refers to logic_cyclops.o(.text.Cyclops_SendUnknown) for Cyclops_SendUnknown
+    logic_cyclops.o(.ARM.exidx.text.LogicCyclops_ProcessMessage) refers to logic_cyclops.o(.text.LogicCyclops_ProcessMessage) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_HandlePing) refers to logic_cyclops.o(.bss.cached_drone_system_status) for cached_drone_system_status
+    logic_cyclops.o(.text.Cyclops_HandlePing) refers to logic_drone.o(.text.LogicDrone_GetDroneState) for LogicDrone_GetDroneState
+    logic_cyclops.o(.text.Cyclops_HandlePing) refers to logic_cyclops.o(.bss.last_error) for last_error
+    logic_cyclops.o(.text.Cyclops_HandlePing) refers to logic_cyclops.o(.text.Cyclops_SendResponse) for Cyclops_SendResponse
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_HandlePing) refers to logic_cyclops.o(.text.Cyclops_HandlePing) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_HandleHwReset) refers to logic_cyclops.o(.bss.pending_hw_reset_response) for pending_hw_reset_response
+    logic_cyclops.o(.text.Cyclops_HandleHwReset) refers to logic_cyclops.o(.bss.saved_packet_id_for_reset) for saved_packet_id_for_reset
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleHwReset) refers to logic_cyclops.o(.text.Cyclops_HandleHwReset) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_HandleSwReset) refers to logic_cyclops.o(.bss.pending_sw_reset_response) for pending_sw_reset_response
+    logic_cyclops.o(.text.Cyclops_HandleSwReset) refers to logic_cyclops.o(.bss.saved_packet_id_for_reset) for saved_packet_id_for_reset
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleSwReset) refers to logic_cyclops.o(.text.Cyclops_HandleSwReset) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_HandleGetError) refers to logic_cyclops.o(.text.Cyclops_SendUnknown) for Cyclops_SendUnknown
+    logic_cyclops.o(.text.Cyclops_HandleGetError) refers to logic_cyclops.o(.bss.errors) for errors
+    logic_cyclops.o(.text.Cyclops_HandleGetError) refers to logic_cyclops.o(.bss.last_error) for last_error
+    logic_cyclops.o(.text.Cyclops_HandleGetError) refers to logic_cyclops.o(.text.Cyclops_SendResponse) for Cyclops_SendResponse
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleGetError) refers to logic_cyclops.o(.text.Cyclops_HandleGetError) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_HandleZeroizeError) refers to logic_cyclops.o(.bss.errors) for errors
+    logic_cyclops.o(.text.Cyclops_HandleZeroizeError) refers to logic_cyclops.o(.bss.last_error) for last_error
+    logic_cyclops.o(.text.Cyclops_HandleZeroizeError) refers to logic_cyclops.o(.text.Cyclops_SendResponse) for Cyclops_SendResponse
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleZeroizeError) refers to logic_cyclops.o(.text.Cyclops_HandleZeroizeError) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_HandleSetParam) refers to logic_cyclops.o(.text.Cyclops_SendUnknown) for Cyclops_SendUnknown
+    logic_cyclops.o(.text.Cyclops_HandleSetParam) refers to logic_cyclops.o(.text.Cyclops_HandleEngines) for Cyclops_HandleEngines
+    logic_cyclops.o(.text.Cyclops_HandleSetParam) refers to logic_cyclops.o(.text.Cyclops_HandleLaunch) for Cyclops_HandleLaunch
+    logic_cyclops.o(.text.Cyclops_HandleSetParam) refers to logic_cyclops.o(.text.Cyclops_HandleSetOrient) for Cyclops_HandleSetOrient
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleSetParam) refers to logic_cyclops.o(.text.Cyclops_HandleSetParam) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_HandleGetParam) refers to logic_cyclops.o(.text.Cyclops_SendUnknown) for Cyclops_SendUnknown
+    logic_cyclops.o(.text.Cyclops_HandleGetParam) refers to logic_cyclops.o(.text.Cyclops_SendAccState) for Cyclops_SendAccState
+    logic_cyclops.o(.text.Cyclops_HandleGetParam) refers to logic_cyclops.o(.text.Cyclops_SendInterceptorState) for Cyclops_SendInterceptorState
+    logic_cyclops.o(.text.Cyclops_HandleGetParam) refers to logic_cyclops.o(.text.Cyclops_SendInterceptorInfo) for Cyclops_SendInterceptorInfo
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleGetParam) refers to logic_cyclops.o(.text.Cyclops_HandleGetParam) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_SendUnknown) refers to logic_cyclops.o(.text.Cyclops_SendResponse) for Cyclops_SendResponse
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_SendUnknown) refers to logic_cyclops.o(.text.Cyclops_SendUnknown) for [Anonymous Symbol]
+    logic_cyclops.o(.text.LogicCyclops_OnHeartbeatReceived) refers to logic_cyclops.o(.bss.pending_hw_reset_response) for pending_hw_reset_response
+    logic_cyclops.o(.text.LogicCyclops_OnHeartbeatReceived) refers to logic_cyclops.o(.bss.pending_sw_reset_response) for pending_sw_reset_response
+    logic_cyclops.o(.text.LogicCyclops_OnHeartbeatReceived) refers to logic_cyclops.o(.bss.last_error) for last_error
+    logic_cyclops.o(.text.LogicCyclops_OnHeartbeatReceived) refers to logic_cyclops.o(.bss.saved_packet_id_for_reset) for saved_packet_id_for_reset
+    logic_cyclops.o(.text.LogicCyclops_OnHeartbeatReceived) refers to logic_cyclops.o(.text.Cyclops_SendResponse) for Cyclops_SendResponse
+    logic_cyclops.o(.ARM.exidx.text.LogicCyclops_OnHeartbeatReceived) refers to logic_cyclops.o(.text.LogicCyclops_OnHeartbeatReceived) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_SendResponse) refers to cyclops_tx.o(.text.CyclopsTx_BuildPacket) for CyclopsTx_BuildPacket
+    logic_cyclops.o(.text.Cyclops_SendResponse) refers to usart.o(.text.USART1_SendArray) for USART1_SendArray
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_SendResponse) refers to logic_cyclops.o(.text.Cyclops_SendResponse) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_HandleEngines) refers to logic_cyclops.o(.text.Cyclops_CheckBwa) for Cyclops_CheckBwa
+    logic_cyclops.o(.text.Cyclops_HandleEngines) refers to logic_cyclops.o(.bss.engines_state) for engines_state
+    logic_cyclops.o(.text.Cyclops_HandleEngines) refers to mavlink_tx.o(.text.MavlinkTx_SendPrepare) for MavlinkTx_SendPrepare
+    logic_cyclops.o(.text.Cyclops_HandleEngines) refers to mavlink_tx.o(.text.MavlinkTx_SendCancel) for MavlinkTx_SendCancel
+    logic_cyclops.o(.text.Cyclops_HandleEngines) refers to logic_cyclops.o(.bss.last_error) for last_error
+    logic_cyclops.o(.text.Cyclops_HandleEngines) refers to logic_cyclops.o(.text.Cyclops_SendResponse) for Cyclops_SendResponse
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleEngines) refers to logic_cyclops.o(.text.Cyclops_HandleEngines) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_HandleLaunch) refers to logic_cyclops.o(.text.Cyclops_CheckBwa) for Cyclops_CheckBwa
+    logic_cyclops.o(.text.Cyclops_HandleLaunch) refers to logic_cyclops.o(.bss.interceptor_state) for interceptor_state
+    logic_cyclops.o(.text.Cyclops_HandleLaunch) refers to logic_cyclops.o(.bss.engines_state) for engines_state
+    logic_cyclops.o(.text.Cyclops_HandleLaunch) refers to logic_cyclops.o(.bss.last_error) for last_error
+    logic_cyclops.o(.text.Cyclops_HandleLaunch) refers to logic_cyclops.o(.text.Cyclops_SendResponse) for Cyclops_SendResponse
+    logic_cyclops.o(.text.Cyclops_HandleLaunch) refers to pwm.o(.text.Servo_Release) for Servo_Release
+    logic_cyclops.o(.text.Cyclops_HandleLaunch) refers to timer.o(.text.DelayMs) for DelayMs
+    logic_cyclops.o(.text.Cyclops_HandleLaunch) refers to mavlink_tx.o(.text.MavlinkTx_SendFly) for MavlinkTx_SendFly
+    logic_cyclops.o(.text.Cyclops_HandleLaunch) refers to logic_drone.o(.text.LogicDrone_SetDroneState) for LogicDrone_SetDroneState
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleLaunch) refers to logic_cyclops.o(.text.Cyclops_HandleLaunch) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_HandleSetOrient) refers to logic_cyclops.o(.text.Cyclops_SendUnknown) for Cyclops_SendUnknown
+    logic_cyclops.o(.text.Cyclops_HandleSetOrient) refers to logic_cyclops.o(.text.ReadU16BE) for ReadU16BE
+    logic_cyclops.o(.text.Cyclops_HandleSetOrient) refers to logic_cyclops.o(.bss.orient_azimuth) for orient_azimuth
+    logic_cyclops.o(.text.Cyclops_HandleSetOrient) refers to logic_cyclops.o(.text.ReadS16BE) for ReadS16BE
+    logic_cyclops.o(.text.Cyclops_HandleSetOrient) refers to logic_cyclops.o(.bss.orient_elevation) for orient_elevation
+    logic_cyclops.o(.text.Cyclops_HandleSetOrient) refers to logic_cyclops.o(.text.WriteU16BE) for WriteU16BE
+    logic_cyclops.o(.text.Cyclops_HandleSetOrient) refers to logic_cyclops.o(.bss.last_error) for last_error
+    logic_cyclops.o(.text.Cyclops_HandleSetOrient) refers to logic_cyclops.o(.text.Cyclops_SendResponse) for Cyclops_SendResponse
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleSetOrient) refers to logic_cyclops.o(.text.Cyclops_HandleSetOrient) for [Anonymous Symbol]
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_CheckBwa) refers to logic_cyclops.o(.text.Cyclops_CheckBwa) for [Anonymous Symbol]
+    logic_cyclops.o(.ARM.exidx.text.ReadU16BE) refers to logic_cyclops.o(.text.ReadU16BE) for [Anonymous Symbol]
+    logic_cyclops.o(.ARM.exidx.text.ReadS16BE) refers to logic_cyclops.o(.text.ReadS16BE) for [Anonymous Symbol]
+    logic_cyclops.o(.ARM.exidx.text.WriteU16BE) refers to logic_cyclops.o(.text.WriteU16BE) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_SendAccState) refers to logic_cyclops.o(.data.cached_drone_voltage_mv) for cached_drone_voltage_mv
+    logic_cyclops.o(.text.Cyclops_SendAccState) refers to logic_cyclops.o(.text.WriteU16BE) for WriteU16BE
+    logic_cyclops.o(.text.Cyclops_SendAccState) refers to logic_cyclops.o(.data.cached_drone_battery_pct) for cached_drone_battery_pct
+    logic_cyclops.o(.text.Cyclops_SendAccState) refers to logic_cyclops.o(.data.cached_drone_temp) for cached_drone_temp
+    logic_cyclops.o(.text.Cyclops_SendAccState) refers to logic_cyclops.o(.bss.last_error) for last_error
+    logic_cyclops.o(.text.Cyclops_SendAccState) refers to logic_cyclops.o(.text.Cyclops_SendResponse) for Cyclops_SendResponse
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_SendAccState) refers to logic_cyclops.o(.text.Cyclops_SendAccState) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_SendInterceptorState) refers to logic_cyclops.o(.bss.cached_drone_target_count) for cached_drone_target_count
+    logic_cyclops.o(.text.Cyclops_SendInterceptorState) refers to logic_cyclops.o(.bss.cached_drone_target_intensity) for cached_drone_target_intensity
+    logic_cyclops.o(.text.Cyclops_SendInterceptorState) refers to logic_cyclops.o(.bss.interceptor_state) for interceptor_state
+    logic_cyclops.o(.text.Cyclops_SendInterceptorState) refers to logic_cyclops.o(.text.MakeInterceptorStateByte) for MakeInterceptorStateByte
+    logic_cyclops.o(.text.Cyclops_SendInterceptorState) refers to logic_cyclops.o(.text.WriteU16BE) for WriteU16BE
+    logic_cyclops.o(.text.Cyclops_SendInterceptorState) refers to logic_cyclops.o(.bss.orient_azimuth) for orient_azimuth
+    logic_cyclops.o(.text.Cyclops_SendInterceptorState) refers to logic_cyclops.o(.bss.orient_elevation) for orient_elevation
+    logic_cyclops.o(.text.Cyclops_SendInterceptorState) refers to logic_cyclops.o(.bss.last_error) for last_error
+    logic_cyclops.o(.text.Cyclops_SendInterceptorState) refers to logic_cyclops.o(.text.Cyclops_SendResponse) for Cyclops_SendResponse
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_SendInterceptorState) refers to logic_cyclops.o(.text.Cyclops_SendInterceptorState) for [Anonymous Symbol]
+    logic_cyclops.o(.text.Cyclops_SendInterceptorInfo) refers to logic_cyclops.o(.bss.cached_drone_serial) for cached_drone_serial
+    logic_cyclops.o(.text.Cyclops_SendInterceptorInfo) refers to logic_cyclops.o(.data.cached_drone_version) for cached_drone_version
+    logic_cyclops.o(.text.Cyclops_SendInterceptorInfo) refers to logic_cyclops.o(.bss.last_error) for last_error
+    logic_cyclops.o(.text.Cyclops_SendInterceptorInfo) refers to logic_cyclops.o(.text.Cyclops_SendResponse) for Cyclops_SendResponse
+    logic_cyclops.o(.ARM.exidx.text.Cyclops_SendInterceptorInfo) refers to logic_cyclops.o(.text.Cyclops_SendInterceptorInfo) for [Anonymous Symbol]
+    logic_cyclops.o(.ARM.exidx.text.MakeInterceptorStateByte) refers to logic_cyclops.o(.text.MakeInterceptorStateByte) for [Anonymous Symbol]
+    logic_drone.o(.text.LogicDrone_Init) refers to logic_drone.o(.bss.drone_state) for drone_state
+    logic_drone.o(.text.LogicDrone_Init) refers to gpio.o(.text.Launch_Read) for Launch_Read
+    logic_drone.o(.text.LogicDrone_Init) refers to logic_drone.o(.bss.lastLaunch) for lastLaunch
+    logic_drone.o(.text.LogicDrone_Init) refers to gpio.o(.text.End_Read) for End_Read
+    logic_drone.o(.text.LogicDrone_Init) refers to pwm.o(.text.Servo_Hold) for Servo_Hold
+    logic_drone.o(.text.LogicDrone_Init) refers to logic_drone.o(.text.LogicDrone_SetState) for LogicDrone_SetState
+    logic_drone.o(.text.LogicDrone_Init) refers to pwm.o(.text.Servo_Release) for Servo_Release
+    logic_drone.o(.ARM.exidx.text.LogicDrone_Init) refers to logic_drone.o(.text.LogicDrone_Init) for [Anonymous Symbol]
+    logic_drone.o(.text.LogicDrone_SetState) refers to logic_drone.o(.bss.logic_drone_state) for logic_drone_state
+    logic_drone.o(.text.LogicDrone_SetState) refers to timer.o(.text.GetTick) for GetTick
+    logic_drone.o(.text.LogicDrone_SetState) refers to logic_drone.o(.bss.stateTime) for stateTime
+    logic_drone.o(.ARM.exidx.text.LogicDrone_SetState) refers to logic_drone.o(.text.LogicDrone_SetState) for [Anonymous Symbol]
+    logic_drone.o(.text.LogicDrone_Process) refers to gpio.o(.text.Launch_Read) for Launch_Read
+    logic_drone.o(.text.LogicDrone_Process) refers to gpio.o(.text.Safety_Read) for Safety_Read
+    logic_drone.o(.text.LogicDrone_Process) refers to gpio.o(.text.End_Read) for End_Read
+    logic_drone.o(.text.LogicDrone_Process) refers to logic_drone.o(.bss.stateTime) for stateTime
+    logic_drone.o(.text.LogicDrone_Process) refers to timer.o(.text.Timeout) for Timeout
+    logic_drone.o(.text.LogicDrone_Process) refers to logic_drone.o(.bss.logic_drone_state) for logic_drone_state
+    logic_drone.o(.text.LogicDrone_Process) refers to pwm.o(.text.Servo_Hold) for Servo_Hold
+    logic_drone.o(.text.LogicDrone_Process) refers to logic_drone.o(.text.LogicDrone_SetState) for LogicDrone_SetState
+    logic_drone.o(.text.LogicDrone_Process) refers to pwm.o(.text.Servo_Release) for Servo_Release
+    logic_drone.o(.text.LogicDrone_Process) refers to mavlink_tx.o(.text.MavlinkTx_SendPrepare) for MavlinkTx_SendPrepare
+    logic_drone.o(.text.LogicDrone_Process) refers to logic_drone.o(.text.LogicDrone_SetDroneState) for LogicDrone_SetDroneState
+    logic_drone.o(.text.LogicDrone_Process) refers to mavlink_tx.o(.text.MavlinkTx_SendCancel) for MavlinkTx_SendCancel
+    logic_drone.o(.text.LogicDrone_Process) refers to logic_drone.o(.bss.lastLaunch) for lastLaunch
+    logic_drone.o(.text.LogicDrone_Process) refers to timer.o(.text.DelayMs) for DelayMs
+    logic_drone.o(.text.LogicDrone_Process) refers to mavlink_tx.o(.text.MavlinkTx_SendFly) for MavlinkTx_SendFly
+    logic_drone.o(.ARM.exidx.text.LogicDrone_Process) refers to logic_drone.o(.text.LogicDrone_Process) for [Anonymous Symbol]
+    logic_drone.o(.text.LogicDrone_SetDroneState) refers to logic_drone.o(.bss.drone_state) for drone_state
+    logic_drone.o(.ARM.exidx.text.LogicDrone_SetDroneState) refers to logic_drone.o(.text.LogicDrone_SetDroneState) for [Anonymous Symbol]
+    logic_drone.o(.ARM.exidx.text.LogicDrone_ProcessMessage) refers to logic_drone.o(.text.LogicDrone_ProcessMessage) for [Anonymous Symbol]
+    logic_drone.o(.text.LogicDrone_GetDroneState) refers to logic_drone.o(.bss.drone_state) for drone_state
+    logic_drone.o(.ARM.exidx.text.LogicDrone_GetDroneState) refers to logic_drone.o(.text.LogicDrone_GetDroneState) for [Anonymous Symbol]
+    message_queue.o(.text.MessageQueue_Push) refers to message_queue.o(.bss.head) for head
+    message_queue.o(.text.MessageQueue_Push) refers to message_queue.o(.text.NextIndex) for NextIndex
+    message_queue.o(.text.MessageQueue_Push) refers to message_queue.o(.bss.queue) for queue
+    message_queue.o(.text.MessageQueue_Push) refers to message_queue.o(.text.CopyMessage) for CopyMessage
+    message_queue.o(.text.MessageQueue_Push) refers to message_queue.o(.bss.tail) for tail
+    message_queue.o(.ARM.exidx.text.MessageQueue_Push) refers to message_queue.o(.text.MessageQueue_Push) for [Anonymous Symbol]
+    message_queue.o(.ARM.exidx.text.NextIndex) refers to message_queue.o(.text.NextIndex) for [Anonymous Symbol]
+    message_queue.o(.ARM.exidx.text.CopyMessage) refers to message_queue.o(.text.CopyMessage) for [Anonymous Symbol]
+    message_queue.o(.text.MessageQueue_Pop) refers to message_queue.o(.bss.tail) for tail
+    message_queue.o(.text.MessageQueue_Pop) refers to message_queue.o(.bss.head) for head
+    message_queue.o(.text.MessageQueue_Pop) refers to message_queue.o(.bss.queue) for queue
+    message_queue.o(.text.MessageQueue_Pop) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    message_queue.o(.text.MessageQueue_Pop) refers to message_queue.o(.text.NextIndex) for NextIndex
+    message_queue.o(.ARM.exidx.text.MessageQueue_Pop) refers to message_queue.o(.text.MessageQueue_Pop) for [Anonymous Symbol]
+    message_queue.o(.text.MessageQueue_ReadLast) refers to message_queue.o(.bss.tail) for tail
+    message_queue.o(.text.MessageQueue_ReadLast) refers to message_queue.o(.bss.head) for head
+    message_queue.o(.text.MessageQueue_ReadLast) refers to message_queue.o(.bss.queue) for queue
+    message_queue.o(.text.MessageQueue_ReadLast) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    message_queue.o(.ARM.exidx.text.MessageQueue_ReadLast) refers to message_queue.o(.text.MessageQueue_ReadLast) for [Anonymous Symbol]
+    message_queue.o(.text.MessageQueue_ReadLastBySource) refers to message_queue.o(.bss.head) for head
+    message_queue.o(.text.MessageQueue_ReadLastBySource) refers to message_queue.o(.bss.tail) for tail
+    message_queue.o(.text.MessageQueue_ReadLastBySource) refers to message_queue.o(.bss.queue) for queue
+    message_queue.o(.text.MessageQueue_ReadLastBySource) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    message_queue.o(.ARM.exidx.text.MessageQueue_ReadLastBySource) refers to message_queue.o(.text.MessageQueue_ReadLastBySource) for [Anonymous Symbol]
+    startup_stm32f10x_md.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f10x_md.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f10x_md.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f10x_md.o(RESET) refers to startup_stm32f10x_md.o(STACK) for __initial_sp
+    startup_stm32f10x_md.o(RESET) refers to startup_stm32f10x_md.o(.text) for Reset_Handler
+    startup_stm32f10x_md.o(RESET) refers to timer.o(.text.SysTick_Handler) for SysTick_Handler
+    startup_stm32f10x_md.o(RESET) refers to timer.o(.text.TIM3_IRQHandler) for TIM3_IRQHandler
+    startup_stm32f10x_md.o(RESET) refers to main.o(.text.USART1_IRQHandler) for USART1_IRQHandler
+    startup_stm32f10x_md.o(RESET) refers to main.o(.text.USART2_IRQHandler) for USART2_IRQHandler
+    startup_stm32f10x_md.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f10x_md.o(.text) refers to system_stm32f10x.o(.text.SystemInit) for SystemInit
+    startup_stm32f10x_md.o(.text) refers to __main.o(!!!main) for __main
+    startup_stm32f10x_md.o(.text) refers to startup_stm32f10x_md.o(HEAP) for Heap_Mem
+    startup_stm32f10x_md.o(.text) refers to startup_stm32f10x_md.o(STACK) for Stack_Mem
+    system_stm32f10x.o(.text.SystemInit) refers to system_stm32f10x.o(.text.SetSysClock) for SetSysClock
+    system_stm32f10x.o(.ARM.exidx.text.SystemInit) refers to system_stm32f10x.o(.text.SystemInit) for [Anonymous Symbol]
+    system_stm32f10x.o(.text.SetSysClock) refers to system_stm32f10x.o(.text.SetSysClockTo72) for SetSysClockTo72
+    system_stm32f10x.o(.ARM.exidx.text.SetSysClock) refers to system_stm32f10x.o(.text.SetSysClock) for [Anonymous Symbol]
+    system_stm32f10x.o(.text.SystemCoreClockUpdate) refers to system_stm32f10x.o(.data.SystemCoreClock) for SystemCoreClock
+    system_stm32f10x.o(.text.SystemCoreClockUpdate) refers to system_stm32f10x.o(.rodata.AHBPrescTable) for AHBPrescTable
+    system_stm32f10x.o(.ARM.exidx.text.SystemCoreClockUpdate) refers to system_stm32f10x.o(.text.SystemCoreClockUpdate) for [Anonymous Symbol]
+    system_stm32f10x.o(.ARM.exidx.text.SetSysClockTo72) refers to system_stm32f10x.o(.text.SetSysClockTo72) for [Anonymous Symbol]
+    rt_memcpy_v6.o(.text) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    rt_memclr.o(.text) refers to rt_memclr_w.o(.text) for _memset_w
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(.text.main) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup_stm32f10x_md.o(.text) for __user_initial_stackheap
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000034) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000002) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000006) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000010) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_relocate_pie_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000035) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000027) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_user_alloc_1
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
+    libinit2.o(.ARM.Collect$$libinit$$0000001A) refers to libinit2.o(.ARM.Collect$$libinit$$00000011) for .ARM.Collect$$libinit$$00000011
+    libinit2.o(.ARM.Collect$$libinit$$00000028) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000029) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_exit_hlt.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit_hlt.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000007) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000010) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_command_hlt.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command_hlt.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_wrch_hlt.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch_hlt.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.text), (0 bytes).
+    Removing main.o(.ARM.exidx.text.App_Init), (8 bytes).
+    Removing main.o(.ARM.exidx.text.App_Process), (8 bytes).
+    Removing main.o(.ARM.exidx.text.Main_ReadMessages), (8 bytes).
+    Removing main.o(.ARM.exidx.text.main), (8 bytes).
+    Removing main.o(.ARM.exidx.text.USART1_IRQHandler), (8 bytes).
+    Removing main.o(.ARM.exidx.text.USART2_IRQHandler), (8 bytes).
+    Removing main.o(.ARM.use_no_argv), (4 bytes).
+    Removing rcc.o(.text), (0 bytes).
+    Removing rcc.o(.ARM.exidx.text.RCC_Init), (8 bytes).
+    Removing gpio.o(.text), (0 bytes).
+    Removing gpio.o(.ARM.exidx.text.GPIO_Init), (8 bytes).
+    Removing gpio.o(.ARM.exidx.text.Launch_Read), (8 bytes).
+    Removing gpio.o(.ARM.exidx.text.Safety_Read), (8 bytes).
+    Removing gpio.o(.ARM.exidx.text.End_Read), (8 bytes).
+    Removing gpio.o(.ARM.exidx.text.Optocouplers_Enable), (8 bytes).
+    Removing gpio.o(.ARM.exidx.text.StatusLed_Toggle), (8 bytes).
+    Removing pwm.o(.text), (0 bytes).
+    Removing pwm.o(.ARM.exidx.text.PWM_Init), (8 bytes).
+    Removing pwm.o(.ARM.exidx.text.PWM_SetUs), (8 bytes).
+    Removing pwm.o(.ARM.exidx.text.PWM_InitServo), (8 bytes).
+    Removing pwm.o(.ARM.exidx.text.Servo_Release), (8 bytes).
+    Removing pwm.o(.ARM.exidx.text.Servo_Hold), (8 bytes).
+    Removing timer.o(.text), (0 bytes).
+    Removing timer.o(.ARM.exidx.text.Timer_Init), (8 bytes).
+    Removing timer.o(.ARM.exidx.text.SysTick_Config), (8 bytes).
+    Removing timer.o(.ARM.exidx.text.StatusLedTimer_Init), (8 bytes).
+    Removing timer.o(.ARM.exidx.text.__NVIC_EnableIRQ), (8 bytes).
+    Removing timer.o(.ARM.exidx.text.SysTick_Handler), (8 bytes).
+    Removing timer.o(.ARM.exidx.text.TIM3_IRQHandler), (8 bytes).
+    Removing timer.o(.ARM.exidx.text.GetTick), (8 bytes).
+    Removing timer.o(.ARM.exidx.text.DelayMs), (8 bytes).
+    Removing timer.o(.ARM.exidx.text.Timeout), (8 bytes).
+    Removing timer.o(.ARM.exidx.text.__NVIC_SetPriority), (8 bytes).
+    Removing usart.o(.text), (0 bytes).
+    Removing usart.o(.ARM.exidx.text.USART_Init), (8 bytes).
+    Removing usart.o(.ARM.exidx.text.__NVIC_EnableIRQ), (8 bytes).
+    Removing usart.o(.ARM.exidx.text.USART2_SendByte), (8 bytes).
+    Removing usart.o(.ARM.exidx.text.USART2_SendArray), (8 bytes).
+    Removing usart.o(.ARM.exidx.text.USART1_SendByte), (8 bytes).
+    Removing usart.o(.ARM.exidx.text.USART1_SendArray), (8 bytes).
+    Removing mavlink_tx.o(.text), (0 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.MavlinkTx_Init), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.mavlink_set_proto_version), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.MavlinkTx_SendPrepare), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.MavlinkTx_SendCommand), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.MavlinkTx_SendCancel), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.MavlinkTx_SendFly), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.mavlink_get_channel_status), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.mavlink_msg_command_long_pack), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.mavlink_msg_to_send_buffer), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.mavlink_finalize_message), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.mavlink_finalize_message_chan), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.mavlink_finalize_message_buffer), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text._mav_trim_payload), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.crc_calculate), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.crc_accumulate_buffer), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.crc_accumulate), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.mavlink_sign_packet), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.crc_init), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.mavlink_sha256_init), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.mavlink_sha256_update), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.mavlink_sha256_final_48), (8 bytes).
+    Removing mavlink_tx.o(.ARM.exidx.text.mavlink_sha256_calc), (8 bytes).
+    Removing mavlink_rx.o(.text), (0 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.Mavlink_RxByte), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_parse_char), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.ResetParser), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.UpdateExpectedSize), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_frame_char), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_get_channel_buffer), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_get_channel_status), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text._mav_parse_error), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_start_checksum), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_frame_char_buffer), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_update_checksum), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_get_msg_entry), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_signature_check), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.crc_accumulate), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_sha256_init), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_sha256_update), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_sha256_final_48), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.mavlink_sha256_calc), (8 bytes).
+    Removing mavlink_rx.o(.ARM.exidx.text.crc_init), (8 bytes).
+    Removing cyclops_tx.o(.text), (0 bytes).
+    Removing cyclops_tx.o(.ARM.exidx.text.CyclopsTx_BuildPacket), (8 bytes).
+    Removing cyclops_tx.o(.ARM.exidx.text.XorData), (8 bytes).
+    Removing cyclops_rx.o(.text), (0 bytes).
+    Removing cyclops_rx.o(.ARM.exidx.text.Cyclops_RxByte), (8 bytes).
+    Removing cyclops_rx.o(.ARM.exidx.text.XorData), (8 bytes).
+    Removing cyclops_rx.o(.ARM.exidx.text.ResetParser), (8 bytes).
+    Removing cyclops_rx.o(.ARM.exidx.text.PacketIsValid), (8 bytes).
+    Removing logic_cyclops.o(.text), (0 bytes).
+    Removing logic_cyclops.o(.text.Cyclops_UpdateDroneBattery), (60 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_UpdateDroneBattery), (8 bytes).
+    Removing logic_cyclops.o(.text.Cyclops_UpdateDroneInfo), (40 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_UpdateDroneInfo), (8 bytes).
+    Removing logic_cyclops.o(.text.Cyclops_UpdateDroneTarget), (42 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_UpdateDroneTarget), (8 bytes).
+    Removing logic_cyclops.o(.text.Cyclops_UpdateDroneStatus), (24 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_UpdateDroneStatus), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.LogicCyclops_Process), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.LogicCyclops_ProcessMessage), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_HandlePing), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleHwReset), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleSwReset), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleGetError), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleZeroizeError), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleSetParam), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleGetParam), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_SendUnknown), (8 bytes).
+    Removing logic_cyclops.o(.text.LogicCyclops_OnHeartbeatReceived), (100 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.LogicCyclops_OnHeartbeatReceived), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_SendResponse), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleEngines), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleLaunch), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_HandleSetOrient), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_CheckBwa), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.ReadU16BE), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.ReadS16BE), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.WriteU16BE), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_SendAccState), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_SendInterceptorState), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.Cyclops_SendInterceptorInfo), (8 bytes).
+    Removing logic_cyclops.o(.ARM.exidx.text.MakeInterceptorStateByte), (8 bytes).
+    Removing logic_drone.o(.text), (0 bytes).
+    Removing logic_drone.o(.ARM.exidx.text.LogicDrone_Init), (8 bytes).
+    Removing logic_drone.o(.ARM.exidx.text.LogicDrone_SetState), (8 bytes).
+    Removing logic_drone.o(.ARM.exidx.text.LogicDrone_Process), (8 bytes).
+    Removing logic_drone.o(.ARM.exidx.text.LogicDrone_SetDroneState), (8 bytes).
+    Removing logic_drone.o(.ARM.exidx.text.LogicDrone_ProcessMessage), (8 bytes).
+    Removing logic_drone.o(.ARM.exidx.text.LogicDrone_GetDroneState), (8 bytes).
+    Removing message_queue.o(.text), (0 bytes).
+    Removing message_queue.o(.ARM.exidx.text.MessageQueue_Push), (8 bytes).
+    Removing message_queue.o(.ARM.exidx.text.NextIndex), (8 bytes).
+    Removing message_queue.o(.ARM.exidx.text.CopyMessage), (8 bytes).
+    Removing message_queue.o(.ARM.exidx.text.MessageQueue_Pop), (8 bytes).
+    Removing message_queue.o(.text.MessageQueue_ReadLast), (146 bytes).
+    Removing message_queue.o(.ARM.exidx.text.MessageQueue_ReadLast), (8 bytes).
+    Removing message_queue.o(.text.MessageQueue_ReadLastBySource), (180 bytes).
+    Removing message_queue.o(.ARM.exidx.text.MessageQueue_ReadLastBySource), (8 bytes).
+    Removing system_stm32f10x.o(.text), (0 bytes).
+    Removing system_stm32f10x.o(.ARM.exidx.text.SystemInit), (8 bytes).
+    Removing system_stm32f10x.o(.ARM.exidx.text.SetSysClock), (8 bytes).
+    Removing system_stm32f10x.o(.text.SystemCoreClockUpdate), (290 bytes).
+    Removing system_stm32f10x.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
+    Removing system_stm32f10x.o(.ARM.exidx.text.SetSysClockTo72), (8 bytes).
+    Removing system_stm32f10x.o(.rodata.AHBPrescTable), (16 bytes).
+
+148 unused section(s) (total 1894 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
+    ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit_hlt.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command_hlt.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch_hlt.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_v6.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../clib/string.c                         0x00000000   Number         0  memcmp.o ABSOLUTE
+    ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
+    ../fplib/fpinit_empty.s                  0x00000000   Number         0  fpinit_empty.o ABSOLUTE
+    RTE/Device/STM32F103RB/startup_stm32f10x_md.s 0x00000000   Number         0  startup_stm32f10x_md.o ABSOLUTE
+    cyclops_rx.c                             0x00000000   Number         0  cyclops_rx.o ABSOLUTE
+    cyclops_tx.c                             0x00000000   Number         0  cyclops_tx.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    gpio.c                                   0x00000000   Number         0  gpio.o ABSOLUTE
+    logic_cyclops.c                          0x00000000   Number         0  logic_cyclops.o ABSOLUTE
+    logic_drone.c                            0x00000000   Number         0  logic_drone.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    mavlink_rx.c                             0x00000000   Number         0  mavlink_rx.o ABSOLUTE
+    mavlink_tx.c                             0x00000000   Number         0  mavlink_tx.o ABSOLUTE
+    message_queue.c                          0x00000000   Number         0  message_queue.o ABSOLUTE
+    pwm.c                                    0x00000000   Number         0  pwm.o ABSOLUTE
+    rcc.c                                    0x00000000   Number         0  rcc.o ABSOLUTE
+    system_stm32f10x.c                       0x00000000   Number         0  system_stm32f10x.o ABSOLUTE
+    timer.c                                  0x00000000   Number         0  timer.o ABSOLUTE
+    usart.c                                  0x00000000   Number         0  usart.o ABSOLUTE
+    RESET                                    0x08000000   Section      236  startup_stm32f10x_md.o(RESET)
+    !!!main                                  0x080000ec   Section        8  __main.o(!!!main)
+    !!!scatter                               0x080000f4   Section       92  __scatter.o(!!!scatter)
+    !!handler_copy                           0x08000150   Section       26  __scatter_copy.o(!!handler_copy)
+    !!handler_null                           0x0800016c   Section        2  __scatter.o(!!handler_null)
+    !!handler_zi                             0x08000170   Section       28  __scatter_zi.o(!!handler_zi)
+    .ARM.Collect$$libinit$$00000000          0x0800018c   Section        2  libinit.o(.ARM.Collect$$libinit$$00000000)
+    .ARM.Collect$$libinit$$00000002          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    .ARM.Collect$$libinit$$00000004          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    .ARM.Collect$$libinit$$00000006          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000006)
+    .ARM.Collect$$libinit$$0000000C          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    .ARM.Collect$$libinit$$0000000E          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    .ARM.Collect$$libinit$$00000010          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000010)
+    .ARM.Collect$$libinit$$00000013          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    .ARM.Collect$$libinit$$00000015          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    .ARM.Collect$$libinit$$00000017          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    .ARM.Collect$$libinit$$00000019          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    .ARM.Collect$$libinit$$0000001B          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    .ARM.Collect$$libinit$$0000001D          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    .ARM.Collect$$libinit$$0000001F          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    .ARM.Collect$$libinit$$00000021          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    .ARM.Collect$$libinit$$00000023          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    .ARM.Collect$$libinit$$00000025          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    .ARM.Collect$$libinit$$00000027          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000027)
+    .ARM.Collect$$libinit$$0000002E          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    .ARM.Collect$$libinit$$00000030          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    .ARM.Collect$$libinit$$00000032          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    .ARM.Collect$$libinit$$00000034          0x0800018e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000034)
+    .ARM.Collect$$libinit$$00000035          0x0800018e   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000035)
+    .ARM.Collect$$libshutdown$$00000000      0x08000190   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    .ARM.Collect$$libshutdown$$00000002      0x08000192   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    .ARM.Collect$$libshutdown$$00000004      0x08000192   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    .ARM.Collect$$libshutdown$$00000007      0x08000192   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
+    .ARM.Collect$$libshutdown$$0000000A      0x08000192   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
+    .ARM.Collect$$libshutdown$$0000000C      0x08000192   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    .ARM.Collect$$libshutdown$$0000000F      0x08000192   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    .ARM.Collect$$libshutdown$$00000010      0x08000192   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
+    .ARM.Collect$$rtentry$$00000000          0x08000194   Section        0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    .ARM.Collect$$rtentry$$00000002          0x08000194   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    .ARM.Collect$$rtentry$$00000004          0x08000194   Section        6  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    .ARM.Collect$$rtentry$$00000009          0x0800019a   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    .ARM.Collect$$rtentry$$0000000A          0x0800019a   Section        4  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    .ARM.Collect$$rtentry$$0000000C          0x0800019e   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    .ARM.Collect$$rtentry$$0000000D          0x0800019e   Section        8  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    .ARM.Collect$$rtexit$$00000000           0x080001a6   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    .ARM.Collect$$rtexit$$00000002           0x080001a8   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    .ARM.Collect$$rtexit$$00000003           0x080001a8   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    .ARM.Collect$$rtexit$$00000004           0x080001ac   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    .text                                    0x080001b4   Section       64  startup_stm32f10x_md.o(.text)
+    .text                                    0x080001f4   Section        0  memcmp.o(.text)
+    .text                                    0x0800024c   Section      138  rt_memcpy_v6.o(.text)
+    .text                                    0x080002d6   Section       68  rt_memclr.o(.text)
+    .text                                    0x0800031a   Section        0  heapauxi.o(.text)
+    .text                                    0x08000320   Section      100  rt_memcpy_w.o(.text)
+    .text                                    0x08000384   Section       78  rt_memclr_w.o(.text)
+    .text                                    0x080003d2   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x0800041c   Section        0  exit.o(.text)
+    .text                                    0x08000430   Section        8  libspace.o(.text)
+    .text                                    0x08000438   Section        0  sys_exit.o(.text)
+    .text                                    0x08000444   Section        2  use_no_semi.o(.text)
+    .text                                    0x08000446   Section        0  indicate_semi.o(.text)
+    [Anonymous Symbol]                       0x08000448   Section        0  main.o(.text.App_Init)
+    [Anonymous Symbol]                       0x08000474   Section        0  main.o(.text.App_Process)
+    CopyMessage                              0x08000499   Thumb Code   106  message_queue.o(.text.CopyMessage)
+    [Anonymous Symbol]                       0x08000498   Section        0  message_queue.o(.text.CopyMessage)
+    [Anonymous Symbol]                       0x08000504   Section        0  cyclops_tx.o(.text.CyclopsTx_BuildPacket)
+    Cyclops_CheckBwa                         0x080005c9   Thumb Code    90  logic_cyclops.o(.text.Cyclops_CheckBwa)
+    [Anonymous Symbol]                       0x080005c8   Section        0  logic_cyclops.o(.text.Cyclops_CheckBwa)
+    Cyclops_HandleEngines                    0x08000625   Thumb Code   120  logic_cyclops.o(.text.Cyclops_HandleEngines)
+    [Anonymous Symbol]                       0x08000624   Section        0  logic_cyclops.o(.text.Cyclops_HandleEngines)
+    Cyclops_HandleGetError                   0x0800069d   Thumb Code   132  logic_cyclops.o(.text.Cyclops_HandleGetError)
+    [Anonymous Symbol]                       0x0800069c   Section        0  logic_cyclops.o(.text.Cyclops_HandleGetError)
+    Cyclops_HandleGetParam                   0x08000721   Thumb Code   108  logic_cyclops.o(.text.Cyclops_HandleGetParam)
+    [Anonymous Symbol]                       0x08000720   Section        0  logic_cyclops.o(.text.Cyclops_HandleGetParam)
+    Cyclops_HandleHwReset                    0x0800078d   Thumb Code    36  logic_cyclops.o(.text.Cyclops_HandleHwReset)
+    [Anonymous Symbol]                       0x0800078c   Section        0  logic_cyclops.o(.text.Cyclops_HandleHwReset)
+    Cyclops_HandleLaunch                     0x080007b1   Thumb Code   170  logic_cyclops.o(.text.Cyclops_HandleLaunch)
+    [Anonymous Symbol]                       0x080007b0   Section        0  logic_cyclops.o(.text.Cyclops_HandleLaunch)
+    Cyclops_HandlePing                       0x0800085d   Thumb Code    72  logic_cyclops.o(.text.Cyclops_HandlePing)
+    [Anonymous Symbol]                       0x0800085c   Section        0  logic_cyclops.o(.text.Cyclops_HandlePing)
+    Cyclops_HandleSetOrient                  0x080008a5   Thumb Code   140  logic_cyclops.o(.text.Cyclops_HandleSetOrient)
+    [Anonymous Symbol]                       0x080008a4   Section        0  logic_cyclops.o(.text.Cyclops_HandleSetOrient)
+    Cyclops_HandleSetParam                   0x08000931   Thumb Code   126  logic_cyclops.o(.text.Cyclops_HandleSetParam)
+    [Anonymous Symbol]                       0x08000930   Section        0  logic_cyclops.o(.text.Cyclops_HandleSetParam)
+    Cyclops_HandleSwReset                    0x080009b1   Thumb Code    36  logic_cyclops.o(.text.Cyclops_HandleSwReset)
+    [Anonymous Symbol]                       0x080009b0   Section        0  logic_cyclops.o(.text.Cyclops_HandleSwReset)
+    Cyclops_HandleZeroizeError               0x080009d5   Thumb Code    94  logic_cyclops.o(.text.Cyclops_HandleZeroizeError)
+    [Anonymous Symbol]                       0x080009d4   Section        0  logic_cyclops.o(.text.Cyclops_HandleZeroizeError)
+    [Anonymous Symbol]                       0x08000a34   Section        0  cyclops_rx.o(.text.Cyclops_RxByte)
+    Cyclops_SendAccState                     0x08000b89   Thumb Code   150  logic_cyclops.o(.text.Cyclops_SendAccState)
+    [Anonymous Symbol]                       0x08000b88   Section        0  logic_cyclops.o(.text.Cyclops_SendAccState)
+    Cyclops_SendInterceptorInfo              0x08000c21   Thumb Code   102  logic_cyclops.o(.text.Cyclops_SendInterceptorInfo)
+    [Anonymous Symbol]                       0x08000c20   Section        0  logic_cyclops.o(.text.Cyclops_SendInterceptorInfo)
+    Cyclops_SendInterceptorState             0x08000c89   Thumb Code   190  logic_cyclops.o(.text.Cyclops_SendInterceptorState)
+    [Anonymous Symbol]                       0x08000c88   Section        0  logic_cyclops.o(.text.Cyclops_SendInterceptorState)
+    Cyclops_SendResponse                     0x08000d49   Thumb Code    76  logic_cyclops.o(.text.Cyclops_SendResponse)
+    [Anonymous Symbol]                       0x08000d48   Section        0  logic_cyclops.o(.text.Cyclops_SendResponse)
+    Cyclops_SendUnknown                      0x08000d95   Thumb Code    26  logic_cyclops.o(.text.Cyclops_SendUnknown)
+    [Anonymous Symbol]                       0x08000d94   Section        0  logic_cyclops.o(.text.Cyclops_SendUnknown)
+    [Anonymous Symbol]                       0x08000db0   Section        0  timer.o(.text.DelayMs)
+    [Anonymous Symbol]                       0x08000de0   Section        0  gpio.o(.text.End_Read)
+    [Anonymous Symbol]                       0x08000df0   Section        0  gpio.o(.text.GPIO_Init)
+    [Anonymous Symbol]                       0x08000ec4   Section        0  timer.o(.text.GetTick)
+    [Anonymous Symbol]                       0x08000ed0   Section        0  gpio.o(.text.Launch_Read)
+    [Anonymous Symbol]                       0x08000ee0   Section        0  logic_cyclops.o(.text.LogicCyclops_Process)
+    [Anonymous Symbol]                       0x08000ef4   Section        0  logic_cyclops.o(.text.LogicCyclops_ProcessMessage)
+    [Anonymous Symbol]                       0x08000fa8   Section        0  logic_drone.o(.text.LogicDrone_GetDroneState)
+    [Anonymous Symbol]                       0x08000fb4   Section        0  logic_drone.o(.text.LogicDrone_Init)
+    [Anonymous Symbol]                       0x08000ff4   Section        0  logic_drone.o(.text.LogicDrone_Process)
+    [Anonymous Symbol]                       0x0800114c   Section        0  logic_drone.o(.text.LogicDrone_ProcessMessage)
+    [Anonymous Symbol]                       0x08001154   Section        0  logic_drone.o(.text.LogicDrone_SetDroneState)
+    LogicDrone_SetState                      0x0800116d   Thumb Code    40  logic_drone.o(.text.LogicDrone_SetState)
+    [Anonymous Symbol]                       0x0800116c   Section        0  logic_drone.o(.text.LogicDrone_SetState)
+    Main_ReadMessages                        0x08001195   Thumb Code    56  main.o(.text.Main_ReadMessages)
+    [Anonymous Symbol]                       0x08001194   Section        0  main.o(.text.Main_ReadMessages)
+    MakeInterceptorStateByte                 0x080011cd   Thumb Code    34  logic_cyclops.o(.text.MakeInterceptorStateByte)
+    [Anonymous Symbol]                       0x080011cc   Section        0  logic_cyclops.o(.text.MakeInterceptorStateByte)
+    [Anonymous Symbol]                       0x080011f0   Section        0  mavlink_tx.o(.text.MavlinkTx_Init)
+    [Anonymous Symbol]                       0x080011fc   Section        0  mavlink_tx.o(.text.MavlinkTx_SendCancel)
+    MavlinkTx_SendCommand                    0x08001209   Thumb Code    86  mavlink_tx.o(.text.MavlinkTx_SendCommand)
+    [Anonymous Symbol]                       0x08001208   Section        0  mavlink_tx.o(.text.MavlinkTx_SendCommand)
+    [Anonymous Symbol]                       0x08001260   Section        0  mavlink_tx.o(.text.MavlinkTx_SendFly)
+    [Anonymous Symbol]                       0x0800126c   Section        0  mavlink_tx.o(.text.MavlinkTx_SendPrepare)
+    [Anonymous Symbol]                       0x08001278   Section        0  mavlink_rx.o(.text.Mavlink_RxByte)
+    [Anonymous Symbol]                       0x08001394   Section        0  message_queue.o(.text.MessageQueue_Pop)
+    [Anonymous Symbol]                       0x080013fc   Section        0  message_queue.o(.text.MessageQueue_Push)
+    NextIndex                                0x08001479   Thumb Code    42  message_queue.o(.text.NextIndex)
+    [Anonymous Symbol]                       0x08001478   Section        0  message_queue.o(.text.NextIndex)
+    [Anonymous Symbol]                       0x080014a4   Section        0  gpio.o(.text.Optocouplers_Enable)
+    [Anonymous Symbol]                       0x080014bc   Section        0  pwm.o(.text.PWM_Init)
+    [Anonymous Symbol]                       0x0800157c   Section        0  pwm.o(.text.PWM_InitServo)
+    [Anonymous Symbol]                       0x08001594   Section        0  pwm.o(.text.PWM_SetUs)
+    PacketIsValid                            0x080015ad   Thumb Code   256  cyclops_rx.o(.text.PacketIsValid)
+    [Anonymous Symbol]                       0x080015ac   Section        0  cyclops_rx.o(.text.PacketIsValid)
+    [Anonymous Symbol]                       0x080016ac   Section        0  rcc.o(.text.RCC_Init)
+    ReadS16BE                                0x0800180d   Thumb Code    28  logic_cyclops.o(.text.ReadS16BE)
+    [Anonymous Symbol]                       0x0800180c   Section        0  logic_cyclops.o(.text.ReadS16BE)
+    ReadU16BE                                0x08001829   Thumb Code    26  logic_cyclops.o(.text.ReadU16BE)
+    [Anonymous Symbol]                       0x08001828   Section        0  logic_cyclops.o(.text.ReadU16BE)
+    ResetParser                              0x08001845   Thumb Code    24  mavlink_rx.o(.text.ResetParser)
+    [Anonymous Symbol]                       0x08001844   Section        0  mavlink_rx.o(.text.ResetParser)
+    ResetParser                              0x0800185d   Thumb Code    24  cyclops_rx.o(.text.ResetParser)
+    [Anonymous Symbol]                       0x0800185c   Section        0  cyclops_rx.o(.text.ResetParser)
+    [Anonymous Symbol]                       0x08001874   Section        0  gpio.o(.text.Safety_Read)
+    [Anonymous Symbol]                       0x08001884   Section        0  pwm.o(.text.Servo_Hold)
+    [Anonymous Symbol]                       0x08001898   Section        0  pwm.o(.text.Servo_Release)
+    SetSysClock                              0x080018ad   Thumb Code     8  system_stm32f10x.o(.text.SetSysClock)
+    [Anonymous Symbol]                       0x080018ac   Section        0  system_stm32f10x.o(.text.SetSysClock)
+    SetSysClockTo72                          0x080018b5   Thumb Code   290  system_stm32f10x.o(.text.SetSysClockTo72)
+    [Anonymous Symbol]                       0x080018b4   Section        0  system_stm32f10x.o(.text.SetSysClockTo72)
+    [Anonymous Symbol]                       0x080019d8   Section        0  timer.o(.text.StatusLedTimer_Init)
+    [Anonymous Symbol]                       0x08001a4c   Section        0  gpio.o(.text.StatusLed_Toggle)
+    SysTick_Config                           0x08001a61   Thumb Code    82  timer.o(.text.SysTick_Config)
+    [Anonymous Symbol]                       0x08001a60   Section        0  timer.o(.text.SysTick_Config)
+    [Anonymous Symbol]                       0x08001ab4   Section        0  timer.o(.text.SysTick_Handler)
+    [Anonymous Symbol]                       0x08001ac4   Section        0  system_stm32f10x.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x08001b2c   Section        0  timer.o(.text.TIM3_IRQHandler)
+    [Anonymous Symbol]                       0x08001b58   Section        0  timer.o(.text.Timeout)
+    [Anonymous Symbol]                       0x08001b7c   Section        0  timer.o(.text.Timer_Init)
+    [Anonymous Symbol]                       0x08001b9c   Section        0  main.o(.text.USART1_IRQHandler)
+    [Anonymous Symbol]                       0x08001bd0   Section        0  usart.o(.text.USART1_SendArray)
+    [Anonymous Symbol]                       0x08001c10   Section        0  usart.o(.text.USART1_SendByte)
+    [Anonymous Symbol]                       0x08001c40   Section        0  main.o(.text.USART2_IRQHandler)
+    [Anonymous Symbol]                       0x08001c68   Section        0  usart.o(.text.USART2_SendArray)
+    [Anonymous Symbol]                       0x08001ca8   Section        0  usart.o(.text.USART2_SendByte)
+    [Anonymous Symbol]                       0x08001cd8   Section        0  usart.o(.text.USART_Init)
+    UpdateExpectedSize                       0x08001de9   Thumb Code    76  mavlink_rx.o(.text.UpdateExpectedSize)
+    [Anonymous Symbol]                       0x08001de8   Section        0  mavlink_rx.o(.text.UpdateExpectedSize)
+    WriteU16BE                               0x08001e35   Thumb Code    28  logic_cyclops.o(.text.WriteU16BE)
+    [Anonymous Symbol]                       0x08001e34   Section        0  logic_cyclops.o(.text.WriteU16BE)
+    XorData                                  0x08001e51   Thumb Code    82  cyclops_tx.o(.text.XorData)
+    [Anonymous Symbol]                       0x08001e50   Section        0  cyclops_tx.o(.text.XorData)
+    XorData                                  0x08001ea5   Thumb Code    82  cyclops_rx.o(.text.XorData)
+    [Anonymous Symbol]                       0x08001ea4   Section        0  cyclops_rx.o(.text.XorData)
+    __NVIC_EnableIRQ                         0x08001ef9   Thumb Code    48  timer.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x08001ef8   Section        0  timer.o(.text.__NVIC_EnableIRQ)
+    __NVIC_EnableIRQ                         0x08001f29   Thumb Code    48  usart.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x08001f28   Section        0  usart.o(.text.__NVIC_EnableIRQ)
+    __NVIC_SetPriority                       0x08001f59   Thumb Code    66  timer.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x08001f58   Section        0  timer.o(.text.__NVIC_SetPriority)
+    _mav_parse_error                         0x08001f9d   Thumb Code    16  mavlink_rx.o(.text._mav_parse_error)
+    [Anonymous Symbol]                       0x08001f9c   Section        0  mavlink_rx.o(.text._mav_parse_error)
+    _mav_trim_payload                        0x08001fad   Thumb Code    74  mavlink_tx.o(.text._mav_trim_payload)
+    [Anonymous Symbol]                       0x08001fac   Section        0  mavlink_tx.o(.text._mav_trim_payload)
+    crc_accumulate                           0x08001ff9   Thumb Code    60  mavlink_tx.o(.text.crc_accumulate)
+    [Anonymous Symbol]                       0x08001ff8   Section        0  mavlink_tx.o(.text.crc_accumulate)
+    crc_accumulate                           0x08002035   Thumb Code    60  mavlink_rx.o(.text.crc_accumulate)
+    [Anonymous Symbol]                       0x08002034   Section        0  mavlink_rx.o(.text.crc_accumulate)
+    crc_accumulate_buffer                    0x08002071   Thumb Code    52  mavlink_tx.o(.text.crc_accumulate_buffer)
+    [Anonymous Symbol]                       0x08002070   Section        0  mavlink_tx.o(.text.crc_accumulate_buffer)
+    crc_calculate                            0x080020a5   Thumb Code    56  mavlink_tx.o(.text.crc_calculate)
+    [Anonymous Symbol]                       0x080020a4   Section        0  mavlink_tx.o(.text.crc_calculate)
+    crc_init                                 0x080020dd   Thumb Code    16  mavlink_tx.o(.text.crc_init)
+    [Anonymous Symbol]                       0x080020dc   Section        0  mavlink_tx.o(.text.crc_init)
+    crc_init                                 0x080020ed   Thumb Code    16  mavlink_rx.o(.text.crc_init)
+    [Anonymous Symbol]                       0x080020ec   Section        0  mavlink_rx.o(.text.crc_init)
+    [Anonymous Symbol]                       0x080020fc   Section        0  main.o(.text.main)
+    mavlink_finalize_message                 0x08002111   Thumb Code    82  mavlink_tx.o(.text.mavlink_finalize_message)
+    [Anonymous Symbol]                       0x08002110   Section        0  mavlink_tx.o(.text.mavlink_finalize_message)
+    mavlink_finalize_message_buffer          0x08002165   Thumb Code   558  mavlink_tx.o(.text.mavlink_finalize_message_buffer)
+    [Anonymous Symbol]                       0x08002164   Section        0  mavlink_tx.o(.text.mavlink_finalize_message_buffer)
+    mavlink_finalize_message_chan            0x08002395   Thumb Code    98  mavlink_tx.o(.text.mavlink_finalize_message_chan)
+    [Anonymous Symbol]                       0x08002394   Section        0  mavlink_tx.o(.text.mavlink_finalize_message_chan)
+    mavlink_frame_char                       0x080023f9   Thumb Code    62  mavlink_rx.o(.text.mavlink_frame_char)
+    [Anonymous Symbol]                       0x080023f8   Section        0  mavlink_rx.o(.text.mavlink_frame_char)
+    mavlink_frame_char_buffer                0x08002439   Thumb Code  1344  mavlink_rx.o(.text.mavlink_frame_char_buffer)
+    [Anonymous Symbol]                       0x08002438   Section        0  mavlink_rx.o(.text.mavlink_frame_char_buffer)
+    mavlink_get_channel_buffer               0x08002979   Thumb Code    30  mavlink_rx.o(.text.mavlink_get_channel_buffer)
+    [Anonymous Symbol]                       0x08002978   Section        0  mavlink_rx.o(.text.mavlink_get_channel_buffer)
+    mavlink_get_channel_status               0x08002999   Thumb Code    30  mavlink_tx.o(.text.mavlink_get_channel_status)
+    [Anonymous Symbol]                       0x08002998   Section        0  mavlink_tx.o(.text.mavlink_get_channel_status)
+    mavlink_get_channel_status               0x080029b9   Thumb Code    30  mavlink_rx.o(.text.mavlink_get_channel_status)
+    [Anonymous Symbol]                       0x080029b8   Section        0  mavlink_rx.o(.text.mavlink_get_channel_status)
+    mavlink_get_msg_entry                    0x080029d9   Thumb Code   168  mavlink_rx.o(.text.mavlink_get_msg_entry)
+    [Anonymous Symbol]                       0x080029d8   Section        0  mavlink_rx.o(.text.mavlink_get_msg_entry)
+    mavlink_msg_command_long_pack            0x08002a81   Thumb Code   178  mavlink_tx.o(.text.mavlink_msg_command_long_pack)
+    [Anonymous Symbol]                       0x08002a80   Section        0  mavlink_tx.o(.text.mavlink_msg_command_long_pack)
+    mavlink_msg_to_send_buffer               0x08002b35   Thumb Code   350  mavlink_tx.o(.text.mavlink_msg_to_send_buffer)
+    [Anonymous Symbol]                       0x08002b34   Section        0  mavlink_tx.o(.text.mavlink_msg_to_send_buffer)
+    mavlink_parse_char                       0x08002c95   Thumb Code   150  mavlink_rx.o(.text.mavlink_parse_char)
+    [Anonymous Symbol]                       0x08002c94   Section        0  mavlink_rx.o(.text.mavlink_parse_char)
+    mavlink_set_proto_version                0x08002d2d   Thumb Code    56  mavlink_tx.o(.text.mavlink_set_proto_version)
+    [Anonymous Symbol]                       0x08002d2c   Section        0  mavlink_tx.o(.text.mavlink_set_proto_version)
+    mavlink_sha256_calc                      0x08002d65   Thumb Code   420  mavlink_tx.o(.text.mavlink_sha256_calc)
+    [Anonymous Symbol]                       0x08002d64   Section        0  mavlink_tx.o(.text.mavlink_sha256_calc)
+    mavlink_sha256_calc                      0x08002f09   Thumb Code   420  mavlink_rx.o(.text.mavlink_sha256_calc)
+    [Anonymous Symbol]                       0x08002f08   Section        0  mavlink_rx.o(.text.mavlink_sha256_calc)
+    mavlink_sha256_final_48                  0x080030ad   Thumb Code   202  mavlink_tx.o(.text.mavlink_sha256_final_48)
+    [Anonymous Symbol]                       0x080030ac   Section        0  mavlink_tx.o(.text.mavlink_sha256_final_48)
+    mavlink_sha256_final_48                  0x08003179   Thumb Code   202  mavlink_rx.o(.text.mavlink_sha256_final_48)
+    [Anonymous Symbol]                       0x08003178   Section        0  mavlink_rx.o(.text.mavlink_sha256_final_48)
+    mavlink_sha256_init                      0x08003245   Thumb Code   114  mavlink_tx.o(.text.mavlink_sha256_init)
+    [Anonymous Symbol]                       0x08003244   Section        0  mavlink_tx.o(.text.mavlink_sha256_init)
+    mavlink_sha256_init                      0x080032b9   Thumb Code   114  mavlink_rx.o(.text.mavlink_sha256_init)
+    [Anonymous Symbol]                       0x080032b8   Section        0  mavlink_rx.o(.text.mavlink_sha256_init)
+    mavlink_sha256_update                    0x0800332d   Thumb Code   246  mavlink_tx.o(.text.mavlink_sha256_update)
+    [Anonymous Symbol]                       0x0800332c   Section        0  mavlink_tx.o(.text.mavlink_sha256_update)
+    mavlink_sha256_update                    0x08003425   Thumb Code   246  mavlink_rx.o(.text.mavlink_sha256_update)
+    [Anonymous Symbol]                       0x08003424   Section        0  mavlink_rx.o(.text.mavlink_sha256_update)
+    mavlink_sign_packet                      0x0800351d   Thumb Code   194  mavlink_tx.o(.text.mavlink_sign_packet)
+    [Anonymous Symbol]                       0x0800351c   Section        0  mavlink_tx.o(.text.mavlink_sign_packet)
+    mavlink_signature_check                  0x080035e1   Thumb Code   616  mavlink_rx.o(.text.mavlink_signature_check)
+    [Anonymous Symbol]                       0x080035e0   Section        0  mavlink_rx.o(.text.mavlink_signature_check)
+    mavlink_start_checksum                   0x08003849   Thumb Code    32  mavlink_rx.o(.text.mavlink_start_checksum)
+    [Anonymous Symbol]                       0x08003848   Section        0  mavlink_rx.o(.text.mavlink_start_checksum)
+    mavlink_update_checksum                  0x08003869   Thumb Code    40  mavlink_rx.o(.text.mavlink_update_checksum)
+    [Anonymous Symbol]                       0x08003868   Section        0  mavlink_rx.o(.text.mavlink_update_checksum)
+    mavlink_get_msg_entry.mavlink_message_crcs 0x08003890   Data        2808  mavlink_rx.o(.rodata.mavlink_get_msg_entry.mavlink_message_crcs)
+    [Anonymous Symbol]                       0x08003890   Section        0  mavlink_rx.o(.rodata.mavlink_get_msg_entry.mavlink_message_crcs)
+    mavlink_sha256_constant_256              0x08004388   Data         256  mavlink_tx.o(.rodata.mavlink_sha256_constant_256)
+    [Anonymous Symbol]                       0x08004388   Section        0  mavlink_tx.o(.rodata.mavlink_sha256_constant_256)
+    mavlink_sha256_constant_256              0x08004488   Data         256  mavlink_rx.o(.rodata.mavlink_sha256_constant_256)
+    [Anonymous Symbol]                       0x08004488   Section        0  mavlink_rx.o(.rodata.mavlink_sha256_constant_256)
+    cached_drone_battery_pct                 0x20000008   Data           1  logic_cyclops.o(.data.cached_drone_battery_pct)
+    [Anonymous Symbol]                       0x20000008   Section        0  logic_cyclops.o(.data.cached_drone_battery_pct)
+    cached_drone_temp                        0x2000000a   Data           2  logic_cyclops.o(.data.cached_drone_temp)
+    [Anonymous Symbol]                       0x2000000a   Section        0  logic_cyclops.o(.data.cached_drone_temp)
+    cached_drone_version                     0x2000000c   Data           4  logic_cyclops.o(.data.cached_drone_version)
+    [Anonymous Symbol]                       0x2000000c   Section        0  logic_cyclops.o(.data.cached_drone_version)
+    cached_drone_voltage_mv                  0x20000010   Data           2  logic_cyclops.o(.data.cached_drone_voltage_mv)
+    [Anonymous Symbol]                       0x20000010   Section        0  logic_cyclops.o(.data.cached_drone_voltage_mv)
+    .bss                                     0x20000018   Section       96  libspace.o(.bss)
+    Tick                                     0x20000078   Data           4  timer.o(.bss.Tick)
+    [Anonymous Symbol]                       0x20000078   Section        0  timer.o(.bss.Tick)
+    buf                                      0x2000007c   Data         280  mavlink_rx.o(.bss.buf)
+    [Anonymous Symbol]                       0x2000007c   Section        0  mavlink_rx.o(.bss.buf)
+    buf                                      0x20000194   Data         262  cyclops_rx.o(.bss.buf)
+    [Anonymous Symbol]                       0x20000194   Section        0  cyclops_rx.o(.bss.buf)
+    cached_drone_serial                      0x200002a0   Data           8  logic_cyclops.o(.bss.cached_drone_serial)
+    [Anonymous Symbol]                       0x200002a0   Section        0  logic_cyclops.o(.bss.cached_drone_serial)
+    cached_drone_system_status               0x200002a8   Data           1  logic_cyclops.o(.bss.cached_drone_system_status)
+    [Anonymous Symbol]                       0x200002a8   Section        0  logic_cyclops.o(.bss.cached_drone_system_status)
+    cached_drone_target_count                0x200002a9   Data           1  logic_cyclops.o(.bss.cached_drone_target_count)
+    [Anonymous Symbol]                       0x200002a9   Section        0  logic_cyclops.o(.bss.cached_drone_target_count)
+    cached_drone_target_intensity            0x200002aa   Data           1  logic_cyclops.o(.bss.cached_drone_target_intensity)
+    [Anonymous Symbol]                       0x200002aa   Section        0  logic_cyclops.o(.bss.cached_drone_target_intensity)
+    cyclops_connected                        0x200002ab   Data           1  main.o(.bss.cyclops_connected)
+    [Anonymous Symbol]                       0x200002ab   Section        0  main.o(.bss.cyclops_connected)
+    drone_state                              0x200002ac   Data           1  logic_drone.o(.bss.drone_state)
+    [Anonymous Symbol]                       0x200002ac   Section        0  logic_drone.o(.bss.drone_state)
+    engines_state                            0x200002ad   Data           1  logic_cyclops.o(.bss.engines_state)
+    [Anonymous Symbol]                       0x200002ad   Section        0  logic_cyclops.o(.bss.engines_state)
+    errors                                   0x200002ae   Data           8  logic_cyclops.o(.bss.errors)
+    [Anonymous Symbol]                       0x200002ae   Section        0  logic_cyclops.o(.bss.errors)
+    expected                                 0x200002b6   Data           2  mavlink_rx.o(.bss.expected)
+    [Anonymous Symbol]                       0x200002b6   Section        0  mavlink_rx.o(.bss.expected)
+    expected                                 0x200002b8   Data           2  cyclops_rx.o(.bss.expected)
+    [Anonymous Symbol]                       0x200002b8   Section        0  cyclops_rx.o(.bss.expected)
+    head                                     0x200002ba   Data           1  message_queue.o(.bss.head)
+    [Anonymous Symbol]                       0x200002ba   Section        0  message_queue.o(.bss.head)
+    interceptor_state                        0x200002bb   Data           1  logic_cyclops.o(.bss.interceptor_state)
+    [Anonymous Symbol]                       0x200002bb   Section        0  logic_cyclops.o(.bss.interceptor_state)
+    lastLaunch                               0x200002bc   Data           1  logic_drone.o(.bss.lastLaunch)
+    [Anonymous Symbol]                       0x200002bc   Section        0  logic_drone.o(.bss.lastLaunch)
+    last_error                               0x200002bd   Data           1  logic_cyclops.o(.bss.last_error)
+    [Anonymous Symbol]                       0x200002bd   Section        0  logic_cyclops.o(.bss.last_error)
+    mavlink_get_channel_buffer.m_mavlink_buffer 0x200002bf   Data        1164  mavlink_rx.o(.bss.mavlink_get_channel_buffer.m_mavlink_buffer)
+    [Anonymous Symbol]                       0x200002bf   Section        0  mavlink_rx.o(.bss.mavlink_get_channel_buffer.m_mavlink_buffer)
+    mavlink_get_channel_status.m_mavlink_status 0x2000074c   Data          96  mavlink_tx.o(.bss.mavlink_get_channel_status.m_mavlink_status)
+    [Anonymous Symbol]                       0x2000074c   Section        0  mavlink_tx.o(.bss.mavlink_get_channel_status.m_mavlink_status)
+    mavlink_get_channel_status.m_mavlink_status 0x200007ac   Data          96  mavlink_rx.o(.bss.mavlink_get_channel_status.m_mavlink_status)
+    [Anonymous Symbol]                       0x200007ac   Section        0  mavlink_rx.o(.bss.mavlink_get_channel_status.m_mavlink_status)
+    orient_azimuth                           0x2000080c   Data           2  logic_cyclops.o(.bss.orient_azimuth)
+    [Anonymous Symbol]                       0x2000080c   Section        0  logic_cyclops.o(.bss.orient_azimuth)
+    orient_elevation                         0x2000080e   Data           2  logic_cyclops.o(.bss.orient_elevation)
+    [Anonymous Symbol]                       0x2000080e   Section        0  logic_cyclops.o(.bss.orient_elevation)
+    pending_hw_reset_response                0x20000810   Data           1  logic_cyclops.o(.bss.pending_hw_reset_response)
+    [Anonymous Symbol]                       0x20000810   Section        0  logic_cyclops.o(.bss.pending_hw_reset_response)
+    pending_sw_reset_response                0x20000811   Data           1  logic_cyclops.o(.bss.pending_sw_reset_response)
+    [Anonymous Symbol]                       0x20000811   Section        0  logic_cyclops.o(.bss.pending_sw_reset_response)
+    pos                                      0x20000812   Data           2  mavlink_rx.o(.bss.pos)
+    [Anonymous Symbol]                       0x20000812   Section        0  mavlink_rx.o(.bss.pos)
+    pos                                      0x20000814   Data           2  cyclops_rx.o(.bss.pos)
+    [Anonymous Symbol]                       0x20000814   Section        0  cyclops_rx.o(.bss.pos)
+    queue                                    0x20000816   Data        2272  message_queue.o(.bss.queue)
+    [Anonymous Symbol]                       0x20000816   Section        0  message_queue.o(.bss.queue)
+    saved_packet_id_for_reset                0x200010f6   Data           1  logic_cyclops.o(.bss.saved_packet_id_for_reset)
+    [Anonymous Symbol]                       0x200010f6   Section        0  logic_cyclops.o(.bss.saved_packet_id_for_reset)
+    stateTime                                0x200010f8   Data           4  logic_drone.o(.bss.stateTime)
+    [Anonymous Symbol]                       0x200010f8   Section        0  logic_drone.o(.bss.stateTime)
+    tail                                     0x200010fc   Data           1  message_queue.o(.bss.tail)
+    [Anonymous Symbol]                       0x200010fc   Section        0  message_queue.o(.bss.tail)
+    Heap_Mem                                 0x20001100   Data         512  startup_stm32f10x_md.o(HEAP)
+    HEAP                                     0x20001100   Section      512  startup_stm32f10x_md.o(HEAP)
+    Stack_Mem                                0x20001300   Data        1024  startup_stm32f10x_md.o(STACK)
+    STACK                                    0x20001300   Section     1024  startup_stm32f10x_md.o(STACK)
+    __initial_sp                             0x20001700   Data           0  startup_stm32f10x_md.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$UX$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __fp_init_empty                          0x00000000   Number         0  fpinit_empty.o ABSOLUTE
+    __ARM_exceptions_init                     - Undefined Weak Reference
+    __alloca_initialize                       - Undefined Weak Reference
+    __arm_preinit_                            - Undefined Weak Reference
+    __arm_relocate_pie_                       - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __rt_locale                               - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    _atexit_init                              - Undefined Weak Reference
+    _call_atexit_fns                          - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _fp_trap_init                             - Undefined Weak Reference
+    _fp_trap_shutdown                         - Undefined Weak Reference
+    _get_lc_collate                           - Undefined Weak Reference
+    _get_lc_ctype                             - Undefined Weak Reference
+    _get_lc_monetary                          - Undefined Weak Reference
+    _get_lc_numeric                           - Undefined Weak Reference
+    _get_lc_time                              - Undefined Weak Reference
+    _getenv_init                              - Undefined Weak Reference
+    _handle_redirection                       - Undefined Weak Reference
+    _init_alloc                               - Undefined Weak Reference
+    _init_user_alloc                          - Undefined Weak Reference
+    _initio                                   - Undefined Weak Reference
+    _rand_init                                - Undefined Weak Reference
+    _signal_finish                            - Undefined Weak Reference
+    _signal_init                              - Undefined Weak Reference
+    _terminate_alloc                          - Undefined Weak Reference
+    _terminate_user_alloc                     - Undefined Weak Reference
+    _terminateio                              - Undefined Weak Reference
+    __Vectors_Size                           0x000000ec   Number         0  startup_stm32f10x_md.o ABSOLUTE
+    __Vectors                                0x08000000   Data           4  startup_stm32f10x_md.o(RESET)
+    __Vectors_End                            0x080000ec   Data           0  startup_stm32f10x_md.o(RESET)
+    __main                                   0x080000ed   Thumb Code     8  __main.o(!!!main)
+    __scatterload                            0x080000f5   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_rt2                        0x080000f5   Thumb Code    84  __scatter.o(!!!scatter)
+    __scatterload_rt2_thumb_only             0x080000f5   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_loop                       0x080000ff   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_copy                       0x08000151   Thumb Code    26  __scatter_copy.o(!!handler_copy)
+    __scatterload_null                       0x0800016d   Thumb Code     2  __scatter.o(!!handler_null)
+    __scatterload_zeroinit                   0x08000171   Thumb Code    28  __scatter_zi.o(!!handler_zi)
+    __rt_lib_init                            0x0800018d   Thumb Code     0  libinit.o(.ARM.Collect$$libinit$$00000000)
+    __rt_lib_init_alloca_1                   0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    __rt_lib_init_argv_1                     0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    __rt_lib_init_atexit_1                   0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    __rt_lib_init_clock_1                    0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    __rt_lib_init_cpp_1                      0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000034)
+    __rt_lib_init_exceptions_1               0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    __rt_lib_init_fp_1                       0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    __rt_lib_init_fp_trap_1                  0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    __rt_lib_init_getenv_1                   0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    __rt_lib_init_heap_1                     0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    __rt_lib_init_lc_collate_1               0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    __rt_lib_init_lc_ctype_1                 0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    __rt_lib_init_lc_monetary_1              0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    __rt_lib_init_lc_numeric_1               0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    __rt_lib_init_lc_time_1                  0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_preinit_1                  0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000006)
+    __rt_lib_init_rand_1                     0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000010)
+    __rt_lib_init_relocate_pie_1             0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    __rt_lib_init_return                     0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000035)
+    __rt_lib_init_signal_1                   0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    __rt_lib_init_stdio_1                    0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000027)
+    __rt_lib_init_user_alloc_1               0x0800018f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    __rt_lib_shutdown                        0x08000191   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    __rt_lib_shutdown_cpp_1                  0x08000193   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    __rt_lib_shutdown_fp_trap_1              0x08000193   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
+    __rt_lib_shutdown_heap_1                 0x08000193   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    __rt_lib_shutdown_return                 0x08000193   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
+    __rt_lib_shutdown_signal_1               0x08000193   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
+    __rt_lib_shutdown_stdio_1                0x08000193   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    __rt_lib_shutdown_user_alloc_1           0x08000193   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    __rt_entry                               0x08000195   Thumb Code     0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    __rt_entry_presh_1                       0x08000195   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    __rt_entry_sh                            0x08000195   Thumb Code     0  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    __rt_entry_li                            0x0800019b   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    __rt_entry_postsh_1                      0x0800019b   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    __rt_entry_main                          0x0800019f   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __rt_entry_postli_1                      0x0800019f   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    __rt_exit                                0x080001a7   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    __rt_exit_ls                             0x080001a9   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    __rt_exit_prels_1                        0x080001a9   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    __rt_exit_exit                           0x080001ad   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    Reset_Handler                            0x080001b5   Thumb Code     8  startup_stm32f10x_md.o(.text)
+    NMI_Handler                              0x080001bd   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    HardFault_Handler                        0x080001bf   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    MemManage_Handler                        0x080001c1   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    BusFault_Handler                         0x080001c3   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    UsageFault_Handler                       0x080001c5   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    SVC_Handler                              0x080001c7   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    DebugMon_Handler                         0x080001c9   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    PendSV_Handler                           0x080001cb   Thumb Code     2  startup_stm32f10x_md.o(.text)
+    ADC1_2_IRQHandler                        0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    CAN1_RX1_IRQHandler                      0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    CAN1_SCE_IRQHandler                      0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel1_IRQHandler                 0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel2_IRQHandler                 0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel3_IRQHandler                 0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel4_IRQHandler                 0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel5_IRQHandler                 0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel6_IRQHandler                 0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    DMA1_Channel7_IRQHandler                 0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI0_IRQHandler                         0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI15_10_IRQHandler                     0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI1_IRQHandler                         0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI2_IRQHandler                         0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI3_IRQHandler                         0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI4_IRQHandler                         0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    EXTI9_5_IRQHandler                       0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    FLASH_IRQHandler                         0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    I2C1_ER_IRQHandler                       0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    I2C1_EV_IRQHandler                       0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    I2C2_ER_IRQHandler                       0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    I2C2_EV_IRQHandler                       0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    PVD_IRQHandler                           0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    RCC_IRQHandler                           0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    RTCAlarm_IRQHandler                      0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    RTC_IRQHandler                           0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    SPI1_IRQHandler                          0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    SPI2_IRQHandler                          0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TAMPER_IRQHandler                        0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM1_BRK_IRQHandler                      0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM1_CC_IRQHandler                       0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM1_TRG_COM_IRQHandler                  0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM1_UP_IRQHandler                       0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM2_IRQHandler                          0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    TIM4_IRQHandler                          0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    USART3_IRQHandler                        0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    USBWakeUp_IRQHandler                     0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    USB_HP_CAN1_TX_IRQHandler                0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    USB_LP_CAN1_RX0_IRQHandler               0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    WWDG_IRQHandler                          0x080001cf   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    __user_initial_stackheap                 0x080001d1   Thumb Code     0  startup_stm32f10x_md.o(.text)
+    memcmp                                   0x080001f5   Thumb Code    88  memcmp.o(.text)
+    __aeabi_memcpy                           0x0800024d   Thumb Code     0  rt_memcpy_v6.o(.text)
+    __rt_memcpy                              0x0800024d   Thumb Code   138  rt_memcpy_v6.o(.text)
+    _memcpy_lastbytes                        0x080002b3   Thumb Code     0  rt_memcpy_v6.o(.text)
+    __aeabi_memclr                           0x080002d7   Thumb Code     0  rt_memclr.o(.text)
+    __rt_memclr                              0x080002d7   Thumb Code     0  rt_memclr.o(.text)
+    _memset                                  0x080002db   Thumb Code    64  rt_memclr.o(.text)
+    __use_two_region_memory                  0x0800031b   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x0800031d   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x0800031f   Thumb Code     2  heapauxi.o(.text)
+    __aeabi_memcpy4                          0x08000321   Thumb Code     0  rt_memcpy_w.o(.text)
+    __aeabi_memcpy8                          0x08000321   Thumb Code     0  rt_memcpy_w.o(.text)
+    __rt_memcpy_w                            0x08000321   Thumb Code   100  rt_memcpy_w.o(.text)
+    _memcpy_lastbytes_aligned                0x08000369   Thumb Code     0  rt_memcpy_w.o(.text)
+    __aeabi_memclr4                          0x08000385   Thumb Code     0  rt_memclr_w.o(.text)
+    __aeabi_memclr8                          0x08000385   Thumb Code     0  rt_memclr_w.o(.text)
+    __rt_memclr_w                            0x08000385   Thumb Code     0  rt_memclr_w.o(.text)
+    _memset_w                                0x08000389   Thumb Code    74  rt_memclr_w.o(.text)
+    __user_setup_stackheap                   0x080003d3   Thumb Code    74  sys_stackheap_outer.o(.text)
+    exit                                     0x0800041d   Thumb Code    18  exit.o(.text)
+    __user_libspace                          0x08000431   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x08000431   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x08000431   Thumb Code     0  libspace.o(.text)
+    _sys_exit                                0x08000439   Thumb Code     8  sys_exit.o(.text)
+    __I$use$semihosting                      0x08000445   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x08000445   Thumb Code     2  use_no_semi.o(.text)
+    __semihosting_library_function           0x08000447   Thumb Code     0  indicate_semi.o(.text)
+    App_Init                                 0x08000449   Thumb Code    44  main.o(.text.App_Init)
+    App_Process                              0x08000475   Thumb Code    34  main.o(.text.App_Process)
+    CyclopsTx_BuildPacket                    0x08000505   Thumb Code   196  cyclops_tx.o(.text.CyclopsTx_BuildPacket)
+    Cyclops_RxByte                           0x08000a35   Thumb Code   338  cyclops_rx.o(.text.Cyclops_RxByte)
+    DelayMs                                  0x08000db1   Thumb Code    48  timer.o(.text.DelayMs)
+    End_Read                                 0x08000de1   Thumb Code    16  gpio.o(.text.End_Read)
+    GPIO_Init                                0x08000df1   Thumb Code   210  gpio.o(.text.GPIO_Init)
+    GetTick                                  0x08000ec5   Thumb Code    12  timer.o(.text.GetTick)
+    Launch_Read                              0x08000ed1   Thumb Code    16  gpio.o(.text.Launch_Read)
+    LogicCyclops_Process                     0x08000ee1   Thumb Code    20  logic_cyclops.o(.text.LogicCyclops_Process)
+    LogicCyclops_ProcessMessage              0x08000ef5   Thumb Code   178  logic_cyclops.o(.text.LogicCyclops_ProcessMessage)
+    LogicDrone_GetDroneState                 0x08000fa9   Thumb Code    12  logic_drone.o(.text.LogicDrone_GetDroneState)
+    LogicDrone_Init                          0x08000fb5   Thumb Code    62  logic_drone.o(.text.LogicDrone_Init)
+    LogicDrone_Process                       0x08000ff5   Thumb Code   342  logic_drone.o(.text.LogicDrone_Process)
+    LogicDrone_ProcessMessage                0x0800114d   Thumb Code     8  logic_drone.o(.text.LogicDrone_ProcessMessage)
+    LogicDrone_SetDroneState                 0x08001155   Thumb Code    24  logic_drone.o(.text.LogicDrone_SetDroneState)
+    MavlinkTx_Init                           0x080011f1   Thumb Code    12  mavlink_tx.o(.text.MavlinkTx_Init)
+    MavlinkTx_SendCancel                     0x080011fd   Thumb Code    12  mavlink_tx.o(.text.MavlinkTx_SendCancel)
+    MavlinkTx_SendFly                        0x08001261   Thumb Code    12  mavlink_tx.o(.text.MavlinkTx_SendFly)
+    MavlinkTx_SendPrepare                    0x0800126d   Thumb Code    12  mavlink_tx.o(.text.MavlinkTx_SendPrepare)
+    Mavlink_RxByte                           0x08001279   Thumb Code   284  mavlink_rx.o(.text.Mavlink_RxByte)
+    MessageQueue_Pop                         0x08001395   Thumb Code   104  message_queue.o(.text.MessageQueue_Pop)
+    MessageQueue_Push                        0x080013fd   Thumb Code   122  message_queue.o(.text.MessageQueue_Push)
+    Optocouplers_Enable                      0x080014a5   Thumb Code    22  gpio.o(.text.Optocouplers_Enable)
+    PWM_Init                                 0x080014bd   Thumb Code   190  pwm.o(.text.PWM_Init)
+    PWM_InitServo                            0x0800157d   Thumb Code    22  pwm.o(.text.PWM_InitServo)
+    PWM_SetUs                                0x08001595   Thumb Code    22  pwm.o(.text.PWM_SetUs)
+    RCC_Init                                 0x080016ad   Thumb Code   352  rcc.o(.text.RCC_Init)
+    Safety_Read                              0x08001875   Thumb Code    16  gpio.o(.text.Safety_Read)
+    Servo_Hold                               0x08001885   Thumb Code    20  pwm.o(.text.Servo_Hold)
+    Servo_Release                            0x08001899   Thumb Code    20  pwm.o(.text.Servo_Release)
+    StatusLedTimer_Init                      0x080019d9   Thumb Code   114  timer.o(.text.StatusLedTimer_Init)
+    StatusLed_Toggle                         0x08001a4d   Thumb Code    18  gpio.o(.text.StatusLed_Toggle)
+    SysTick_Handler                          0x08001ab5   Thumb Code    16  timer.o(.text.SysTick_Handler)
+    SystemInit                               0x08001ac5   Thumb Code   102  system_stm32f10x.o(.text.SystemInit)
+    TIM3_IRQHandler                          0x08001b2d   Thumb Code    42  timer.o(.text.TIM3_IRQHandler)
+    Timeout                                  0x08001b59   Thumb Code    34  timer.o(.text.Timeout)
+    Timer_Init                               0x08001b7d   Thumb Code    32  timer.o(.text.Timer_Init)
+    USART1_IRQHandler                        0x08001b9d   Thumb Code    52  main.o(.text.USART1_IRQHandler)
+    USART1_SendArray                         0x08001bd1   Thumb Code    62  usart.o(.text.USART1_SendArray)
+    USART1_SendByte                          0x08001c11   Thumb Code    46  usart.o(.text.USART1_SendByte)
+    USART2_IRQHandler                        0x08001c41   Thumb Code    40  main.o(.text.USART2_IRQHandler)
+    USART2_SendArray                         0x08001c69   Thumb Code    62  usart.o(.text.USART2_SendArray)
+    USART2_SendByte                          0x08001ca9   Thumb Code    46  usart.o(.text.USART2_SendByte)
+    USART_Init                               0x08001cd9   Thumb Code   270  usart.o(.text.USART_Init)
+    main                                     0x080020fd   Thumb Code    20  main.o(.text.main)
+    Region$$Table$$Base                      0x08004588   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080045a8   Number         0  anon$$obj.o(Region$$Table)
+    ServoPWM                                 0x20000000   Data           4  pwm.o(.data.ServoPWM)
+    SystemCoreClock                          0x20000004   Data           4  system_stm32f10x.o(.data.SystemCoreClock)
+    __libspace_start                         0x20000018   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x20000078   Data           0  libspace.o(.bss)
+    logic_drone_state                        0x200002be   Data           1  logic_drone.o(.bss.logic_drone_state)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x080001b5
+
+  Load Region LR_1 (Base: 0x08000000, Size: 0x000045bc, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000045a8, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x08000000   0x000000ec   Data   RO          373    RESET               startup_stm32f10x_md.o
+    0x080000ec   0x080000ec   0x00000008   Code   RO          407  * !!!main             c_w.l(__main.o)
+    0x080000f4   0x080000f4   0x0000005c   Code   RO          576    !!!scatter          c_w.l(__scatter.o)
+    0x08000150   0x08000150   0x0000001a   Code   RO          580    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x0800016a   0x0800016a   0x00000002   PAD
+    0x0800016c   0x0800016c   0x00000002   Code   RO          577    !!handler_null      c_w.l(__scatter.o)
+    0x0800016e   0x0800016e   0x00000002   PAD
+    0x08000170   0x08000170   0x0000001c   Code   RO          582    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x0800018c   0x0800018c   0x00000002   Code   RO          438    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          445    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          447    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          449    .ARM.Collect$$libinit$$00000006  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          452    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          454    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          456    .ARM.Collect$$libinit$$00000010  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          459    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          461    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          463    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          465    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          467    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          469    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          471    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          473    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          475    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          477    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          479    .ARM.Collect$$libinit$$00000027  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          483    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          485    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          487    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000000   Code   RO          489    .ARM.Collect$$libinit$$00000034  c_w.l(libinit2.o)
+    0x0800018e   0x0800018e   0x00000002   Code   RO          490    .ARM.Collect$$libinit$$00000035  c_w.l(libinit2.o)
+    0x08000190   0x08000190   0x00000002   Code   RO          512    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x08000192   0x08000192   0x00000000   Code   RO          527    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x08000192   0x08000192   0x00000000   Code   RO          529    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x08000192   0x08000192   0x00000000   Code   RO          532    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x08000192   0x08000192   0x00000000   Code   RO          535    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x08000192   0x08000192   0x00000000   Code   RO          537    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x08000192   0x08000192   0x00000000   Code   RO          540    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x08000192   0x08000192   0x00000002   Code   RO          541    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x08000194   0x08000194   0x00000000   Code   RO          409    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x08000194   0x08000194   0x00000000   Code   RO          415    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x08000194   0x08000194   0x00000006   Code   RO          427    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x0800019a   0x0800019a   0x00000000   Code   RO          417    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x0800019a   0x0800019a   0x00000004   Code   RO          418    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x0800019e   0x0800019e   0x00000000   Code   RO          420    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x0800019e   0x0800019e   0x00000008   Code   RO          421    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x080001a6   0x080001a6   0x00000002   Code   RO          442    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x080001a8   0x080001a8   0x00000000   Code   RO          492    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x080001a8   0x080001a8   0x00000004   Code   RO          493    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x080001ac   0x080001ac   0x00000006   Code   RO          494    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x080001b2   0x080001b2   0x00000002   PAD
+    0x080001b4   0x080001b4   0x00000040   Code   RO          374  * .text               startup_stm32f10x_md.o
+    0x080001f4   0x080001f4   0x00000058   Code   RO          399    .text               c_w.l(memcmp.o)
+    0x0800024c   0x0800024c   0x0000008a   Code   RO          401    .text               c_w.l(rt_memcpy_v6.o)
+    0x080002d6   0x080002d6   0x00000044   Code   RO          403    .text               c_w.l(rt_memclr.o)
+    0x0800031a   0x0800031a   0x00000006   Code   RO          405    .text               c_w.l(heapauxi.o)
+    0x08000320   0x08000320   0x00000064   Code   RO          410    .text               c_w.l(rt_memcpy_w.o)
+    0x08000384   0x08000384   0x0000004e   Code   RO          412    .text               c_w.l(rt_memclr_w.o)
+    0x080003d2   0x080003d2   0x0000004a   Code   RO          429    .text               c_w.l(sys_stackheap_outer.o)
+    0x0800041c   0x0800041c   0x00000012   Code   RO          431    .text               c_w.l(exit.o)
+    0x0800042e   0x0800042e   0x00000002   PAD
+    0x08000430   0x08000430   0x00000008   Code   RO          439    .text               c_w.l(libspace.o)
+    0x08000438   0x08000438   0x0000000c   Code   RO          502    .text               c_w.l(sys_exit.o)
+    0x08000444   0x08000444   0x00000002   Code   RO          517    .text               c_w.l(use_no_semi.o)
+    0x08000446   0x08000446   0x00000000   Code   RO          519    .text               c_w.l(indicate_semi.o)
+    0x08000446   0x08000446   0x00000002   PAD
+    0x08000448   0x08000448   0x0000002c   Code   RO            2    .text.App_Init      main.o
+    0x08000474   0x08000474   0x00000022   Code   RO            4    .text.App_Process   main.o
+    0x08000496   0x08000496   0x00000002   PAD
+    0x08000498   0x08000498   0x0000006a   Code   RO          354    .text.CopyMessage   message_queue.o
+    0x08000502   0x08000502   0x00000002   PAD
+    0x08000504   0x08000504   0x000000c4   Code   RO          220    .text.CyclopsTx_BuildPacket  cyclops_tx.o
+    0x080005c8   0x080005c8   0x0000005a   Code   RO          287    .text.Cyclops_CheckBwa  logic_cyclops.o
+    0x08000622   0x08000622   0x00000002   PAD
+    0x08000624   0x08000624   0x00000078   Code   RO          281    .text.Cyclops_HandleEngines  logic_cyclops.o
+    0x0800069c   0x0800069c   0x00000084   Code   RO          267    .text.Cyclops_HandleGetError  logic_cyclops.o
+    0x08000720   0x08000720   0x0000006c   Code   RO          273    .text.Cyclops_HandleGetParam  logic_cyclops.o
+    0x0800078c   0x0800078c   0x00000024   Code   RO          263    .text.Cyclops_HandleHwReset  logic_cyclops.o
+    0x080007b0   0x080007b0   0x000000aa   Code   RO          283    .text.Cyclops_HandleLaunch  logic_cyclops.o
+    0x0800085a   0x0800085a   0x00000002   PAD
+    0x0800085c   0x0800085c   0x00000048   Code   RO          261    .text.Cyclops_HandlePing  logic_cyclops.o
+    0x080008a4   0x080008a4   0x0000008c   Code   RO          285    .text.Cyclops_HandleSetOrient  logic_cyclops.o
+    0x08000930   0x08000930   0x0000007e   Code   RO          271    .text.Cyclops_HandleSetParam  logic_cyclops.o
+    0x080009ae   0x080009ae   0x00000002   PAD
+    0x080009b0   0x080009b0   0x00000024   Code   RO          265    .text.Cyclops_HandleSwReset  logic_cyclops.o
+    0x080009d4   0x080009d4   0x0000005e   Code   RO          269    .text.Cyclops_HandleZeroizeError  logic_cyclops.o
+    0x08000a32   0x08000a32   0x00000002   PAD
+    0x08000a34   0x08000a34   0x00000152   Code   RO          231    .text.Cyclops_RxByte  cyclops_rx.o
+    0x08000b86   0x08000b86   0x00000002   PAD
+    0x08000b88   0x08000b88   0x00000096   Code   RO          295    .text.Cyclops_SendAccState  logic_cyclops.o
+    0x08000c1e   0x08000c1e   0x00000002   PAD
+    0x08000c20   0x08000c20   0x00000066   Code   RO          299    .text.Cyclops_SendInterceptorInfo  logic_cyclops.o
+    0x08000c86   0x08000c86   0x00000002   PAD
+    0x08000c88   0x08000c88   0x000000be   Code   RO          297    .text.Cyclops_SendInterceptorState  logic_cyclops.o
+    0x08000d46   0x08000d46   0x00000002   PAD
+    0x08000d48   0x08000d48   0x0000004c   Code   RO          279    .text.Cyclops_SendResponse  logic_cyclops.o
+    0x08000d94   0x08000d94   0x0000001a   Code   RO          275    .text.Cyclops_SendUnknown  logic_cyclops.o
+    0x08000dae   0x08000dae   0x00000002   PAD
+    0x08000db0   0x08000db0   0x00000030   Code   RO           82    .text.DelayMs       timer.o
+    0x08000de0   0x08000de0   0x00000010   Code   RO           37    .text.End_Read      gpio.o
+    0x08000df0   0x08000df0   0x000000d2   Code   RO           31    .text.GPIO_Init     gpio.o
+    0x08000ec2   0x08000ec2   0x00000002   PAD
+    0x08000ec4   0x08000ec4   0x0000000c   Code   RO           80    .text.GetTick       timer.o
+    0x08000ed0   0x08000ed0   0x00000010   Code   RO           33    .text.Launch_Read   gpio.o
+    0x08000ee0   0x08000ee0   0x00000014   Code   RO          257    .text.LogicCyclops_Process  logic_cyclops.o
+    0x08000ef4   0x08000ef4   0x000000b2   Code   RO          259    .text.LogicCyclops_ProcessMessage  logic_cyclops.o
+    0x08000fa6   0x08000fa6   0x00000002   PAD
+    0x08000fa8   0x08000fa8   0x0000000c   Code   RO          337    .text.LogicDrone_GetDroneState  logic_drone.o
+    0x08000fb4   0x08000fb4   0x0000003e   Code   RO          327    .text.LogicDrone_Init  logic_drone.o
+    0x08000ff2   0x08000ff2   0x00000002   PAD
+    0x08000ff4   0x08000ff4   0x00000156   Code   RO          331    .text.LogicDrone_Process  logic_drone.o
+    0x0800114a   0x0800114a   0x00000002   PAD
+    0x0800114c   0x0800114c   0x00000008   Code   RO          335    .text.LogicDrone_ProcessMessage  logic_drone.o
+    0x08001154   0x08001154   0x00000018   Code   RO          333    .text.LogicDrone_SetDroneState  logic_drone.o
+    0x0800116c   0x0800116c   0x00000028   Code   RO          329    .text.LogicDrone_SetState  logic_drone.o
+    0x08001194   0x08001194   0x00000038   Code   RO            6    .text.Main_ReadMessages  main.o
+    0x080011cc   0x080011cc   0x00000022   Code   RO          301    .text.MakeInterceptorStateByte  logic_cyclops.o
+    0x080011ee   0x080011ee   0x00000002   PAD
+    0x080011f0   0x080011f0   0x0000000c   Code   RO          115    .text.MavlinkTx_Init  mavlink_tx.o
+    0x080011fc   0x080011fc   0x0000000c   Code   RO          123    .text.MavlinkTx_SendCancel  mavlink_tx.o
+    0x08001208   0x08001208   0x00000056   Code   RO          121    .text.MavlinkTx_SendCommand  mavlink_tx.o
+    0x0800125e   0x0800125e   0x00000002   PAD
+    0x08001260   0x08001260   0x0000000c   Code   RO          125    .text.MavlinkTx_SendFly  mavlink_tx.o
+    0x0800126c   0x0800126c   0x0000000c   Code   RO          119    .text.MavlinkTx_SendPrepare  mavlink_tx.o
+    0x08001278   0x08001278   0x0000011c   Code   RO          168    .text.Mavlink_RxByte  mavlink_rx.o
+    0x08001394   0x08001394   0x00000068   Code   RO          356    .text.MessageQueue_Pop  message_queue.o
+    0x080013fc   0x080013fc   0x0000007a   Code   RO          350    .text.MessageQueue_Push  message_queue.o
+    0x08001476   0x08001476   0x00000002   PAD
+    0x08001478   0x08001478   0x0000002a   Code   RO          352    .text.NextIndex     message_queue.o
+    0x080014a2   0x080014a2   0x00000002   PAD
+    0x080014a4   0x080014a4   0x00000016   Code   RO           39    .text.Optocouplers_Enable  gpio.o
+    0x080014ba   0x080014ba   0x00000002   PAD
+    0x080014bc   0x080014bc   0x000000be   Code   RO           50    .text.PWM_Init      pwm.o
+    0x0800157a   0x0800157a   0x00000002   PAD
+    0x0800157c   0x0800157c   0x00000016   Code   RO           54    .text.PWM_InitServo  pwm.o
+    0x08001592   0x08001592   0x00000002   PAD
+    0x08001594   0x08001594   0x00000016   Code   RO           52    .text.PWM_SetUs     pwm.o
+    0x080015aa   0x080015aa   0x00000002   PAD
+    0x080015ac   0x080015ac   0x00000100   Code   RO          237    .text.PacketIsValid  cyclops_rx.o
+    0x080016ac   0x080016ac   0x00000160   Code   RO           23    .text.RCC_Init      rcc.o
+    0x0800180c   0x0800180c   0x0000001c   Code   RO          291    .text.ReadS16BE     logic_cyclops.o
+    0x08001828   0x08001828   0x0000001a   Code   RO          289    .text.ReadU16BE     logic_cyclops.o
+    0x08001842   0x08001842   0x00000002   PAD
+    0x08001844   0x08001844   0x00000018   Code   RO          172    .text.ResetParser   mavlink_rx.o
+    0x0800185c   0x0800185c   0x00000018   Code   RO          235    .text.ResetParser   cyclops_rx.o
+    0x08001874   0x08001874   0x00000010   Code   RO           35    .text.Safety_Read   gpio.o
+    0x08001884   0x08001884   0x00000014   Code   RO           58    .text.Servo_Hold    pwm.o
+    0x08001898   0x08001898   0x00000014   Code   RO           56    .text.Servo_Release  pwm.o
+    0x080018ac   0x080018ac   0x00000008   Code   RO          383    .text.SetSysClock   system_stm32f10x.o
+    0x080018b4   0x080018b4   0x00000122   Code   RO          387    .text.SetSysClockTo72  system_stm32f10x.o
+    0x080019d6   0x080019d6   0x00000002   PAD
+    0x080019d8   0x080019d8   0x00000072   Code   RO           72    .text.StatusLedTimer_Init  timer.o
+    0x08001a4a   0x08001a4a   0x00000002   PAD
+    0x08001a4c   0x08001a4c   0x00000012   Code   RO           41    .text.StatusLed_Toggle  gpio.o
+    0x08001a5e   0x08001a5e   0x00000002   PAD
+    0x08001a60   0x08001a60   0x00000052   Code   RO           70    .text.SysTick_Config  timer.o
+    0x08001ab2   0x08001ab2   0x00000002   PAD
+    0x08001ab4   0x08001ab4   0x00000010   Code   RO           76    .text.SysTick_Handler  timer.o
+    0x08001ac4   0x08001ac4   0x00000066   Code   RO          381    .text.SystemInit    system_stm32f10x.o
+    0x08001b2a   0x08001b2a   0x00000002   PAD
+    0x08001b2c   0x08001b2c   0x0000002a   Code   RO           78    .text.TIM3_IRQHandler  timer.o
+    0x08001b56   0x08001b56   0x00000002   PAD
+    0x08001b58   0x08001b58   0x00000022   Code   RO           84    .text.Timeout       timer.o
+    0x08001b7a   0x08001b7a   0x00000002   PAD
+    0x08001b7c   0x08001b7c   0x00000020   Code   RO           68    .text.Timer_Init    timer.o
+    0x08001b9c   0x08001b9c   0x00000034   Code   RO           10    .text.USART1_IRQHandler  main.o
+    0x08001bd0   0x08001bd0   0x0000003e   Code   RO          106    .text.USART1_SendArray  usart.o
+    0x08001c0e   0x08001c0e   0x00000002   PAD
+    0x08001c10   0x08001c10   0x0000002e   Code   RO          104    .text.USART1_SendByte  usart.o
+    0x08001c3e   0x08001c3e   0x00000002   PAD
+    0x08001c40   0x08001c40   0x00000028   Code   RO           12    .text.USART2_IRQHandler  main.o
+    0x08001c68   0x08001c68   0x0000003e   Code   RO          102    .text.USART2_SendArray  usart.o
+    0x08001ca6   0x08001ca6   0x00000002   PAD
+    0x08001ca8   0x08001ca8   0x0000002e   Code   RO          100    .text.USART2_SendByte  usart.o
+    0x08001cd6   0x08001cd6   0x00000002   PAD
+    0x08001cd8   0x08001cd8   0x0000010e   Code   RO           96    .text.USART_Init    usart.o
+    0x08001de6   0x08001de6   0x00000002   PAD
+    0x08001de8   0x08001de8   0x0000004c   Code   RO          174    .text.UpdateExpectedSize  mavlink_rx.o
+    0x08001e34   0x08001e34   0x0000001c   Code   RO          293    .text.WriteU16BE    logic_cyclops.o
+    0x08001e50   0x08001e50   0x00000052   Code   RO          222    .text.XorData       cyclops_tx.o
+    0x08001ea2   0x08001ea2   0x00000002   PAD
+    0x08001ea4   0x08001ea4   0x00000052   Code   RO          233    .text.XorData       cyclops_rx.o
+    0x08001ef6   0x08001ef6   0x00000002   PAD
+    0x08001ef8   0x08001ef8   0x00000030   Code   RO           74    .text.__NVIC_EnableIRQ  timer.o
+    0x08001f28   0x08001f28   0x00000030   Code   RO           98    .text.__NVIC_EnableIRQ  usart.o
+    0x08001f58   0x08001f58   0x00000042   Code   RO           86    .text.__NVIC_SetPriority  timer.o
+    0x08001f9a   0x08001f9a   0x00000002   PAD
+    0x08001f9c   0x08001f9c   0x00000010   Code   RO          182    .text._mav_parse_error  mavlink_rx.o
+    0x08001fac   0x08001fac   0x0000004a   Code   RO          139    .text._mav_trim_payload  mavlink_tx.o
+    0x08001ff6   0x08001ff6   0x00000002   PAD
+    0x08001ff8   0x08001ff8   0x0000003c   Code   RO          145    .text.crc_accumulate  mavlink_tx.o
+    0x08002034   0x08002034   0x0000003c   Code   RO          194    .text.crc_accumulate  mavlink_rx.o
+    0x08002070   0x08002070   0x00000034   Code   RO          143    .text.crc_accumulate_buffer  mavlink_tx.o
+    0x080020a4   0x080020a4   0x00000038   Code   RO          141    .text.crc_calculate  mavlink_tx.o
+    0x080020dc   0x080020dc   0x00000010   Code   RO          149    .text.crc_init      mavlink_tx.o
+    0x080020ec   0x080020ec   0x00000010   Code   RO          204    .text.crc_init      mavlink_rx.o
+    0x080020fc   0x080020fc   0x00000014   Code   RO            8    .text.main          main.o
+    0x08002110   0x08002110   0x00000052   Code   RO          133    .text.mavlink_finalize_message  mavlink_tx.o
+    0x08002162   0x08002162   0x00000002   PAD
+    0x08002164   0x08002164   0x0000022e   Code   RO          137    .text.mavlink_finalize_message_buffer  mavlink_tx.o
+    0x08002392   0x08002392   0x00000002   PAD
+    0x08002394   0x08002394   0x00000062   Code   RO          135    .text.mavlink_finalize_message_chan  mavlink_tx.o
+    0x080023f6   0x080023f6   0x00000002   PAD
+    0x080023f8   0x080023f8   0x0000003e   Code   RO          176    .text.mavlink_frame_char  mavlink_rx.o
+    0x08002436   0x08002436   0x00000002   PAD
+    0x08002438   0x08002438   0x00000540   Code   RO          186    .text.mavlink_frame_char_buffer  mavlink_rx.o
+    0x08002978   0x08002978   0x0000001e   Code   RO          178    .text.mavlink_get_channel_buffer  mavlink_rx.o
+    0x08002996   0x08002996   0x00000002   PAD
+    0x08002998   0x08002998   0x0000001e   Code   RO          127    .text.mavlink_get_channel_status  mavlink_tx.o
+    0x080029b6   0x080029b6   0x00000002   PAD
+    0x080029b8   0x080029b8   0x0000001e   Code   RO          180    .text.mavlink_get_channel_status  mavlink_rx.o
+    0x080029d6   0x080029d6   0x00000002   PAD
+    0x080029d8   0x080029d8   0x000000a8   Code   RO          190    .text.mavlink_get_msg_entry  mavlink_rx.o
+    0x08002a80   0x08002a80   0x000000b2   Code   RO          129    .text.mavlink_msg_command_long_pack  mavlink_tx.o
+    0x08002b32   0x08002b32   0x00000002   PAD
+    0x08002b34   0x08002b34   0x0000015e   Code   RO          131    .text.mavlink_msg_to_send_buffer  mavlink_tx.o
+    0x08002c92   0x08002c92   0x00000002   PAD
+    0x08002c94   0x08002c94   0x00000096   Code   RO          170    .text.mavlink_parse_char  mavlink_rx.o
+    0x08002d2a   0x08002d2a   0x00000002   PAD
+    0x08002d2c   0x08002d2c   0x00000038   Code   RO          117    .text.mavlink_set_proto_version  mavlink_tx.o
+    0x08002d64   0x08002d64   0x000001a4   Code   RO          157    .text.mavlink_sha256_calc  mavlink_tx.o
+    0x08002f08   0x08002f08   0x000001a4   Code   RO          202    .text.mavlink_sha256_calc  mavlink_rx.o
+    0x080030ac   0x080030ac   0x000000ca   Code   RO          155    .text.mavlink_sha256_final_48  mavlink_tx.o
+    0x08003176   0x08003176   0x00000002   PAD
+    0x08003178   0x08003178   0x000000ca   Code   RO          200    .text.mavlink_sha256_final_48  mavlink_rx.o
+    0x08003242   0x08003242   0x00000002   PAD
+    0x08003244   0x08003244   0x00000072   Code   RO          151    .text.mavlink_sha256_init  mavlink_tx.o
+    0x080032b6   0x080032b6   0x00000002   PAD
+    0x080032b8   0x080032b8   0x00000072   Code   RO          196    .text.mavlink_sha256_init  mavlink_rx.o
+    0x0800332a   0x0800332a   0x00000002   PAD
+    0x0800332c   0x0800332c   0x000000f6   Code   RO          153    .text.mavlink_sha256_update  mavlink_tx.o
+    0x08003422   0x08003422   0x00000002   PAD
+    0x08003424   0x08003424   0x000000f6   Code   RO          198    .text.mavlink_sha256_update  mavlink_rx.o
+    0x0800351a   0x0800351a   0x00000002   PAD
+    0x0800351c   0x0800351c   0x000000c2   Code   RO          147    .text.mavlink_sign_packet  mavlink_tx.o
+    0x080035de   0x080035de   0x00000002   PAD
+    0x080035e0   0x080035e0   0x00000268   Code   RO          192    .text.mavlink_signature_check  mavlink_rx.o
+    0x08003848   0x08003848   0x00000020   Code   RO          184    .text.mavlink_start_checksum  mavlink_rx.o
+    0x08003868   0x08003868   0x00000028   Code   RO          188    .text.mavlink_update_checksum  mavlink_rx.o
+    0x08003890   0x08003890   0x00000af8   Data   RO          209    .rodata.mavlink_get_msg_entry.mavlink_message_crcs  mavlink_rx.o
+    0x08004388   0x08004388   0x00000100   Data   RO          160    .rodata.mavlink_sha256_constant_256  mavlink_tx.o
+    0x08004488   0x08004488   0x00000100   Data   RO          210    .rodata.mavlink_sha256_constant_256  mavlink_rx.o
+    0x08004588   0x08004588   0x00000020   Data   RO          575    Region$$Table       anon$$obj.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x080045a8, Size: 0x00000014, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x080045a8   0x00000004   Data   RW           60    .data.ServoPWM      pwm.o
+    0x20000004   0x080045ac   0x00000004   Data   RW          389    .data.SystemCoreClock  system_stm32f10x.o
+    0x20000008   0x080045b0   0x00000001   Data   RW          305    .data.cached_drone_battery_pct  logic_cyclops.o
+    0x20000009   0x080045b1   0x00000001   PAD
+    0x2000000a   0x080045b2   0x00000002   Data   RW          304    .data.cached_drone_temp  logic_cyclops.o
+    0x2000000c   0x080045b4   0x00000004   Data   RW          307    .data.cached_drone_version  logic_cyclops.o
+    0x20000010   0x080045b8   0x00000002   Data   RW          303    .data.cached_drone_voltage_mv  logic_cyclops.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000018, Load base: 0x080045bc, Size: 0x000016e8, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000018        -       0x00000060   Zero   RW          440    .bss                c_w.l(libspace.o)
+    0x20000078        -       0x00000004   Zero   RW           88    .bss.Tick           timer.o
+    0x2000007c        -       0x00000118   Zero   RW          207    .bss.buf            mavlink_rx.o
+    0x20000194        -       0x00000106   Zero   RW          240    .bss.buf            cyclops_rx.o
+    0x2000029a   0x080045bc   0x00000006   PAD
+    0x200002a0        -       0x00000008   Zero   RW          306    .bss.cached_drone_serial  logic_cyclops.o
+    0x200002a8        -       0x00000001   Zero   RW          310    .bss.cached_drone_system_status  logic_cyclops.o
+    0x200002a9        -       0x00000001   Zero   RW          308    .bss.cached_drone_target_count  logic_cyclops.o
+    0x200002aa        -       0x00000001   Zero   RW          309    .bss.cached_drone_target_intensity  logic_cyclops.o
+    0x200002ab        -       0x00000001   Zero   RW           14    .bss.cyclops_connected  main.o
+    0x200002ac        -       0x00000001   Zero   RW          339    .bss.drone_state    logic_drone.o
+    0x200002ad        -       0x00000001   Zero   RW          316    .bss.engines_state  logic_cyclops.o
+    0x200002ae        -       0x00000008   Zero   RW          315    .bss.errors         logic_cyclops.o
+    0x200002b6        -       0x00000002   Zero   RW          208    .bss.expected       mavlink_rx.o
+    0x200002b8        -       0x00000002   Zero   RW          241    .bss.expected       cyclops_rx.o
+    0x200002ba        -       0x00000001   Zero   RW          362    .bss.head           message_queue.o
+    0x200002bb        -       0x00000001   Zero   RW          317    .bss.interceptor_state  logic_cyclops.o
+    0x200002bc        -       0x00000001   Zero   RW          340    .bss.lastLaunch     logic_drone.o
+    0x200002bd        -       0x00000001   Zero   RW          313    .bss.last_error     logic_cyclops.o
+    0x200002be        -       0x00000001   Zero   RW          342    .bss.logic_drone_state  logic_drone.o
+    0x200002bf        -       0x0000048c   Zero   RW          211    .bss.mavlink_get_channel_buffer.m_mavlink_buffer  mavlink_rx.o
+    0x2000074b   0x080045bc   0x00000001   PAD
+    0x2000074c        -       0x00000060   Zero   RW          159    .bss.mavlink_get_channel_status.m_mavlink_status  mavlink_tx.o
+    0x200007ac        -       0x00000060   Zero   RW          212    .bss.mavlink_get_channel_status.m_mavlink_status  mavlink_rx.o
+    0x2000080c        -       0x00000002   Zero   RW          318    .bss.orient_azimuth  logic_cyclops.o
+    0x2000080e        -       0x00000002   Zero   RW          319    .bss.orient_elevation  logic_cyclops.o
+    0x20000810        -       0x00000001   Zero   RW          311    .bss.pending_hw_reset_response  logic_cyclops.o
+    0x20000811        -       0x00000001   Zero   RW          312    .bss.pending_sw_reset_response  logic_cyclops.o
+    0x20000812        -       0x00000002   Zero   RW          206    .bss.pos            mavlink_rx.o
+    0x20000814        -       0x00000002   Zero   RW          239    .bss.pos            cyclops_rx.o
+    0x20000816        -       0x000008e0   Zero   RW          363    .bss.queue          message_queue.o
+    0x200010f6        -       0x00000001   Zero   RW          314    .bss.saved_packet_id_for_reset  logic_cyclops.o
+    0x200010f7   0x080045bc   0x00000001   PAD
+    0x200010f8        -       0x00000004   Zero   RW          341    .bss.stateTime      logic_drone.o
+    0x200010fc        -       0x00000001   Zero   RW          364    .bss.tail           message_queue.o
+    0x200010fd   0x080045bc   0x00000003   PAD
+    0x20001100        -       0x00000200   Zero   RW          372    HEAP                startup_stm32f10x_md.o
+    0x20001300        -       0x00000400   Zero   RW          371    STACK               startup_stm32f10x_md.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       700          0          0          0        266       1660   cyclops_rx.o
+       278          0          0          0          0       1181   cyclops_tx.o
+       298          0          0          0          0       1596   gpio.o
+      1982          8          0          9         29       7187   logic_cyclops.o
+       488          0          0          0          7       2355   logic_drone.o
+       246          0          0          0          1       2060   main.o
+      3930         34       3064          0       1544      11683   mavlink_rx.o
+      2920          0        256          0         96      10928   mavlink_tx.o
+       374          0          0          0       2274       2613   message_queue.o
+       274          0          0          4          0       2729   pwm.o
+       352          0          0          0          0       1135   rcc.o
+        64         26        236          0       1536        848   startup_stm32f10x_md.o
+       400          0          0          4          0       2994   system_stm32f10x.o
+       494          0          0          0          4       5462   timer.o
+       534          0          0          0          0       3944   usart.o
+
+    ----------------------------------------------------------------------
+     13448         68       3588         20       5768      58375   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+       114          0          0          3         11          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         8          0          0          0          0         68   __main.o
+         0          0          0          0          0          0   __rtentry.o
+        12          0          0          0          0          0   __rtentry2.o
+         6          0          0          0          0          0   __rtentry4.o
+        94          8          0          0          0          0   __scatter.o
+        26          0          0          0          0          0   __scatter_copy.o
+        28          0          0          0          0          0   __scatter_zi.o
+        18          0          0          0          0         80   exit.o
+         6          0          0          0          0        152   heapauxi.o
+         0          0          0          0          0          0   indicate_semi.o
+         2          0          0          0          0          0   libinit.o
+         2          0          0          0          0          0   libinit2.o
+         2          0          0          0          0          0   libshutdown.o
+         2          0          0          0          0          0   libshutdown2.o
+         8          4          0          0         96         68   libspace.o
+        88          0          0          0          0         76   memcmp.o
+        68          0          0          0          0         68   rt_memclr.o
+        78          0          0          0          0         80   rt_memclr_w.o
+       138          0          0          0          0         68   rt_memcpy_v6.o
+       100          0          0          0          0         80   rt_memcpy_w.o
+         2          0          0          0          0          0   rtexit.o
+        10          0          0          0          0          0   rtexit2.o
+        12          4          0          0          0         68   sys_exit.o
+        74          0          0          0          0         80   sys_stackheap_outer.o
+         2          0          0          0          0         68   use_no_semi.o
+
+    ----------------------------------------------------------------------
+       796         16          0          0         96        956   Library Totals
+        10          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       786         16          0          0         96        956   c_w.l
+
+    ----------------------------------------------------------------------
+       796         16          0          0         96        956   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     14244         84       3588         20       5864      58771   Grand Totals
+     14244         84       3588         20       5864      58771   ELF Image Totals
+     14244         84       3588         20          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                17832 (  17.41kB)
+    Total RW  Size (RW Data + ZI Data)              5884 (   5.75kB)
+    Total ROM Size (Code + RO Data + RW Data)      17852 (  17.43kB)
+
+==============================================================================
+
