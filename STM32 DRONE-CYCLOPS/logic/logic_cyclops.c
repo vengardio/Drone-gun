@@ -2,11 +2,15 @@
 #include "cyclops_tx.h"
 #include "usart.h"
 #include "mavlink_tx.h"
+#include "mavlink_rx.h"
 #include "logic_drone.h"
 #include "gpio.h"
 #include "pwm.h"
 #include "timer.h"
 #include <stdbool.h>
+#include <string.h>
+
+#define RESET_HEARTBEAT_TIMEOUT_MS 10000
 
 
 
@@ -152,21 +156,93 @@ void LogicCyclops_ProcessMessage(Message *msg)
 
         //=============================
         //        HARDWARE RESET
-        // Запоминаем packet_id и ждём heartbeat перед ответом
+        // Отправляем reset дрону, ждём новый heartbeat и отвечаем Циклопу
         //=============================
         case CMD_HW_RESET:
-            pending_hw_reset_response = true;
-            saved_packet_id_for_reset = packet_id;
+        {
+            Message old_msg;
+            Message msg;
+            uint32_t start;
+            uint8_t old_msg_valid;
+            uint8_t heartbeat_received = 0;
+            uint8_t payload[1];
+
+            old_msg_valid = MessageQueue_PeekLast(&old_msg);
+            MavlinkTx_HwReset();
+            start = GetTick();
+
+            while(!heartbeat_received)
+            {
+                if(Timeout(start, RESET_HEARTBEAT_TIMEOUT_MS))
+                {
+                    Cyclops_SendUnknown(packet_id);
+                    return;
+                }
+
+                if(!MessageQueue_PeekLast(&msg))
+                    continue;
+
+                if(old_msg_valid &&
+                   (msg.source == old_msg.source) &&
+                   (msg.size == old_msg.size) &&
+                   (memcmp(msg.data, old_msg.data, msg.size) == 0))
+                {
+                    continue;
+                }
+
+                if(MavlinkRx_MessageIsHeartbeat(&msg))
+                    heartbeat_received = 1;
+            }
+
+            payload[0] = last_error;
+            Cyclops_SendResponse(packet_id, CMD_HW_RESET, payload, 1);
             break;
+        }
 
         //=============================
         //         SOFTWARE RESET
-        // Запоминаем packet_id и ждём heartbeat перед ответом
+        // Отправляем reset дрону, ждём новый heartbeat и отвечаем Циклопу
         //=============================
         case CMD_SW_RESET:
-            pending_sw_reset_response = true;
-            saved_packet_id_for_reset = packet_id;
+        {
+            Message old_msg;
+            Message msg;
+            uint32_t start;
+            uint8_t old_msg_valid;
+            uint8_t heartbeat_received = 0;
+            uint8_t payload[1];
+
+            old_msg_valid = MessageQueue_PeekLast(&old_msg);
+            MavlinkTx_SwReset();
+            start = GetTick();
+
+            while(!heartbeat_received)
+            {
+                if(Timeout(start, RESET_HEARTBEAT_TIMEOUT_MS))
+                {
+                    Cyclops_SendUnknown(packet_id);
+                    return;
+                }
+
+                if(!MessageQueue_PeekLast(&msg))
+                    continue;
+
+                if(old_msg_valid &&
+                   (msg.source == old_msg.source) &&
+                   (msg.size == old_msg.size) &&
+                   (memcmp(msg.data, old_msg.data, msg.size) == 0))
+                {
+                    continue;
+                }
+
+                if(MavlinkRx_MessageIsHeartbeat(&msg))
+                    heartbeat_received = 1;
+            }
+
+            payload[0] = last_error;
+            Cyclops_SendResponse(packet_id, CMD_SW_RESET, payload, 1);
             break;
+        }
 
         //=============================
         //          GET ERROR
@@ -430,19 +506,5 @@ void LogicCyclops_ProcessMessage(Message *msg)
         default:
             Cyclops_SendUnknown(packet_id);
             break;
-    }
-}
-
-void LogicCyclops_OnHeartbeatReceived(void)
-{
-    if(pending_hw_reset_response || pending_sw_reset_response)
-    {
-        pending_hw_reset_response = false;
-        pending_sw_reset_response = false;
-
-        uint8_t payload[1];
-        payload[0] = last_error;
-
-        Cyclops_SendResponse(saved_packet_id_for_reset, CMD_HW_RESET, payload, 1);
     }
 }

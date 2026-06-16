@@ -20,6 +20,7 @@ typedef struct
 
 void MessageQueue_Push(MessageSource source, uint8_t *data, uint16_t size);
 uint8_t MessageQueue_Pop(Message *msg);
+uint8_t MessageQueue_PeekLast(Message *msg);
 uint8_t MessageQueue_ReadLast(Message *msg);
 uint8_t MessageQueue_ReadLastBySource(MessageSource source, Message *msg);
 

@@ -3,6 +3,8 @@
 
 void MavlinkTx_Init(void);
 
+void MavlinkTx_SwReset(void);
+void MavlinkTx_HwReset(void);
 void MavlinkTx_SendPrepare(void);
 void MavlinkTx_SendCancel(void);
 void MavlinkTx_SendFly(void);

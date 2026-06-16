@@ -34,10 +34,6 @@ static uint8_t launch_reset_pending = 0;
 static uint16_t orient_azimuth = 0;
 static int16_t orient_elevation = 0;
 
-static bool pending_hw_reset_response = false;
-static bool pending_sw_reset_response = false;
-static uint8_t saved_packet_id_for_reset = 0;
-
 static uint16_t cached_drone_voltage_mv = 25200;
 static int16_t cached_drone_temp = 25;
 static uint8_t cached_drone_battery_pct = 100;

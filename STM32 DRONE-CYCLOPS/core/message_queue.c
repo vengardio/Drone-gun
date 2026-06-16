@@ -63,6 +63,26 @@ uint8_t MessageQueue_Pop(Message *msg)
     return res;
 }
 
+/* Reads the newest message without removing queued messages. */
+uint8_t MessageQueue_PeekLast(Message *msg)
+{
+    uint8_t res = 0;
+    uint8_t last;
+
+    __disable_irq();
+
+    if(tail != head)
+    {
+        last = (head == 0) ? (MESSAGE_QUEUE_SIZE - 1) : (head - 1);
+        *msg = queue[last];
+        res = 1;
+    }
+
+    __enable_irq();
+
+    return res;
+}
+
 /* Reads the newest message and drops older queued messages. */
 uint8_t MessageQueue_ReadLast(Message *msg)
 {

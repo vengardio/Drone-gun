@@ -7,7 +7,10 @@
 #define GUN_SYSTEM_ID             255
 #define GUN_COMPONENT_ID          0
 
+#define DRONE_CMD_SW_RESET        31001
+#define DRONE_CMD_HW_RESET        31002
 #define DRONE_CMD_PREPARE         31003
+#define DRONE_CMD_GET_DETECTIONS  31004
 #define DRONE_CMD_CANCEL          31006
 #define DRONE_CMD_FLY             31009
 
@@ -35,6 +38,16 @@ static void MavlinkTx_SendCommand(uint16_t command)
 void MavlinkTx_Init(void)
 {
     mavlink_set_proto_version(MAVLINK_COMM_0, 2);
+}
+
+void MavlinkTx_SwReset(void)
+{
+    MavlinkTx_SendCommand(DRONE_CMD_SW_RESET);
+}
+
+void MavlinkTx_HwReset(void)
+{
+    MavlinkTx_SendCommand(DRONE_CMD_HW_RESET);
 }
 
 void MavlinkTx_SendPrepare(void)

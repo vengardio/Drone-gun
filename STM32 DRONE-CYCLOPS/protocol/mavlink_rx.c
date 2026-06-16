@@ -35,6 +35,20 @@ static void UpdateExpectedSize(void)
     expected = size;
 }
 
+uint8_t MavlinkRx_MessageIsHeartbeat(Message *msg)
+{
+    if(msg->source != MESSAGE_SOURCE_DRONE)
+        return 0;
+
+    if(msg->size < MAVLINK_V2_HEADER_SIZE)
+        return 0;
+
+    if(msg->data[0] != MAVLINK_V2_START)
+        return 0;
+
+    return (msg->data[7] == 0) && (msg->data[8] == 0) && (msg->data[9] == 0);
+}
+
 /* Feeds one byte from USART2, validates MAVLink CRC, stores full frame. */
 void Mavlink_RxByte(uint8_t data)
 {
