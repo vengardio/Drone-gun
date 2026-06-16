@@ -29,7 +29,10 @@ static void Main_ReadMessages(void)
             LogicCyclops_ProcessMessage(&msg);
 
         if(msg.source == MESSAGE_SOURCE_DRONE)
+        {
+            LogicCyclops_ProcessDroneMessage(&msg);
             LogicDrone_ProcessMessage(&msg);
+        }
     }
 }
 

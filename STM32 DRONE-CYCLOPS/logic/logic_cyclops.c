@@ -7,12 +7,30 @@
 #include "gpio.h"
 #include "pwm.h"
 #include "timer.h"
+#include "common/mavlink.h"
 #include <stdbool.h>
 #include <string.h>
 
 #define RESET_HEARTBEAT_TIMEOUT_MS 10000
+#define MAVLINK_MSG_ID_HEARTBEAT_LOCAL 0
+#define MAVLINK_HEARTBEAT_SYSTEM_STATUS_OFFSET 7
 
+static uint8_t last_error = 0;
+static uint8_t engines_state = 0;
+static uint8_t interceptor_state = INTERCEPTOR_STATE_IDLE;
+static uint8_t end_latched = 0;
+static uint8_t launch_reset_pending = 0;
+static uint16_t orient_azimuth = 0;
+static int16_t orient_elevation = 0;
 
+static uint16_t cached_drone_voltage_mv = 25200;
+static int16_t cached_drone_temp = 25;
+static uint8_t cached_drone_battery_pct = 100;
+static uint64_t cached_drone_serial = 0;
+static uint32_t cached_drone_version = 10;
+static uint8_t cached_drone_target_count = 0;
+static uint8_t cached_drone_target_intensity = 0;
+static uint8_t cached_drone_system_status = 0;
 
 void Cyclops_UpdateDroneBattery(uint16_t voltage_mv, int16_t temp, uint8_t pct)
 {
@@ -36,6 +54,95 @@ void Cyclops_UpdateDroneTarget(uint8_t count, uint8_t intensity)
 void Cyclops_UpdateDroneStatus(uint8_t status)
 {
     cached_drone_system_status = status;
+}
+
+static uint8_t Cyclops_ParseMavlinkMessage(Message *raw, mavlink_message_t *decoded)
+{
+    mavlink_status_t status;
+    uint16_t i;
+
+    if(raw->source != MESSAGE_SOURCE_DRONE)
+        return 0;
+
+    for(i=0;i<raw->size;i++)
+    {
+        if(mavlink_parse_char(MAVLINK_COMM_2, raw->data[i], decoded, &status))
+            return 1;
+    }
+
+    return 0;
+}
+
+static uint16_t Cyclops_ReadTotalBatteryVoltage(mavlink_battery_status_t *battery)
+{
+    uint8_t i;
+    uint8_t valid_cells = 0;
+    uint32_t total_mv = 0;
+
+    for(i=0;i<10;i++)
+    {
+        if((battery->voltages[i] == 0) || (battery->voltages[i] == UINT16_MAX))
+            continue;
+
+        valid_cells++;
+        total_mv += battery->voltages[i];
+    }
+
+    if(valid_cells == 0)
+        return 0;
+
+    if(total_mv > UINT16_MAX)
+        return UINT16_MAX;
+
+    return (uint16_t)total_mv;
+}
+
+static int16_t Cyclops_ReadBatteryTemperatureC(mavlink_battery_status_t *battery)
+{
+    if(battery->temperature == INT16_MAX)
+        return cached_drone_temp;
+
+    return battery->temperature / 100;
+}
+
+static uint8_t Cyclops_ReadHeartbeatStatus(mavlink_message_t *msg)
+{
+    const uint8_t *payload = (const uint8_t *)_MAV_PAYLOAD(msg);
+
+    if(msg->len <= MAVLINK_HEARTBEAT_SYSTEM_STATUS_OFFSET)
+        return cached_drone_system_status;
+
+    return payload[MAVLINK_HEARTBEAT_SYSTEM_STATUS_OFFSET];
+}
+
+void LogicCyclops_ProcessDroneMessage(Message *msg)
+{
+    mavlink_message_t mav_msg;
+    mavlink_battery_status_t battery;
+    uint16_t voltage_mv;
+
+    if(!Cyclops_ParseMavlinkMessage(msg, &mav_msg))
+        return;
+
+    if(mav_msg.msgid == MAVLINK_MSG_ID_HEARTBEAT_LOCAL)
+    {
+        Cyclops_UpdateDroneStatus(Cyclops_ReadHeartbeatStatus(&mav_msg));
+        return;
+    }
+
+    if(mav_msg.msgid != MAVLINK_MSG_ID_BATTERY_STATUS)
+        return;
+
+    mavlink_msg_battery_status_decode(&mav_msg, &battery);
+
+    voltage_mv = Cyclops_ReadTotalBatteryVoltage(&battery);
+    if(voltage_mv)
+        cached_drone_voltage_mv = voltage_mv;
+
+    if((battery.battery_remaining >= 0) && (battery.battery_remaining <= 100))
+        cached_drone_battery_pct = (uint8_t)battery.battery_remaining;
+
+    cached_drone_temp = Cyclops_ReadBatteryTemperatureC(&battery);
 }
 
 static void Cyclops_SendResponse(uint8_t packet_id, uint8_t cmd, uint8_t *payload, uint8_t payload_size)
