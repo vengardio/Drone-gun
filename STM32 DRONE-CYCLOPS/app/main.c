@@ -15,9 +15,10 @@
 
 #include <stdint.h>
 
-
-
 static uint8_t cyclops_connected = 0;
+
+
+
 
 static void Main_ReadMessages(void)
 {
@@ -27,69 +28,65 @@ static void Main_ReadMessages(void)
     {
         if(msg.source == MESSAGE_SOURCE_CYCLOPS)
             LogicCyclops_ProcessMessage(&msg);
-
-        if(msg.source == MESSAGE_SOURCE_DRONE)
-        {
-            LogicCyclops_ProcessDroneMessage(&msg);
-            LogicDrone_ProcessMessage(&msg);
-        }
     }
 }
 
-void App_Init(void)
-{
-    RCC_Init();
-    GPIO_Init();
-    Optocouplers_Enable();
-
-    Timer_Init();
-    StatusLedTimer_Init();
-    USART_Init(115200);
-
-    PWM_InitServo();
-    MavlinkTx_Init();
-    LogicDrone_Init();
-}
-
-void App_Process(void)
-{
-    if(cyclops_connected)
-    {
-        LogicCyclops_Process();
-        Main_ReadMessages();
-    }
-    else
-    {
-        Main_ReadMessages();
-        LogicDrone_Process();
-    }
-}
 
 
 
 int main(void)
 {
-    App_Init();
+  RCC_Init();
+  GPIO_Init();
+  Optocouplers_Enable();
 
-    while(1)
-    {
-        App_Process();
+  Timer_Init();
+  StatusLedTimer_Init();
+  USART_Init(115200);
+
+  PWM_InitServo();
+  MavlinkTx_Init();
+  LogicDrone_Init();
+	
+	Servo_Release();
+	
+	uint8_t EndPrev = End_Read();
+
+  while(1)
+  {
+		if (!EndPrev && End_Read()) {
+			if (End_Read()) {
+				EndPrev = End_Read();
+				DelayMs(200);
+				Servo_Hold();
+			}
+		}
+		
+		
+    if(cyclops_connected) {
+			Main_ReadMessages();
+    } 
+	  else {
+			LogicDrone_Process();
     }
+  }
 }
+
+
+
 
 
 
 void USART1_IRQHandler(void)
 {
-    if(USART1->SR & USART_SR_RXNE)
-    {
-        cyclops_connected = 1;
-        Cyclops_RxByte((uint8_t)USART1->DR);
-    }
+  if(USART1->SR & USART_SR_RXNE)
+  {
+    cyclops_connected = 1;
+    Cyclops_RxByte((uint8_t)USART1->DR);
+  }
 }
 
 void USART2_IRQHandler(void)
 {
-    if(USART2->SR & USART_SR_RXNE)
-        Mavlink_RxByte((uint8_t)USART2->DR);
+  if(USART2->SR & USART_SR_RXNE)  Mavlink_RxByte((uint8_t)USART2->DR);
 }

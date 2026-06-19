@@ -8,5 +8,7 @@ void MavlinkTx_HwReset(void);
 void MavlinkTx_SendPrepare(void);
 void MavlinkTx_SendCancel(void);
 void MavlinkTx_SendFly(void);
+void MavlinkTx_SendGetDetections(void);
+void MavlinkTx_SendInit(void);
 
 #endif

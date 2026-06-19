@@ -1,4 +1,5 @@
 #include "cyclops_tx.h"
+#include "usart.h"
 
 #define CYCLOPS_START_BYTE 0xB7
 #define CYCLOPS_HEADER_SIZE 6
@@ -38,4 +39,21 @@ uint16_t CyclopsTx_BuildPacket(uint8_t adr,
         out[pos++] = XorData(out, CYCLOPS_HEADER_SIZE, CYCLOPS_HEADER_SIZE + data_count);
 
     return pos;
+}
+
+void Cyclops_SendResponse(uint8_t packet_id, uint8_t cmd, uint8_t *payload, uint8_t payload_size)
+{
+    uint8_t packet[280];
+    uint16_t len;
+
+    len = CyclopsTx_BuildPacket(
+        CYCLOPS_MASTER_ADDRESS,
+        packet_id,
+        cmd,
+        payload,
+        payload_size,
+        packet
+    );
+
+    USART1_SendArray(packet, len);
 }

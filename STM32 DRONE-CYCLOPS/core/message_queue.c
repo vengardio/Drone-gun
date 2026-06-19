@@ -131,3 +131,32 @@ uint8_t MessageQueue_ReadLastBySource(MessageSource source, Message *msg)
 
     return res;
 }
+
+/* Removes messages from selected source and keeps all other messages in order. */
+void MessageQueue_ClearBySource(MessageSource source)
+{
+    uint8_t read;
+    uint8_t write;
+
+    __disable_irq();
+
+    read = tail;
+    write = tail;
+
+    while(read != head)
+    {
+        if(queue[read].source != source)
+        {
+            if(write != read)
+                queue[write] = queue[read];
+
+            write = NextIndex(write);
+        }
+
+        read = NextIndex(read);
+    }
+
+    head = write;
+
+    __enable_irq();
+}

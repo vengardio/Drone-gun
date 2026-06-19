@@ -49,7 +49,7 @@ uint8_t MavlinkRx_MessageIsHeartbeat(Message *msg)
     return (msg->data[7] == 0) && (msg->data[8] == 0) && (msg->data[9] == 0);
 }
 
-/* Feeds one byte from USART2, validates MAVLink CRC, stores full frame. */
+/* Переводит принятые сырые данные из USART2 в собранный пакет (не сока) */
 void Mavlink_RxByte(uint8_t data)
 {
     mavlink_message_t msg;
@@ -87,4 +87,32 @@ void Mavlink_RxByte(uint8_t data)
 
     if(expected && pos >= expected)
         ResetParser();
+}
+
+//Расшифровывает принятый сырой пакет из msg в сообщение mavlink
+uint8_t Convert_msg_to_mavlink(Message *raw_msg,
+                               mavlink_message_t *mav_msg)
+{
+    mavlink_status_t status;
+    uint16_t i;
+
+    if((raw_msg == 0) || (mav_msg == 0))
+        return 0;
+
+    if(raw_msg->source != MESSAGE_SOURCE_DRONE)
+        return 0;
+
+    for(i = 0; i < raw_msg->size; i++)
+    {
+        if(mavlink_parse_char(
+            MAVLINK_COMM_2,
+            raw_msg->data[i],
+            mav_msg,
+            &status))
+        {
+            return 1;
+        }
+    }
+
+    return 0;
 }

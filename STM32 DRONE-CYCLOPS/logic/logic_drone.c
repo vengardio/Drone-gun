@@ -57,7 +57,12 @@ void LogicDrone_Process(void)
         {
             Servo_Release();
             LogicDrone_SetState(LOGIC_DRONE_WAIT_END);
-        }
+        } 
+				else if (launch && !lastLaunch) 
+				{
+					Servo_Release();
+          LogicDrone_SetState(LOGIC_DRONE_WAIT_END);
+				}
         else if(safety)
         {
             MavlinkTx_SendPrepare();
@@ -84,13 +89,8 @@ void LogicDrone_Process(void)
     }
     else if(logic_drone_state == LOGIC_DRONE_CANCELLED)
     {
-        if(Timeout(stateTime, 2000))
-        {
-            Servo_Release();
-            DelayMs(200);
-            LogicDrone_SetDroneState(DRONE_STATE_IDLE);
-            LogicDrone_SetState(LOGIC_DRONE_WAIT_END);
-        }
+        LogicDrone_SetDroneState(DRONE_STATE_IDLE);
+        LogicDrone_SetState(LOGIC_DRONE_WAIT_END);
     }
 
     lastLaunch = launch;

@@ -7,6 +7,7 @@
 #define GUN_SYSTEM_ID             255
 #define GUN_COMPONENT_ID          0
 
+#define DRONE_CMD_INIT            31000
 #define DRONE_CMD_SW_RESET        31001
 #define DRONE_CMD_HW_RESET        31002
 #define DRONE_CMD_PREPARE         31003
@@ -64,3 +65,14 @@ void MavlinkTx_SendFly(void)
 {
     MavlinkTx_SendCommand(DRONE_CMD_FLY);
 }
+
+void MavlinkTx_SendGetDetections(void)
+{
+    MavlinkTx_SendCommand(DRONE_CMD_GET_DETECTIONS);
+}
+
+void MavlinkTx_SendInit(void)
+{
+    MavlinkTx_SendCommand(DRONE_CMD_INIT);
+}
+

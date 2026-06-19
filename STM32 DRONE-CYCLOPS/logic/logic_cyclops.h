@@ -21,17 +21,13 @@
 #define PARAM_DRONE_LAUNCH     0x13
 #define PARAM_SET_ORIENT             0x14
 
-#define INTERCEPTOR_STATE_IDLE      0
-#define INTERCEPTOR_STATE_FIXED     1
-#define INTERCEPTOR_STATE_LAUNCHED  2
+#define MAVLINK_MSGID_HEARTBEAT 0
+#define MAVLINK_MSGID_SYSTEM_TIME 2
+#define MAVLINK_MSGID_BATTERY_STATUS 147
+#define MAVLINK_MSGID_DEBUG 254
 
-void LogicCyclops_Process(void);
+#define DRONE_REQUEST_TIMEOUT 5000
+
 void LogicCyclops_ProcessMessage(Message *msg);
-void LogicCyclops_ProcessDroneMessage(Message *msg);
-
-void Cyclops_UpdateDroneBattery(uint16_t voltage_mv, int16_t temp, uint8_t pct);
-void Cyclops_UpdateDroneInfo(uint64_t serial, uint32_t version);
-void Cyclops_UpdateDroneTarget(uint8_t count, uint8_t intensity);
-void Cyclops_UpdateDroneStatus(uint8_t status);
 
 #endif
