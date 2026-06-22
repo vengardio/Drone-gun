@@ -11,4 +11,10 @@ void MavlinkTx_SendFly(void);
 void MavlinkTx_SendGetDetections(void);
 void MavlinkTx_SendInit(void);
 
+#define MAVLINK_MSGID_HEARTBEAT 0
+#define MAVLINK_MSGID_SYSTEM_TIME 2
+#define MAVLINK_MSGID_BATTERY_STATUS 147
+#define MAVLINK_MSGID_DEBUG 254
+#define MAVLINK_MSGID_ACK 77
+
 #endif
