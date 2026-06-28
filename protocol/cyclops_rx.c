@@ -97,7 +97,12 @@ void Cyclops_RxByte(uint8_t data)
     if(expected && pos >= expected)
     {
         if(PacketIsValid())
-            MessageQueue_Push(MESSAGE_SOURCE_CYCLOPS, buf, pos);
+            MessageQueue_Push(
+                &cyclops_message_queue,
+                MESSAGE_SOURCE_CYCLOPS,
+                buf,
+                pos
+            );
 
         ResetParser();
     }

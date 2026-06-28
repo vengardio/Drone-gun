@@ -24,7 +24,7 @@ static void Main_ReadMessages(void)
 {
     Message msg;
 
-    while(MessageQueue_Pop(&msg))
+    while(MessageQueue_Pop(&cyclops_message_queue, &msg))
     {
         if(msg.source == MESSAGE_SOURCE_CYCLOPS)
             LogicCyclops_ProcessMessage(&msg);

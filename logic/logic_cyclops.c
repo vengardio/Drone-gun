@@ -20,7 +20,7 @@ uint8_t DroneResponseWaitCycle(uint8_t requested_msg_id, uint32_t TimeOut) {
 	
 	
 	while(!msg_arrived) {
-		MessageQueue_PeekLast(&msg);
+		MessageQueue_PeekLast(&mavlink_message_queue, &msg);
 		
 		//Условия выхода с ошибкой
 		if (GetTick()-startTime > TimeOut) {   
@@ -66,7 +66,7 @@ void LogicCyclops_ProcessMessage(Message *msg) {
 			uint8_t payload[1];
 			
 			// Ожидание следующего HEARTBEAT пакета
-			MessageQueue_ClearBySource(MESSAGE_SOURCE_DRONE);
+			MessageQueue_Clear(&mavlink_message_queue);
 			if (DroneResponseWaitCycle(MAVLINK_MSGID_HEARTBEAT, DRONE_REQUEST_TIMEOUT)) {
 				payload[0] = 0;
 				Cyclops_SendResponse(packet_id, CMD_PING, payload, 1);
@@ -82,7 +82,7 @@ void LogicCyclops_ProcessMessage(Message *msg) {
     {
 			uint8_t payload[1];
 			
-			MessageQueue_ClearBySource(MESSAGE_SOURCE_DRONE);
+			MessageQueue_Clear(&mavlink_message_queue);
 			MavlinkTx_HwReset();
 			// Ожидание следующего SYSTEM_TIME пакета
 			if (DroneResponseWaitCycle(MAVLINK_MSGID_SYSTEM_TIME, DRONE_REQUEST_TIMEOUT)) {
@@ -102,7 +102,7 @@ void LogicCyclops_ProcessMessage(Message *msg) {
     {
   		uint8_t payload[1];
 			
-			MessageQueue_ClearBySource(MESSAGE_SOURCE_DRONE);
+			MessageQueue_Clear(&mavlink_message_queue);
 			MavlinkTx_SwReset();
 			// Ожидание следующего HEARTBEAT пакета
 			if (DroneResponseWaitCycle(MAVLINK_MSGID_HEARTBEAT, DRONE_REQUEST_TIMEOUT)) {
@@ -195,7 +195,7 @@ void LogicCyclops_ProcessMessage(Message *msg) {
 					MavlinkTx_SendFly();
 					
 					//Ожидание ACK или NACK
-					MessageQueue_ClearBySource(MESSAGE_SOURCE_DRONE);
+					MessageQueue_Clear(&mavlink_message_queue);
 					uint8_t MessageGot = DroneResponseWaitCycle(MAVLINK_MSGID_ACK, 2000);
 					
 					Message msg;
@@ -204,7 +204,7 @@ void LogicCyclops_ProcessMessage(Message *msg) {
 					uint8_t payload[5];
 					
 					if (MessageGot == 1) {
-						MessageQueue_PeekLast(&msg);
+						MessageQueue_PeekLast(&mavlink_message_queue, &msg);
 						
 						if (Convert_msg_to_mavlink(&msg, &mav_msg)) {
 							mavlink_command_ack_t command_ack;
@@ -283,9 +283,9 @@ void LogicCyclops_ProcessMessage(Message *msg) {
 					// 3 попытки дождаться BATTERY STATUS
 					for (int i = 0; i < 3; i++) {
 						//Проверка что сообщение пришло
-						MessageQueue_ClearBySource(MESSAGE_SOURCE_DRONE);
+						MessageQueue_Clear(&mavlink_message_queue);
 						if (DroneResponseWaitCycle(MAVLINK_MSGID_BATTERY_STATUS, DRONE_REQUEST_TIMEOUT)) {
-							MessageQueue_PeekLast(&msg);
+							MessageQueue_PeekLast(&mavlink_message_queue, &msg);
 							
 							//Проверка что оно конвертируется в mavlink
 							if (Convert_msg_to_mavlink(&msg, &mav_msg)) 
@@ -299,7 +299,7 @@ void LogicCyclops_ProcessMessage(Message *msg) {
 					}
 					
 					//Обработка принятого сообщения
-					MessageQueue_PeekLast(&msg);
+					MessageQueue_PeekLast(&mavlink_message_queue, &msg);
 					Convert_msg_to_mavlink(&msg, &mav_msg);
 					
 					mavlink_battery_status_t battery;
@@ -332,11 +332,11 @@ void LogicCyclops_ProcessMessage(Message *msg) {
 					
 					// 3 попытки дождаться DEBUG
 					for (int i = 0; i < 3; i++) {
-						MessageQueue_ClearBySource(MESSAGE_SOURCE_DRONE);
+						MessageQueue_Clear(&mavlink_message_queue);
 						MavlinkTx_SendGetDetections();
 						//Проверка что сообщение пришло
 						if (DroneResponseWaitCycle(MAVLINK_MSGID_DEBUG, DRONE_REQUEST_TIMEOUT)) {
-							MessageQueue_PeekLast(&msg);
+							MessageQueue_PeekLast(&mavlink_message_queue, &msg);
 							
 							//Проверка что оно конвертируется в mavlink
 							if (Convert_msg_to_mavlink(&msg, &mav_msg)) 
@@ -350,7 +350,7 @@ void LogicCyclops_ProcessMessage(Message *msg) {
 					}
 					
 					//Обработка принятого сообщения
-					MessageQueue_PeekLast(&msg);
+					MessageQueue_PeekLast(&mavlink_message_queue, &msg);
 					Convert_msg_to_mavlink(&msg, &mav_msg);
 					
 					mavlink_debug_t debug;
@@ -398,11 +398,11 @@ void LogicCyclops_ProcessMessage(Message *msg) {
 					
 					// 3 попытки дождаться SYSTEM_TIME
 					for (int i = 0; i < 3; i++) {
-						MessageQueue_ClearBySource(MESSAGE_SOURCE_DRONE);
+						MessageQueue_Clear(&mavlink_message_queue);
 						MavlinkTx_SendInit();
 						//Проверка что сообщение пришло
 						if (DroneResponseWaitCycle(MAVLINK_MSGID_SYSTEM_TIME, DRONE_REQUEST_TIMEOUT)) {
-							MessageQueue_PeekLast(&msg);
+							MessageQueue_PeekLast(&mavlink_message_queue, &msg);
 							
 							//Проверка что оно конвертируется в mavlink
 							if (Convert_msg_to_mavlink(&msg, &mav_msg)) 
@@ -416,7 +416,7 @@ void LogicCyclops_ProcessMessage(Message *msg) {
 					}
 					
 					//Обработка принятого сообщения
-					MessageQueue_PeekLast(&msg);
+					MessageQueue_PeekLast(&mavlink_message_queue, &msg);
 					Convert_msg_to_mavlink(&msg, &mav_msg);
 					
 					mavlink_system_time_t system_time;

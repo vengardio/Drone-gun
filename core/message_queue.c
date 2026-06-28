@@ -1,162 +1,102 @@
 #include "message_queue.h"
 #include "stm32f10x.h"
 
-#define MESSAGE_QUEUE_SIZE 8
+MessageQueue cyclops_message_queue;
+MessageQueue mavlink_message_queue;
 
-static volatile uint8_t head;
-static volatile uint8_t tail;
-static Message queue[MESSAGE_QUEUE_SIZE];
-
-/* Returns next ring buffer index. */
-static uint8_t NextIndex(uint8_t x)
+static uint8_t NextIndex(uint8_t index)
 {
-    x++;
-    if(x >= MESSAGE_QUEUE_SIZE)
-        x = 0;
+    index++;
+    if(index >= MESSAGE_QUEUE_SIZE)
+        index = 0;
 
-    return x;
+    return index;
 }
 
-/* Copies raw packet bytes into a queue slot. */
-static void CopyMessage(Message *dst, MessageSource source, uint8_t *data, uint16_t size)
+static void CopyMessage(Message *destination,
+                        MessageSource source,
+                        uint8_t *data,
+                        uint16_t size)
 {
     uint16_t i;
 
     if(size > MESSAGE_MAX_SIZE)
         size = MESSAGE_MAX_SIZE;
 
-    dst->source = source;
-    dst->size = size;
+    destination->source = source;
+    destination->size = size;
 
-    for(i=0;i<size;i++)
-        dst->data[i] = data[i];
+    for(i = 0; i < size; i++)
+        destination->data[i] = data[i];
 }
 
-/* Adds one validated message to the queue. Oldest message is overwritten if full. */
-void MessageQueue_Push(MessageSource source, uint8_t *data, uint16_t size)
+void MessageQueue_Push(MessageQueue *queue,
+                       MessageSource source,
+                       uint8_t *data,
+                       uint16_t size)
 {
-    uint8_t next = NextIndex(head);
+    uint8_t next;
 
-    CopyMessage(&queue[head], source, data, size);
-    head = next;
+    if(queue == 0)
+        return;
 
-    if(head == tail)
-        tail = NextIndex(tail);
+    next = NextIndex(queue->head);
+    CopyMessage(&queue->items[queue->head], source, data, size);
+    queue->head = next;
+
+    if(queue->head == queue->tail)
+        queue->tail = NextIndex(queue->tail);
 }
 
-/* Reads the oldest message and removes it from the queue. */
-uint8_t MessageQueue_Pop(Message *msg)
+uint8_t MessageQueue_Pop(MessageQueue *queue, Message *msg)
 {
-    uint8_t res = 0;
+    uint8_t result = 0;
+
+    if((queue == 0) || (msg == 0))
+        return 0;
 
     __disable_irq();
 
-    if(tail != head)
+    if(queue->tail != queue->head)
     {
-        *msg = queue[tail];
-        tail = NextIndex(tail);
-        res = 1;
+        *msg = queue->items[queue->tail];
+        queue->tail = NextIndex(queue->tail);
+        result = 1;
     }
 
     __enable_irq();
-
-    return res;
+    return result;
 }
 
-/* Reads the newest message without removing queued messages. */
-uint8_t MessageQueue_PeekLast(Message *msg)
+uint8_t MessageQueue_PeekLast(MessageQueue *queue, Message *msg)
 {
-    uint8_t res = 0;
+    uint8_t result = 0;
     uint8_t last;
 
+    if((queue == 0) || (msg == 0))
+        return 0;
+
     __disable_irq();
 
-    if(tail != head)
+    if(queue->tail != queue->head)
     {
-        last = (head == 0) ? (MESSAGE_QUEUE_SIZE - 1) : (head - 1);
-        *msg = queue[last];
-        res = 1;
+        last = (queue->head == 0) ?
+               (MESSAGE_QUEUE_SIZE - 1) :
+               (queue->head - 1);
+        *msg = queue->items[last];
+        result = 1;
     }
 
     __enable_irq();
-
-    return res;
+    return result;
 }
 
-/* Reads the newest message and drops older queued messages. */
-uint8_t MessageQueue_ReadLast(Message *msg)
+void MessageQueue_Clear(MessageQueue *queue)
 {
-    uint8_t res = 0;
-    uint8_t last;
+    if(queue == 0)
+        return;
 
     __disable_irq();
-
-    if(tail != head)
-    {
-        last = (head == 0) ? (MESSAGE_QUEUE_SIZE - 1) : (head - 1);
-        *msg = queue[last];
-        tail = head;
-        res = 1;
-    }
-
-    __enable_irq();
-
-    return res;
-}
-
-/* Reads the newest message from selected source and drops older queued messages. */
-uint8_t MessageQueue_ReadLastBySource(MessageSource source, Message *msg)
-{
-    uint8_t res = 0;
-    uint8_t i;
-
-    __disable_irq();
-
-    i = head;
-
-    while(i != tail)
-    {
-        i = (i == 0) ? (MESSAGE_QUEUE_SIZE - 1) : (i - 1);
-
-        if(queue[i].source == source)
-        {
-            *msg = queue[i];
-            tail = head;
-            res = 1;
-            break;
-        }
-    }
-
-    __enable_irq();
-
-    return res;
-}
-
-/* Removes messages from selected source and keeps all other messages in order. */
-void MessageQueue_ClearBySource(MessageSource source)
-{
-    uint8_t read;
-    uint8_t write;
-
-    __disable_irq();
-
-    read = tail;
-    write = tail;
-
-    while(read != head)
-    {
-        if(queue[read].source != source)
-        {
-            if(write != read)
-                queue[write] = queue[read];
-
-            write = NextIndex(write);
-        }
-
-        read = NextIndex(read);
-    }
-
-    head = write;
-
+    queue->tail = queue->head;
     __enable_irq();
 }
