@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\Drone-gun.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Drone-gun.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Tue Jun 23 11:12:14 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Sun Jun 28 16:52:03 2026
 <BR><P>
-<H3>Maximum Stack Usage =       4444 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =       4436 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; Main_ReadMessages &rArr; LogicCyclops_ProcessMessage &rArr; MavlinkTx_SendInit &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 <P>
@@ -207,7 +207,7 @@ Global Symbols
 <P><STRONG><a name="[e5]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[40]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4444 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 4436 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; Main_ReadMessages &rArr; LogicCyclops_ProcessMessage &rArr; MavlinkTx_SendInit &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -425,7 +425,6 @@ Global Symbols
 
 <P><STRONG><a name="[83]"></a>__aeabi_memcpy</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mavlink_msg_command_ack_decode
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueue_ClearBySource
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueue_PeekLast
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mavlink_msg_system_time_decode
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mavlink_msg_debug_decode
@@ -541,8 +540,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cyclops_SendResponse
 </UL>
 
-<P><STRONG><a name="[51]"></a>Cyclops_RxByte</STRONG> (Thumb, 338 bytes, Stack size 16 bytes, cyclops_rx.o(.text.Cyclops_RxByte))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Cyclops_RxByte &rArr; MessageQueue_Push &rArr; CopyMessage
+<P><STRONG><a name="[51]"></a>Cyclops_RxByte</STRONG> (Thumb, 346 bytes, Stack size 16 bytes, cyclops_rx.o(.text.Cyclops_RxByte))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = Cyclops_RxByte &rArr; MessageQueue_Push &rArr; CopyMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PacketIsValid
 <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ResetParser
@@ -569,7 +568,7 @@ Global Symbols
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[58]"></a>DroneResponseWaitCycle</STRONG> (Thumb, 140 bytes, Stack size 600 bytes, logic_cyclops.o(.text.DroneResponseWaitCycle))
+<P><STRONG><a name="[58]"></a>DroneResponseWaitCycle</STRONG> (Thumb, 148 bytes, Stack size 600 bytes, logic_cyclops.o(.text.DroneResponseWaitCycle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1476 + Unknown Stack Size
 <LI>Call Chain = DroneResponseWaitCycle &rArr; Convert_msg_to_mavlink &rArr; mavlink_parse_char &rArr; mavlink_frame_char &rArr; mavlink_frame_char_buffer &rArr; mavlink_signature_check &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
@@ -601,14 +600,14 @@ Global Symbols
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicDrone_Init
 </UL>
 
-<P><STRONG><a name="[5b]"></a>LogicCyclops_ProcessMessage</STRONG> (Thumb, 1728 bytes, Stack size 2568 bytes, logic_cyclops.o(.text.LogicCyclops_ProcessMessage))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4132 + Unknown Stack Size
+<P><STRONG><a name="[5b]"></a>LogicCyclops_ProcessMessage</STRONG> (Thumb, 1818 bytes, Stack size 2560 bytes, logic_cyclops.o(.text.LogicCyclops_ProcessMessage))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4124 + Unknown Stack Size
 <LI>Call Chain = LogicCyclops_ProcessMessage &rArr; MavlinkTx_SendInit &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueue_ClearBySource
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueue_Clear
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueue_PeekLast
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DroneResponseWaitCycle
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mavlink_msg_system_time_decode
@@ -630,7 +629,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ReadMessages
 </UL>
 
-<P><STRONG><a name="[6d]"></a>LogicDrone_DroneResponseWaitCycle</STRONG> (Thumb, 140 bytes, Stack size 600 bytes, logic_drone.o(.text.LogicDrone_DroneResponseWaitCycle))
+<P><STRONG><a name="[6d]"></a>LogicDrone_DroneResponseWaitCycle</STRONG> (Thumb, 148 bytes, Stack size 600 bytes, logic_drone.o(.text.LogicDrone_DroneResponseWaitCycle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1476 + Unknown Stack Size
 <LI>Call Chain = LogicDrone_DroneResponseWaitCycle &rArr; Convert_msg_to_mavlink &rArr; mavlink_parse_char &rArr; mavlink_frame_char &rArr; mavlink_frame_char_buffer &rArr; mavlink_signature_check &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
@@ -653,7 +652,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[73]"></a>LogicDrone_Process</STRONG> (Thumb, 468 bytes, Stack size 616 bytes, logic_drone.o(.text.LogicDrone_Process))
+<P><STRONG><a name="[73]"></a>LogicDrone_Process</STRONG> (Thumb, 478 bytes, Stack size 616 bytes, logic_drone.o(.text.LogicDrone_Process))
 <BR><BR>[Stack]<UL><LI>Max Depth = 2180 + Unknown Stack Size
 <LI>Call Chain = LogicDrone_Process &rArr; MavlinkTx_SendFly &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
@@ -661,7 +660,7 @@ Global Symbols
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicDrone_DroneResponseWaitCycle
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mavlink_msg_command_ack_decode
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicDrone_SetState
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueue_ClearBySource
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueue_Clear
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueue_PeekLast
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Convert_msg_to_mavlink
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MavlinkTx_SendFly
@@ -758,7 +757,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicCyclops_ProcessMessage
 </UL>
 
-<P><STRONG><a name="[80]"></a>Mavlink_RxByte</STRONG> (Thumb, 284 bytes, Stack size 328 bytes, mavlink_rx.o(.text.Mavlink_RxByte))
+<P><STRONG><a name="[80]"></a>Mavlink_RxByte</STRONG> (Thumb, 292 bytes, Stack size 328 bytes, mavlink_rx.o(.text.Mavlink_RxByte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1156 + Unknown Stack Size
 <LI>Call Chain = Mavlink_RxByte &rArr; mavlink_parse_char &rArr; mavlink_frame_char &rArr; mavlink_frame_char_buffer &rArr; mavlink_signature_check &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
@@ -770,18 +769,15 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_IRQHandler
 </UL>
 
-<P><STRONG><a name="[5c]"></a>MessageQueue_ClearBySource</STRONG> (Thumb, 178 bytes, Stack size 16 bytes, message_queue.o(.text.MessageQueue_ClearBySource))
-<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = MessageQueue_ClearBySource &rArr; NextIndex
-</UL>
-<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NextIndex
+<P><STRONG><a name="[5c]"></a>MessageQueue_Clear</STRONG> (Thumb, 30 bytes, Stack size 4 bytes, message_queue.o(.text.MessageQueue_Clear))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = MessageQueue_Clear
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicCyclops_ProcessMessage
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicDrone_Process
 </UL>
 
-<P><STRONG><a name="[5a]"></a>MessageQueue_PeekLast</STRONG> (Thumb, 126 bytes, Stack size 24 bytes, message_queue.o(.text.MessageQueue_PeekLast))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = MessageQueue_PeekLast
+<P><STRONG><a name="[5a]"></a>MessageQueue_PeekLast</STRONG> (Thumb, 130 bytes, Stack size 32 bytes, message_queue.o(.text.MessageQueue_PeekLast))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = MessageQueue_PeekLast
 </UL>
 <BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
@@ -791,7 +787,7 @@ Global Symbols
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicDrone_Process
 </UL>
 
-<P><STRONG><a name="[79]"></a>MessageQueue_Pop</STRONG> (Thumb, 104 bytes, Stack size 24 bytes, message_queue.o(.text.MessageQueue_Pop))
+<P><STRONG><a name="[79]"></a>MessageQueue_Pop</STRONG> (Thumb, 110 bytes, Stack size 24 bytes, message_queue.o(.text.MessageQueue_Pop))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = MessageQueue_Pop &rArr; NextIndex
 </UL>
 <BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
@@ -800,8 +796,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ReadMessages
 </UL>
 
-<P><STRONG><a name="[55]"></a>MessageQueue_Push</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, message_queue.o(.text.MessageQueue_Push))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = MessageQueue_Push &rArr; CopyMessage
+<P><STRONG><a name="[55]"></a>MessageQueue_Push</STRONG> (Thumb, 104 bytes, Stack size 24 bytes, message_queue.o(.text.MessageQueue_Push))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = MessageQueue_Push &rArr; CopyMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CopyMessage
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NextIndex
@@ -912,7 +908,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2f]"></a>USART1_IRQHandler</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, main.o(.text.USART1_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = USART1_IRQHandler &rArr; Cyclops_RxByte &rArr; MessageQueue_Push &rArr; CopyMessage
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = USART1_IRQHandler &rArr; Cyclops_RxByte &rArr; MessageQueue_Push &rArr; CopyMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cyclops_RxByte
 </UL>
@@ -963,7 +959,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[41]"></a>main</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4444 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 4436 + Unknown Stack Size
 <LI>Call Chain = main &rArr; Main_ReadMessages &rArr; LogicCyclops_ProcessMessage &rArr; MavlinkTx_SendInit &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicDrone_Process
@@ -1083,8 +1079,8 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[78]"></a>Main_ReadMessages</STRONG> (Thumb, 40 bytes, Stack size 296 bytes, main.o(.text.Main_ReadMessages))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4428 + Unknown Stack Size
+<P><STRONG><a name="[78]"></a>Main_ReadMessages</STRONG> (Thumb, 48 bytes, Stack size 296 bytes, main.o(.text.Main_ReadMessages))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4420 + Unknown Stack Size
 <LI>Call Chain = Main_ReadMessages &rArr; LogicCyclops_ProcessMessage &rArr; MavlinkTx_SendInit &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicCyclops_ProcessMessage
@@ -1512,8 +1508,7 @@ Local Symbols
 <P><STRONG><a name="[84]"></a>NextIndex</STRONG> (Thumb, 42 bytes, Stack size 4 bytes, message_queue.o(.text.NextIndex))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = NextIndex
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueue_ClearBySource
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueue_Push
+<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueue_Push
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueue_Pop
 </UL>
 

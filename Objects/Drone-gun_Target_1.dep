@@ -1,19 +1,19 @@
 Dependencies for Project 'Drone-gun', Target 'Target_1': (DO NOT MODIFY !)
-CompilerVersion: 6220000::V6.22::ARMCLANG
-F (.\app\main.c)(0x6A35A012)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/main.o -MMD)
+CompilerVersion: 6240000::V6.24::ARMCLANG
+F (.\app\main.c)(0x6A41186E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/main.o -MMD)
 I (app\main.h)(0x6A2A93C3)
 I (drivers\rcc.h)(0x6A13F27A)
 I (drivers\gpio.h)(0x6A2AA19C)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A13EE40)
 I (RTE\_Target_1\RTE_Components.h)(0x6A13EF34)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x6938B560)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69C27D3B)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A13EE40)
 I (drivers\usart.h)(0x6A2DAF33)
 I (drivers\timer.h)(0x6A2A946C)
 I (drivers\pwm.h)(0x6A2A93F9)
-I (protocol\mavlink_tx.h)(0x6A39273F)
-I (protocol\mavlink_rx.h)(0x6A3585E6)
-I (core\message_queue.h)(0x6A3551B5)
+I (protocol\mavlink_tx.h)(0x6A40F990)
+I (protocol\mavlink_rx.h)(0x6A40F990)
+I (core\message_queue.h)(0x6A41186D)
 I (mavlink\common\mavlink.h)(0x6A15521D)
 I (mavlink\common\version.h)(0x6A15521D)
 I (mavlink\common\common.h)(0x6A15521D)
@@ -257,52 +257,52 @@ I (mavlink\common\.\mavlink_msg_hygrometer_sensor.h)(0x6A15521D)
 I (mavlink\common\..\standard\standard.h)(0x6A2087D4)
 I (mavlink\common\..\mavlink_get_info.h)(0x6A15521D)
 I (protocol\cyclops_rx.h)(0x6A27DDCE)
-I (logic\logic_cyclops.h)(0x6A35B18A)
+I (logic\logic_cyclops.h)(0x6A40F990)
 I (logic\logic_drone.h)(0x6A2DB0C5)
 F (.\app\main.h)(0x6A2A93C3)()
-F (.\drivers\rcc.c)(0x6A1C3A1A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/rcc.o -MMD)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A140A3E)
+F (.\drivers\rcc.c)(0x6A1C3A1A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/rcc.o -MMD)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A13EE40)
 I (RTE\_Target_1\RTE_Components.h)(0x6A13EF34)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x6938B560)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69C27D3B)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A13EE40)
 I (drivers\rcc.h)(0x6A13F27A)
 F (.\drivers\rcc.h)(0x6A13F27A)()
-F (.\drivers\gpio.c)(0x6A2AA19C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/gpio.o -MMD)
+F (.\drivers\gpio.c)(0x6A2AA19C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/gpio.o -MMD)
 I (drivers\gpio.h)(0x6A2AA19C)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A13EE40)
 I (RTE\_Target_1\RTE_Components.h)(0x6A13EF34)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x6938B560)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69C27D3B)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A13EE40)
 F (.\drivers\gpio.h)(0x6A2AA19C)()
-F (.\drivers\pwm.c)(0x6A2A93F9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/pwm.o -MMD)
+F (.\drivers\pwm.c)(0x6A2A93F9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/pwm.o -MMD)
 I (drivers\pwm.h)(0x6A2A93F9)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A13EE40)
 I (RTE\_Target_1\RTE_Components.h)(0x6A13EF34)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x6938B560)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69C27D3B)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A13EE40)
 F (.\drivers\pwm.h)(0x6A2A93F9)()
-F (.\drivers\timer.c)(0x6A2AA19C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/timer.o -MMD)
+F (.\drivers\timer.c)(0x6A2AA19C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/timer.o -MMD)
 I (drivers\timer.h)(0x6A2A946C)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A13EE40)
 I (RTE\_Target_1\RTE_Components.h)(0x6A13EF34)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x6938B560)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69C27D3B)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A13EE40)
 I (drivers\gpio.h)(0x6A2AA19C)
 F (.\drivers\timer.h)(0x6A2A946C)()
-F (.\drivers\usart.c)(0x6A2DAF2B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/usart.o -MMD)
+F (.\drivers\usart.c)(0x6A2DAF2B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/usart.o -MMD)
 I (drivers\usart.h)(0x6A2DAF33)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A13EE40)
 I (RTE\_Target_1\RTE_Components.h)(0x6A13EF34)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x6938B560)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69C27D3B)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A13EE40)
 F (.\drivers\usart.h)(0x6A2DAF33)()
-F (.\protocol\mavlink_tx.c)(0x6A35B0A7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/mavlink_tx.o -MMD)
-I (protocol\mavlink_tx.h)(0x6A39273F)
+F (.\protocol\mavlink_tx.c)(0x6A40F990)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/mavlink_tx.o -MMD)
+I (protocol\mavlink_tx.h)(0x6A40F990)
 I (drivers\usart.h)(0x6A2DAF33)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A13EE40)
 I (RTE\_Target_1\RTE_Components.h)(0x6A13EF34)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x6938B560)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69C27D3B)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A13EE40)
 I (mavlink\common\mavlink.h)(0x6A15521D)
 I (mavlink\common\version.h)(0x6A15521D)
 I (mavlink\common\common.h)(0x6A15521D)
@@ -545,10 +545,10 @@ I (mavlink\common\.\mavlink_msg_open_drone_id_system_update.h)(0x6A15521D)
 I (mavlink\common\.\mavlink_msg_hygrometer_sensor.h)(0x6A15521D)
 I (mavlink\common\..\standard\standard.h)(0x6A2087D4)
 I (mavlink\common\..\mavlink_get_info.h)(0x6A15521D)
-F (.\protocol\mavlink_tx.h)(0x6A39273F)()
-F (.\protocol\mavlink_rx.c)(0x6A35865B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/mavlink_rx.o -MMD)
-I (protocol\mavlink_rx.h)(0x6A3585E6)
-I (core\message_queue.h)(0x6A3551B5)
+F (.\protocol\mavlink_tx.h)(0x6A40F990)()
+F (.\protocol\mavlink_rx.c)(0x6A41186E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/mavlink_rx.o -MMD)
+I (protocol\mavlink_rx.h)(0x6A40F990)
+I (core\message_queue.h)(0x6A41186D)
 I (mavlink\common\mavlink.h)(0x6A15521D)
 I (mavlink\common\version.h)(0x6A15521D)
 I (mavlink\common\common.h)(0x6A15521D)
@@ -791,27 +791,27 @@ I (mavlink\common\.\mavlink_msg_open_drone_id_system_update.h)(0x6A15521D)
 I (mavlink\common\.\mavlink_msg_hygrometer_sensor.h)(0x6A15521D)
 I (mavlink\common\..\standard\standard.h)(0x6A2087D4)
 I (mavlink\common\..\mavlink_get_info.h)(0x6A15521D)
-F (.\protocol\mavlink_rx.h)(0x6A3585E6)()
-F (.\protocol\cyclops_tx.c)(0x6A35B2D3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/cyclops_tx.o -MMD)
-I (protocol\cyclops_tx.h)(0x6A35B2A5)
-I (core\message_queue.h)(0x6A3551B5)
+F (.\protocol\mavlink_rx.h)(0x6A40F990)()
+F (.\protocol\cyclops_tx.c)(0x6A40F990)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/cyclops_tx.o -MMD)
+I (protocol\cyclops_tx.h)(0x6A40F990)
+I (core\message_queue.h)(0x6A41186D)
 I (drivers\usart.h)(0x6A2DAF33)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A13EE40)
 I (RTE\_Target_1\RTE_Components.h)(0x6A13EF34)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x6938B560)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A140A3E)
-F (.\protocol\cyclops_tx.h)(0x6A35B2A5)()
-F (.\protocol\cyclops_rx.c)(0x6A27F386)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/cyclops_rx.o -MMD)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69C27D3B)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A13EE40)
+F (.\protocol\cyclops_tx.h)(0x6A40F990)()
+F (.\protocol\cyclops_rx.c)(0x6A41186E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/cyclops_rx.o -MMD)
 I (protocol\cyclops_rx.h)(0x6A27DDCE)
-I (core\message_queue.h)(0x6A3551B5)
+I (core\message_queue.h)(0x6A41186D)
 F (.\protocol\cyclops_rx.h)(0x6A27DDCE)()
 F (.\mavlink\protocol.h)(0x6A15521D)()
-F (.\logic\logic_cyclops.c)(0x6A3A31CA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/logic_cyclops.o -MMD)
-I (logic\logic_cyclops.h)(0x6A35B18A)
-I (core\message_queue.h)(0x6A3551B5)
-I (protocol\cyclops_tx.h)(0x6A35B2A5)
-I (protocol\mavlink_tx.h)(0x6A39273F)
-I (protocol\mavlink_rx.h)(0x6A3585E6)
+F (.\logic\logic_cyclops.c)(0x6A411892)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/logic_cyclops.o -MMD)
+I (logic\logic_cyclops.h)(0x6A40F990)
+I (core\message_queue.h)(0x6A41186D)
+I (protocol\cyclops_tx.h)(0x6A40F990)
+I (protocol\mavlink_tx.h)(0x6A40F990)
+I (protocol\mavlink_rx.h)(0x6A40F990)
 I (mavlink\common\mavlink.h)(0x6A15521D)
 I (mavlink\common\version.h)(0x6A15521D)
 I (mavlink\common\common.h)(0x6A15521D)
@@ -1055,24 +1055,24 @@ I (mavlink\common\.\mavlink_msg_hygrometer_sensor.h)(0x6A15521D)
 I (mavlink\common\..\standard\standard.h)(0x6A2087D4)
 I (mavlink\common\..\mavlink_get_info.h)(0x6A15521D)
 I (drivers\timer.h)(0x6A2A946C)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A13EE40)
 I (RTE\_Target_1\RTE_Components.h)(0x6A13EF34)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x6938B560)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69C27D3B)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A13EE40)
 I (drivers\pwm.h)(0x6A2A93F9)
-F (.\logic\logic_cyclops.h)(0x6A35B18A)()
-F (.\logic\logic_drone.c)(0x6A393018)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/logic_drone.o -MMD)
+F (.\logic\logic_cyclops.h)(0x6A40F990)()
+F (.\logic\logic_drone.c)(0x6A411891)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/logic_drone.o -MMD)
 I (logic\logic_drone.h)(0x6A2DB0C5)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A13EE40)
 I (RTE\_Target_1\RTE_Components.h)(0x6A13EF34)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x6938B560)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A140A3E)
-I (core\message_queue.h)(0x6A3551B5)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69C27D3B)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A13EE40)
+I (core\message_queue.h)(0x6A41186D)
 I (drivers\pwm.h)(0x6A2A93F9)
 I (drivers\gpio.h)(0x6A2AA19C)
-I (protocol\mavlink_tx.h)(0x6A39273F)
+I (protocol\mavlink_tx.h)(0x6A40F990)
 I (drivers\timer.h)(0x6A2A946C)
-I (protocol\mavlink_rx.h)(0x6A3585E6)
+I (protocol\mavlink_rx.h)(0x6A40F990)
 I (mavlink\common\mavlink.h)(0x6A15521D)
 I (mavlink\common\version.h)(0x6A15521D)
 I (mavlink\common\common.h)(0x6A15521D)
@@ -1316,17 +1316,17 @@ I (mavlink\common\.\mavlink_msg_hygrometer_sensor.h)(0x6A15521D)
 I (mavlink\common\..\standard\standard.h)(0x6A2087D4)
 I (mavlink\common\..\mavlink_get_info.h)(0x6A15521D)
 F (.\logic\logic_drone.h)(0x6A2DB0C5)()
-F (.\core\message_queue.c)(0x6A3551B5)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/message_queue.o -MMD)
-I (core\message_queue.h)(0x6A3551B5)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A140A3E)
+F (.\core\message_queue.c)(0x6A41186E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/message_queue.o -MMD)
+I (core\message_queue.h)(0x6A41186D)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A13EE40)
 I (RTE\_Target_1\RTE_Components.h)(0x6A13EF34)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x6938B560)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A140A3E)
-F (.\core\message_queue.h)(0x6A3551B5)()
+I (C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69C27D3B)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A13EE40)
+F (.\core\message_queue.h)(0x6A41186D)()
 F (RTE/Device/STM32F103RB/RTE_Device.h)(0x6A13EE41)()
-F (RTE/Device/STM32F103RB/startup_stm32f10x_md.s)(0x6A212DAE)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 540" -Wa,armasm,--pd,"STM32F10X_MD SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32f10x_md.o)
-F (RTE/Device/STM32F103RB/system_stm32f10x.c)(0x6A13EE40)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_-o ./objects/system_stm32f10x.o -MMD)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A140A3E)
+F (RTE/Device/STM32F103RB/startup_stm32f10x_md.s)(0x6A212DAE)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 543" -Wa,armasm,--pd,"STM32F10X_MD SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32f10x_md.o)
+F (RTE/Device/STM32F103RB/system_stm32f10x.c)(0x6A13EE40)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./app -I ./drivers -I ./protocol -I ./logic -I ./core -I ./mavlink -I ./mavlink/common -I ./mavlink/standard-I./RTE/Device/STM32F103RB-I./RTE/_Target_1-IC:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./objects/system_stm32f10x.o -MMD)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x6A13EE40)
 I (RTE\_Target_1\RTE_Components.h)(0x6A13EF34)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x6938B560)
-I (C:\Users\Mi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A140A3E)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69C27D3B)
+I (C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x6A13EE40)

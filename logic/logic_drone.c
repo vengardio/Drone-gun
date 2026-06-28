@@ -50,7 +50,7 @@ uint8_t LogicDrone_DroneResponseWaitCycle(uint8_t requested_msg_id, uint32_t Tim
 	
 	
 	while(!msg_arrived) {
-		MessageQueue_PeekLast(&msg);
+		MessageQueue_PeekLast(&mavlink_message_queue, &msg);
 		
 		//Условия выхода с ошибкой
 		if (GetTick()-startTime > TimeOut) {   
@@ -121,7 +121,7 @@ void LogicDrone_Process(void)
 					MavlinkTx_SendFly();
 					
 					//Ожидание ACK или NACK
-					MessageQueue_ClearBySource(MESSAGE_SOURCE_DRONE);
+					MessageQueue_Clear(&mavlink_message_queue);
 					uint8_t MessageGot = LogicDrone_DroneResponseWaitCycle(MAVLINK_MSGID_ACK, 2000);
 					
 					Message msg;
@@ -129,7 +129,7 @@ void LogicDrone_Process(void)
 					mavlink_message_t mav_msg;
 					
 					if (MessageGot == 1) {
-						MessageQueue_PeekLast(&msg);
+						MessageQueue_PeekLast(&mavlink_message_queue, &msg);
 						
 						if (Convert_msg_to_mavlink(&msg, &mav_msg)) {
 							mavlink_command_ack_t command_ack;

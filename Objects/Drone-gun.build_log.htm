@@ -3,47 +3,47 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.40.0.0
-Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: mikhail mineev, vosk, LIC=----
+IDE-Version: µVision V5.43.1.0
+Copyright (C) 2025 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: artem mosnenko, ssau, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.40.0.3
-Toolchain Path:  C:\Users\Mi\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin
-C Compiler:      ArmClang.exe V6.22
-Assembler:       Armasm.exe V6.22
-Linker/Locator:  ArmLink.exe V6.22
-Library Manager: ArmAr.exe V6.22
-Hex Converter:   FromElf.exe V6.22
-CPU DLL:         SARMCM3.DLL V5.40.0.3
+Toolchain:       MDK-Lite  Version: 5.43.0.0
+Toolchain Path:  C:\Users\Artem\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.24
+Assembler:       Armasm.exe V6.24
+Linker/Locator:  ArmLink.exe V6.24
+Library Manager: ArmAr.exe V6.24
+Hex Converter:   FromElf.exe V6.24
+CPU DLL:         SARMCM3.DLL V5.43.0.0
 Dialog DLL:      DCM.DLL V1.17.5.0
-Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.0.0
-Dialog DLL:      TCM.DLL V1.56.4.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.1.0
+Dialog DLL:      TCM.DLL V1.56.6.0
  
 <h2>Project:</h2>
-D:\Home folder\02 Projects\Drone-gun\Drone-gun\Drone-gun.uvprojx
-Project File Date:  06/15/2026
+C:\Users\Artem\Desktop\STM32 DRONE-CYCLOPS\Drone-gun.uvprojx
+Project File Date:  06/28/2026
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.22', folder: 'C:\Users\Mi\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Target_1'
-compiling cyclops_rx.c...
+*** Using Compiler 'V6.24', folder: 'C:\Users\Artem\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target_1'
 compiling pwm.c...
-compiling message_queue.c...
-compiling cyclops_tx.c...
 compiling gpio.c...
 compiling usart.c...
 compiling timer.c...
 compiling rcc.c...
-compiling system_stm32f10x.c...
+compiling cyclops_tx.c...
+compiling cyclops_rx.c...
+compiling message_queue.c...
 assembling startup_stm32f10x_md.s...
-compiling logic_drone.c...
-compiling mavlink_rx.c...
+compiling system_stm32f10x.c...
 compiling mavlink_tx.c...
 compiling main.c...
 compiling logic_cyclops.c...
+compiling mavlink_rx.c...
+compiling logic_drone.c...
 linking...
-Program Size: Code=15884 RO-data=3588 RW-data=8 ZI-data=5832  
+Program Size: Code=15872 RO-data=3588 RW-data=8 ZI-data=8104  
 FromELF: creating hex file...
 ".\Objects\Drone-gun.axf" - 0 Error(s), 0 Warning(s).
 
@@ -64,19 +64,19 @@ Package Vendor: Keil
 <h2>Collection of Component include folders:</h2>
   ./RTE/Device/STM32F103RB
   ./RTE/_Target_1
-  C:/Users/Mi/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include
-  C:/Users/Mi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+  C:/Users/Artem/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include
+  C:/Users/Artem/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE@6.1.1
 
    * Component: Keil::Device:Startup@1.0.0
-      Source file:   Device/Source/system_stm32f10x.c
       Source file:   Device/Source/ARM/startup_stm32f10x_md.s
       Include file:  RTE_Driver/Config/RTE_Device.h
       Source file:   Device/Source/ARM/STM32F1xx_OPT.s
-Build Time Elapsed:  00:00:02
+      Source file:   Device/Source/system_stm32f10x.c
+Build Time Elapsed:  00:00:07
 </pre>
 </body>
 </html>

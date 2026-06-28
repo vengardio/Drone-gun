@@ -79,7 +79,12 @@ void Mavlink_RxByte(uint8_t data)
     if(mavlink_parse_char(MAVLINK_COMM_1, data, &msg, &status))
     {
         if(expected && pos == expected)
-            MessageQueue_Push(MESSAGE_SOURCE_DRONE, buf, pos);
+            MessageQueue_Push(
+                &mavlink_message_queue,
+                MESSAGE_SOURCE_DRONE,
+                buf,
+                pos
+            );
 
         ResetParser();
         return;
