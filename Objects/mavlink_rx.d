@@ -1,9 +1,13 @@
 ./objects/mavlink_rx.o: protocol\mavlink_rx.c protocol\mavlink_rx.h \
-  core\message_queue.h mavlink\common\mavlink.h mavlink\common\version.h \
+  core\message_queue.h D:\Keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  mavlink\common\mavlink.h mavlink\common\version.h \
   mavlink\common\common.h mavlink\common\..\protocol.h \
-  mavlink\common\..\mavlink_types.h mavlink\common\..\mavlink_helpers.h \
-  mavlink\common\..\checksum.h mavlink\common\..\mavlink_conversions.h \
-  mavlink\common\..\mavlink_sha256.h \
+  D:\Keil\ARM\ARMCLANG\Bin\..\include\string.h mavlink\mavlink_types.h \
+  D:\Keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  mavlink\mavlink_helpers.h mavlink\checksum.h \
+  mavlink\mavlink_conversions.h \
+  D:\Keil\ARM\ARMCLANG\Bin\..\include\math.h \
+  D:\Keil\ARM\ARMCLANG\Bin\..\include\stdio.h mavlink\mavlink_sha256.h \
   mavlink\common\.\mavlink_msg_sys_status.h \
   mavlink\common\.\mavlink_msg_system_time.h \
   mavlink\common\.\mavlink_msg_ping.h \

@@ -1,15 +1,22 @@
 ./objects/main.o: app\main.c app\main.h drivers\rcc.h drivers\gpio.h \
-  C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h \
+  D:\KeilPacks\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h \
   RTE\_Target_1\RTE_Components.h \
-  C:\Users\Artem\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h \
-  C:\Users\Artem\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h \
+  D:\KeilPacks\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h \
+  D:\Keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\KeilPacks\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h \
+  D:\KeilPacks\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h \
+  D:\KeilPacks\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h \
+  D:\KeilPacks\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h \
   drivers\usart.h drivers\timer.h drivers\pwm.h protocol\mavlink_tx.h \
   protocol\mavlink_rx.h core\message_queue.h mavlink\common\mavlink.h \
   mavlink\common\version.h mavlink\common\common.h \
-  mavlink\common\..\protocol.h mavlink\common\..\mavlink_types.h \
-  mavlink\common\..\mavlink_helpers.h mavlink\common\..\checksum.h \
-  mavlink\common\..\mavlink_conversions.h \
-  mavlink\common\..\mavlink_sha256.h \
+  mavlink\common\..\protocol.h \
+  D:\Keil\ARM\ARMCLANG\Bin\..\include\string.h mavlink\mavlink_types.h \
+  D:\Keil\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  mavlink\mavlink_helpers.h mavlink\checksum.h \
+  mavlink\mavlink_conversions.h \
+  D:\Keil\ARM\ARMCLANG\Bin\..\include\math.h \
+  D:\Keil\ARM\ARMCLANG\Bin\..\include\stdio.h mavlink\mavlink_sha256.h \
   mavlink\common\.\mavlink_msg_sys_status.h \
   mavlink\common\.\mavlink_msg_system_time.h \
   mavlink\common\.\mavlink_msg_ping.h \

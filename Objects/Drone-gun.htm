@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\Drone-gun.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Drone-gun.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Sun Jun 28 16:52:03 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Tue Jun 30 12:48:37 2026
 <BR><P>
-<H3>Maximum Stack Usage =       4436 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =       4444 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; Main_ReadMessages &rArr; LogicCyclops_ProcessMessage &rArr; MavlinkTx_SendInit &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 <P>
@@ -102,13 +102,13 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[3a]"></a>__scatterload_rt2</STRONG> (Thumb, 84 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<P><STRONG><a name="[3a]"></a>__scatterload_rt2</STRONG> (Thumb, 44 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
 <P><STRONG><a name="[c3]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[c4]"></a>__scatterload_loop</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<P><STRONG><a name="[c4]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
 <P><STRONG><a name="[3b]"></a>__scatterload_copy</STRONG> (Thumb, 26 bytes, Stack size unknown bytes, __scatter_copy.o(!!handler_copy), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
@@ -116,82 +116,80 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
 </UL>
 
-<P><STRONG><a name="[c5]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, __scatter.o(!!handler_null), UNUSED)
-
-<P><STRONG><a name="[c6]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
+<P><STRONG><a name="[c5]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
 
 <P><STRONG><a name="[3f]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
 </UL>
 
-<P><STRONG><a name="[c7]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
+<P><STRONG><a name="[c6]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
 
-<P><STRONG><a name="[c8]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
+<P><STRONG><a name="[c7]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
 
-<P><STRONG><a name="[c9]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
+<P><STRONG><a name="[c8]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
 
-<P><STRONG><a name="[ca]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
+<P><STRONG><a name="[c9]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
 
-<P><STRONG><a name="[cb]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000034))
+<P><STRONG><a name="[ca]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000034))
 
-<P><STRONG><a name="[cc]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000032))
+<P><STRONG><a name="[cb]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000032))
 
-<P><STRONG><a name="[cd]"></a>__rt_lib_init_fp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000002))
+<P><STRONG><a name="[cc]"></a>__rt_lib_init_fp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000002))
 
-<P><STRONG><a name="[ce]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
+<P><STRONG><a name="[cd]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
 
-<P><STRONG><a name="[cf]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
+<P><STRONG><a name="[ce]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
 
-<P><STRONG><a name="[d0]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
+<P><STRONG><a name="[cf]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
 
-<P><STRONG><a name="[d1]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
+<P><STRONG><a name="[d0]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
 
-<P><STRONG><a name="[d2]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
+<P><STRONG><a name="[d1]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
 
-<P><STRONG><a name="[d3]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
+<P><STRONG><a name="[d2]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
 
-<P><STRONG><a name="[d4]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
+<P><STRONG><a name="[d3]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
 
-<P><STRONG><a name="[d5]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
+<P><STRONG><a name="[d4]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
 
-<P><STRONG><a name="[d6]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000006))
+<P><STRONG><a name="[d5]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000006))
 
-<P><STRONG><a name="[d7]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000010))
+<P><STRONG><a name="[d6]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000010))
 
-<P><STRONG><a name="[d8]"></a>__rt_lib_init_relocate_pie_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
+<P><STRONG><a name="[d7]"></a>__rt_lib_init_relocate_pie_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
 
-<P><STRONG><a name="[d9]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000035))
+<P><STRONG><a name="[d8]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000035))
 
-<P><STRONG><a name="[da]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
+<P><STRONG><a name="[d9]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
 
-<P><STRONG><a name="[db]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000027))
+<P><STRONG><a name="[da]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000027))
 
-<P><STRONG><a name="[dc]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000E))
+<P><STRONG><a name="[db]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000E))
 
 <P><STRONG><a name="[44]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
 </UL>
 
-<P><STRONG><a name="[dd]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
+<P><STRONG><a name="[dc]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
 
-<P><STRONG><a name="[de]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000007))
+<P><STRONG><a name="[dd]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000007))
 
-<P><STRONG><a name="[df]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
+<P><STRONG><a name="[de]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
 
-<P><STRONG><a name="[e0]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000010))
+<P><STRONG><a name="[df]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000010))
 
-<P><STRONG><a name="[e1]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A))
+<P><STRONG><a name="[e0]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A))
 
-<P><STRONG><a name="[e2]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
+<P><STRONG><a name="[e1]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
 
-<P><STRONG><a name="[e3]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
+<P><STRONG><a name="[e2]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
 <P><STRONG><a name="[39]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
 <LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[e4]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
+<P><STRONG><a name="[e3]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
 
 <P><STRONG><a name="[3c]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -204,17 +202,17 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
 </UL>
 
-<P><STRONG><a name="[e5]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
+<P><STRONG><a name="[e4]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[40]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4436 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 4444 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; Main_ReadMessages &rArr; LogicCyclops_ProcessMessage &rArr; MavlinkTx_SendInit &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[e6]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
+<P><STRONG><a name="[e5]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
 
 <P><STRONG><a name="[4c]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -224,7 +222,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
 </UL>
 
-<P><STRONG><a name="[e7]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
+<P><STRONG><a name="[e6]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
 
 <P><STRONG><a name="[45]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
@@ -442,7 +440,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 
-<P><STRONG><a name="[e8]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
+<P><STRONG><a name="[e7]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
 
 <P><STRONG><a name="[aa]"></a>__aeabi_memclr</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mavlink_msg_battery_status_decode
@@ -451,33 +449,33 @@ Global Symbols
 <LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mavlink_sha256_final_48
 </UL>
 
-<P><STRONG><a name="[e9]"></a>__rt_memclr</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr.o(.text), UNUSED)
+<P><STRONG><a name="[e8]"></a>__rt_memclr</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr.o(.text), UNUSED)
 
 <P><STRONG><a name="[49]"></a>_memset</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, rt_memclr.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset_w
 </UL>
 
-<P><STRONG><a name="[ea]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[e9]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[eb]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[ea]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[ec]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[eb]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
 <P><STRONG><a name="[48]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
 </UL>
 
-<P><STRONG><a name="[ed]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[ec]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[ee]"></a>__rt_memcpy_w</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[ed]"></a>__rt_memcpy_w</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[ef]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[ee]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[f0]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[ef]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[f1]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[f0]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[f2]"></a>__rt_memclr_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[f1]"></a>__rt_memclr_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
 
 <P><STRONG><a name="[4a]"></a>_memset_w</STRONG> (Thumb, 74 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset
@@ -502,23 +500,23 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[f3]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[f2]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[4b]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[f4]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[f3]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[46]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
 </UL>
 
-<P><STRONG><a name="[f5]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[f4]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[f6]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[f5]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[f7]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
+<P><STRONG><a name="[f6]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
 <P><STRONG><a name="[4d]"></a>Convert_msg_to_mavlink</STRONG> (Thumb, 128 bytes, Stack size 48 bytes, mavlink_rx.o(.text.Convert_msg_to_mavlink))
 <BR><BR>[Stack]<UL><LI>Max Depth = 876 + Unknown Stack Size
@@ -568,7 +566,7 @@ Global Symbols
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[58]"></a>DroneResponseWaitCycle</STRONG> (Thumb, 148 bytes, Stack size 600 bytes, logic_cyclops.o(.text.DroneResponseWaitCycle))
+<P><STRONG><a name="[58]"></a>DroneResponseWaitCycle</STRONG> (Thumb, 146 bytes, Stack size 600 bytes, logic_cyclops.o(.text.DroneResponseWaitCycle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1476 + Unknown Stack Size
 <LI>Call Chain = DroneResponseWaitCycle &rArr; Convert_msg_to_mavlink &rArr; mavlink_parse_char &rArr; mavlink_frame_char &rArr; mavlink_frame_char_buffer &rArr; mavlink_signature_check &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
@@ -600,8 +598,8 @@ Global Symbols
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicDrone_Init
 </UL>
 
-<P><STRONG><a name="[5b]"></a>LogicCyclops_ProcessMessage</STRONG> (Thumb, 1818 bytes, Stack size 2560 bytes, logic_cyclops.o(.text.LogicCyclops_ProcessMessage))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4124 + Unknown Stack Size
+<P><STRONG><a name="[5b]"></a>LogicCyclops_ProcessMessage</STRONG> (Thumb, 1808 bytes, Stack size 2560 bytes, logic_cyclops.o(.text.LogicCyclops_ProcessMessage))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4132 + Unknown Stack Size
 <LI>Call Chain = LogicCyclops_ProcessMessage &rArr; MavlinkTx_SendInit &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
@@ -629,7 +627,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ReadMessages
 </UL>
 
-<P><STRONG><a name="[6d]"></a>LogicDrone_DroneResponseWaitCycle</STRONG> (Thumb, 148 bytes, Stack size 600 bytes, logic_drone.o(.text.LogicDrone_DroneResponseWaitCycle))
+<P><STRONG><a name="[6d]"></a>LogicDrone_DroneResponseWaitCycle</STRONG> (Thumb, 146 bytes, Stack size 600 bytes, logic_drone.o(.text.LogicDrone_DroneResponseWaitCycle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1476 + Unknown Stack Size
 <LI>Call Chain = LogicDrone_DroneResponseWaitCycle &rArr; Convert_msg_to_mavlink &rArr; mavlink_parse_char &rArr; mavlink_frame_char &rArr; mavlink_frame_char_buffer &rArr; mavlink_signature_check &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
@@ -653,7 +651,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[73]"></a>LogicDrone_Process</STRONG> (Thumb, 478 bytes, Stack size 616 bytes, logic_drone.o(.text.LogicDrone_Process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 2180 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 2188 + Unknown Stack Size
 <LI>Call Chain = LogicDrone_Process &rArr; MavlinkTx_SendFly &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicDrone_SetDroneState
@@ -684,7 +682,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[5d]"></a>MavlinkTx_HwReset</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, mavlink_tx.o(.text.MavlinkTx_HwReset))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1564 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 1572 + Unknown Stack Size
 <LI>Call Chain = MavlinkTx_HwReset &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MavlinkTx_SendCommand
@@ -701,7 +699,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[60]"></a>MavlinkTx_SendCancel</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, mavlink_tx.o(.text.MavlinkTx_SendCancel))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1564 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 1572 + Unknown Stack Size
 <LI>Call Chain = MavlinkTx_SendCancel &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MavlinkTx_SendCommand
@@ -711,7 +709,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[61]"></a>MavlinkTx_SendFly</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, mavlink_tx.o(.text.MavlinkTx_SendFly))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1564 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 1572 + Unknown Stack Size
 <LI>Call Chain = MavlinkTx_SendFly &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MavlinkTx_SendCommand
@@ -721,7 +719,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[66]"></a>MavlinkTx_SendGetDetections</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, mavlink_tx.o(.text.MavlinkTx_SendGetDetections))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1564 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 1572 + Unknown Stack Size
 <LI>Call Chain = MavlinkTx_SendGetDetections &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MavlinkTx_SendCommand
@@ -730,7 +728,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[6b]"></a>MavlinkTx_SendInit</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, mavlink_tx.o(.text.MavlinkTx_SendInit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1564 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 1572 + Unknown Stack Size
 <LI>Call Chain = MavlinkTx_SendInit &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MavlinkTx_SendCommand
@@ -739,7 +737,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[5f]"></a>MavlinkTx_SendPrepare</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, mavlink_tx.o(.text.MavlinkTx_SendPrepare))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1564 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 1572 + Unknown Stack Size
 <LI>Call Chain = MavlinkTx_SendPrepare &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MavlinkTx_SendCommand
@@ -749,7 +747,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[5e]"></a>MavlinkTx_SwReset</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, mavlink_tx.o(.text.MavlinkTx_SwReset))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1564 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 1572 + Unknown Stack Size
 <LI>Call Chain = MavlinkTx_SwReset &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MavlinkTx_SendCommand
@@ -959,7 +957,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[41]"></a>main</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4436 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 4444 + Unknown Stack Size
 <LI>Call Chain = main &rArr; Main_ReadMessages &rArr; LogicCyclops_ProcessMessage &rArr; MavlinkTx_SendInit &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicDrone_Process
@@ -981,7 +979,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[f8]"></a>__aeabi_fcmpeq</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
+<P><STRONG><a name="[f7]"></a>__aeabi_fcmpeq</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
 
 <P><STRONG><a name="[b7]"></a>_feq</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
@@ -991,7 +989,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
 </UL>
 
-<P><STRONG><a name="[f9]"></a>__aeabi_fcmpgt</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
+<P><STRONG><a name="[f8]"></a>__aeabi_fcmpgt</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
 
 <P><STRONG><a name="[ba]"></a>_fgr</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpge
@@ -1017,7 +1015,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
 </UL>
 
-<P><STRONG><a name="[fa]"></a>__aeabi_fcmplt</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
+<P><STRONG><a name="[f9]"></a>__aeabi_fcmplt</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
 
 <P><STRONG><a name="[bf]"></a>_fls</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
@@ -1029,7 +1027,7 @@ Global Symbols
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
 </UL>
 
-<P><STRONG><a name="[fb]"></a>__aeabi_cfcmpeq</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf), UNUSED)
+<P><STRONG><a name="[fa]"></a>__aeabi_cfcmpeq</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf), UNUSED)
 
 <P><STRONG><a name="[b8]"></a>_fcmpeq</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmp_Inf
@@ -1057,7 +1055,7 @@ Global Symbols
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fgr
 </UL>
 
-<P><STRONG><a name="[fc]"></a>__aeabi_cfcmple</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf), UNUSED)
+<P><STRONG><a name="[fb]"></a>__aeabi_cfcmple</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf), UNUSED)
 
 <P><STRONG><a name="[be]"></a>_fcmple</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmp_Inf
@@ -1067,7 +1065,7 @@ Global Symbols
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fleq
 </UL>
 
-<P><STRONG><a name="[fd]"></a>__fpl_fcmple_InfNaN</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fleqf.o(x$fpl$fleqf), UNUSED)
+<P><STRONG><a name="[fc]"></a>__fpl_fcmple_InfNaN</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fleqf.o(x$fpl$fleqf), UNUSED)
 
 <P><STRONG><a name="[c0]"></a>__fpl_fnaninf</STRONG> (Thumb, 140 bytes, Stack size 8 bytes, fnaninf.o(x$fpl$fnaninf), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
@@ -1080,7 +1078,7 @@ Global Symbols
 Local Symbols
 </H3>
 <P><STRONG><a name="[78]"></a>Main_ReadMessages</STRONG> (Thumb, 48 bytes, Stack size 296 bytes, main.o(.text.Main_ReadMessages))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4420 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 4428 + Unknown Stack Size
 <LI>Call Chain = Main_ReadMessages &rArr; LogicCyclops_ProcessMessage &rArr; MavlinkTx_SendInit &rArr; MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LogicCyclops_ProcessMessage
@@ -1130,8 +1128,8 @@ Local Symbols
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mavlink_set_proto_version
 </UL>
 
-<P><STRONG><a name="[7a]"></a>MavlinkTx_SendCommand</STRONG> (Thumb, 86 bytes, Stack size 632 bytes, mavlink_tx.o(.text.MavlinkTx_SendCommand))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1556 + Unknown Stack Size
+<P><STRONG><a name="[7a]"></a>MavlinkTx_SendCommand</STRONG> (Thumb, 82 bytes, Stack size 640 bytes, mavlink_tx.o(.text.MavlinkTx_SendCommand))
+<BR><BR>[Stack]<UL><LI>Max Depth = 1564 + Unknown Stack Size
 <LI>Call Chain = MavlinkTx_SendCommand &rArr; mavlink_msg_command_long_pack &rArr; mavlink_finalize_message &rArr; mavlink_finalize_message_chan &rArr; mavlink_finalize_message_buffer &rArr; mavlink_sign_packet &rArr; mavlink_sha256_final_48 &rArr; mavlink_sha256_update &rArr; mavlink_sha256_calc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mavlink_msg_to_send_buffer
